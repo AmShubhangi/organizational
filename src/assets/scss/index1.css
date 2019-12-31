@@ -1,0 +1,18 @@
+h3.my-top-name {
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 50px;
+    color: black;
+    margin-bottom: 25px;
+}
+
+.blue-background {
+    padding: 10px !important;
+    background: lightblue;
+}
+.MuiTypography-colorTextSecondary {
+    color: #0e5779 !important;
+    text-align: center;
+}

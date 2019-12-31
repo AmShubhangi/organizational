@@ -49,7 +49,12 @@ const Sidebar = props => {
       icon: <DashboardIcon />
     },
     {
-      title: 'Users',
+      title: 'WSOne API Settings',
+      href: '/settings',
+      icon: <SettingsIcon />
+    },
+    {
+      title: 'OG Gesture',
       href: '/users',
       icon: <PeopleIcon />
     },
@@ -77,11 +82,6 @@ const Sidebar = props => {
       title: 'Account',
       href: '/account',
       icon: <AccountBoxIcon />
-    },
-    {
-      title: 'OG Settings',
-      href: '/settings',
-      icon: <SettingsIcon />
     }
   ];
 

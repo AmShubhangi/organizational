@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/styles';
+import '../../../../assets/scss/index1.css';
 import {
   Card,
   CardHeader,
@@ -13,7 +14,7 @@ import {
 } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
-  root: {}
+  root: {},
 }));
 
 const Password = props => {
@@ -40,39 +41,75 @@ const Password = props => {
     >
       <form>
         <CardHeader
-          subheader="Update password"
-          title="Password"
+        className="blue-background"
+          subheader="This information will let our application communicate with your WS1 server"
+        // title="Password"
         />
+        <div className="my-top-header">
+          <h3 className="my-top-name">WSOne API Settings</h3>
+        </div>
         <Divider />
         <CardContent>
           <TextField
             fullWidth
-            label="Password"
+            label="UEM Host (E.G. Cn801.Awmdm.Com)"
             name="password"
-            onChange={handleChange}
-            type="password"
-            value={values.password}
+            // onChange={handleChange}
+            type="text"
+            // value={values.password}
             variant="outlined"
           />
           <TextField
             fullWidth
-            label="Confirm password"
+            label="UEM Username"
             name="confirm"
+            // onChange={handleChange}
+            style={{ marginTop: '1rem' }}
+            type="text"
+            // value={values.confirm}
+            variant="outlined"
+          />
+          <TextField
+            fullWidth
+            label="UEM Password"
+            name="password"
             onChange={handleChange}
             style={{ marginTop: '1rem' }}
             type="password"
             value={values.confirm}
             variant="outlined"
           />
+          <TextField
+            fullWidth
+            label="UEM API Key"
+            name="password"
+            // onChange={handleChange}
+            style={{ marginTop: '1rem' }}
+            type="text"
+            // value={values.confirm}
+            variant="outlined"
+          />
+          <TextField
+            fullWidth
+            label="UEM Global OG Identifier (E.G. 77)"
+            name="password"
+            // onChange={handleChange}
+            style={{ marginTop: '1rem' }}
+            type="text"
+            // value={values.confirm}
+            variant="outlined"
+          />
         </CardContent>
         <Divider />
-        <CardActions>
-          <Button
-            color="primary"
-            variant="outlined"
-          >
-            Update
+        <CardActions >
+          <div style={{ margin: '0 auto' }}>
+            <Button
+              color="primary"
+              variant="outlined"
+            >
+              Save
           </Button>
+          </div>
         </CardActions>
       </form>
     </Card>
