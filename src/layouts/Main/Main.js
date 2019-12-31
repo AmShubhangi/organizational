@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/styles';
 import { useMediaQuery } from '@material-ui/core';
 
+
 import { Sidebar, Topbar, Footer } from './components';
 
 const useStyles = makeStyles(theme => ({
@@ -44,6 +45,7 @@ const Main = props => {
   const shouldOpenSidebar = isDesktop ? true : openSidebar;
 
   return (
+   
     <div
       className={clsx({
         [classes.root]: true,

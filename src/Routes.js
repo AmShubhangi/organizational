@@ -16,6 +16,7 @@ import {
   SignIn as SignInView,
   NotFound as NotFoundView
 } from './views';
+import Login from "../src/layouts/Main/components/Auth/Login";
 
 const Routes = () => {
   return (
@@ -36,6 +37,12 @@ const Routes = () => {
         exact
         layout={MainLayout}
         path="/users"
+      />
+        <RouteWithLayout
+        component={Login}
+        exact
+        layout={MainLayout}
+        path="/login"
       />
       <RouteWithLayout
         component={ProductListView}
