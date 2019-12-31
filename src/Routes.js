@@ -72,7 +72,7 @@ const Routes = () => {
         component={SettingsView}
         exact
         layout={MainLayout}
-        path="/settings"
+        path="/ws1-setting"
       />
       <RouteWithLayout
         component={SignUpView}
