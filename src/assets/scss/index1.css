@@ -25,3 +25,40 @@ h3.my-top-name {
   margin-top: 30px;
   margin-bottom: 30px;
 }
+
+/* OG Tool Css */
+.initechNode {
+  border: solid 3px black;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.initechNode-info {
+  padding: 7px;
+}
+
+.parent-node {
+  padding: 0px;
+}
+
+#initechOrgChart .orgNodeChildGroup .nodeGroupLineVerticalMiddle {
+  border-right: solid 3px black;
+}
+
+#initechOrgChart .nodeLineBorderTop {
+  border-top: solid 3px black;
+}
+
+.mt4 {
+  background-color: white;
+  /* width: 210mm; */
+  min-height: 297mm;
+  margin: 20px;
+}
+
+div#initechOrgChart {
+  padding: 40px;
+}
+.donwload-group {
+  padding: 20px;
+}

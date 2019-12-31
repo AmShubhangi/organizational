@@ -33,10 +33,11 @@ const Topbar = props => {
     >
       <Toolbar>
         <RouterLink to="/">
-          <img
+          {/* <img
             alt="Logo"
             src="/images/logos/logo--white.svg"
-          />
+          /> */}
+          <h2 style={{color:'white'}}>OG</h2>
         </RouterLink>
         <div className={classes.flexGrow} />
         <Hidden mdDown>
