@@ -32,7 +32,7 @@ const Settings = () => {
           xs={12}>
           <Password />
         </Grid>
-
+      
         <Grid
           item
           md={3}

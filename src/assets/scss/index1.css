@@ -8,6 +8,25 @@ h3.my-top-name {
   margin-bottom: 25px;
 }
 
+h3.my-top-name-login {
+    color: black;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.newuser
+{
+    margin: 15px;
+    text-align: right;
+}
+.padding {
+    padding: 32px;
+}
+
 .blue-background {
   padding: 10px !important;
   background: lightblue;

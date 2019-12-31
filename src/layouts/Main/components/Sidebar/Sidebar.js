@@ -54,6 +54,11 @@ const Sidebar = props => {
       href: '/og-map',
       icon: <AccountTreeIcon />
     },
+    {
+      title: 'Login',
+      href: '/login',
+      icon: <PeopleIcon />
+    },
     // {
     //   title: 'Products',
     //   href: '/products',
