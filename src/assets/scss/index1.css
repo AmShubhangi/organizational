@@ -1,18 +1,27 @@
 h3.my-top-name {
-    font-family: sans-serif;
-    font-weight: 500;
-    font-size: 24px;
-    text-align: center;
-    margin-top: 50px;
-    color: black;
-    margin-bottom: 25px;
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 50px;
+  color: black;
+  margin-bottom: 25px;
 }
 
 .blue-background {
-    padding: 10px !important;
-    background: lightblue;
+  padding: 10px !important;
+  background: lightblue;
 }
 .MuiTypography-colorTextSecondary {
-    color: #0e5779 !important;
-    text-align: center;
+  color: #0e5779 !important;
+  text-align: center;
+}
+
+.save-button {
+  margin: 0 auto;
+}
+
+.button-section {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }

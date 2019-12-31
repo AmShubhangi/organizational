@@ -101,8 +101,8 @@ const Password = props => {
           />
         </CardContent>
         <Divider />
-        <CardActions >
-          <div style={{ margin: '0 auto' }}>
+        <CardActions className="button-section" >
+          <div className="save-button">
             <Button
               color="primary"
               variant="outlined"
