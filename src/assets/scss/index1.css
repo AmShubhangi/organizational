@@ -17,6 +17,9 @@ h3.my-top-name-login {
   margin-top: 15px;
   margin-bottom: 15px;
 }
+html{
+  scroll-behavior: smooth;
+}
 
 .newuser {
   margin: 15px;
@@ -34,11 +37,16 @@ h3.my-top-name-login {
     color: #0e5779 !important;
     text-align: center;
 }
-.home-top-bg,.featur-bg{
+.home-top-bg{
     background-image: url('../../assets/images/home-bg.jpeg');
     background-size: cover;
     background-position: center center;
     
+}
+.featur-bg{
+  background-image: url('../../assets/images/feature.jpg');
+  background-size: cover;
+  background-position: center center;
 }
 .MuiToolbar-root.MuiToolbar-regular.MuiToolbar-gutters{
     justify-content: space-between;
@@ -50,11 +58,11 @@ h3.my-top-name-login {
     background-color: #35477d;
     color: white;
 }
- 
-.MuiAppBar-colorPrimary {
-    color: black !important;
-    background-color: white !important;
+header.MuiPaper-root.MuiAppBar-root.MuiAppBar-positionStatic.home-bg-color.MuiAppBar-colorPrimary.MuiPaper-elevation4 {
+  color: black !important;
+  background-color: white !important;
 }
+ 
 .stat-underline{
     width: 200px;
     background-color: black;

@@ -12,6 +12,9 @@ import DescriptionOutlinedIcon from '@material-ui/icons/DescriptionOutlined';
 import ArrowForwardOutlinedIcon from '@material-ui/icons/ArrowForwardOutlined';
 import logo from '../../assets/images/\ logo.png';
 import CountUp from 'react-countup';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import InstagramIcon from '@material-ui/icons/Instagram';
 
 
 class HomeComponent extends Component {
@@ -21,7 +24,7 @@ class HomeComponent extends Component {
 
     return (
       <div>
-        <AppBar position="static">
+        <AppBar className="home-bg-color" position="static">
           <Toolbar>
             <IconButton edge="start" color="inherit" aria-label="menu">
               <MenuIcon />
@@ -38,7 +41,7 @@ class HomeComponent extends Component {
         </AppBar>
         <div className="container-fluid">
           <div className="row">
-            <div className="col-lg-6 p-5 home-bg home-min-height"> 
+            <div className="col-lg-6 p-5 home-bg home-min-height">
               <h1 className="display-4 font-weight-bolder home-top-margin">What is OG-Tool?</h1>
               <p>OG tool is a simple Workspace One tool to visualize organization groups and
 manipulate them using an interactive UI.</p>
@@ -58,26 +61,26 @@ manipulate them using an interactive UI.</p>
               <div className="stat-underline"></div>
               <div className="d-flex col-lg-9 ml-auto mr-auto mt-4 mb-4">
                 <div className="col-lg-4 text-center mt-4">
-                 <div className="service-border" >
-                 < h5>Save time</ h5>
-                  <p>OG tool helps you update and manipulate Workspace One organization
-groups using a simple interactive UI. OG tool decreases the timeframe needed for such a
+                  <div className="service-border" >
+                    < h5>Save time</ h5>
+                    <p>OG tool helps you update and manipulate Workspace One organization
+  groups using a simple interactive UI. OG tool decreases the timeframe needed for such a
 task.</p>
-                 </div>
+                  </div>
                 </div>
                 <div className="col-lg-4 text-center mt-4">
-                <div className="service-border" >
-                  < h5>Better visualization</ h5>
-                  <p>OG tool provides you with an easy (drag-and-drop)  <br/>and
-interactive diagram to visualize Workspace One groups structure in a  <br/>  better way.</p>
-                </div>
+                  <div className="service-border" >
+                    < h5>Better visualization</ h5>
+                    <p>OG tool provides you with an easy (drag-and-drop)  <br />and
+interactive diagram to visualize Workspace One groups structure in a  <br />  better way.</p>
+                  </div>
                 </div>
                 <div className="col-lg-4 text-center mt-4">
-                <div className="service-border" >
-                  < h5>Export OGs</ h5>
-                  <p>with OG tool you can easily export your  <br/> Workspace One groups  <br/>  structure
-or specific groups as  <br/> a format of  <br/> your choice.</p>
-                </div>
+                  <div className="service-border" >
+                    < h5>Export OGs</ h5>
+                    <p>with OG tool you can easily export your  <br /> Workspace One groups  <br />  structure
+or specific groups as  <br /> a format of  <br /> your choice.</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -197,12 +200,29 @@ visualize and export (Image, PDF, other types if possible) OGs.</p>
 
                 </div>
               </div>
-              <div className="col-lg-6 featur-bg">
+              <div className="col-lg-6 featur-bg mb-5">
 
               </div>
             </div>
           </div>
         </div>
+        <footer className="bg-dark p-3 text-light ">
+          <div className="row">
+        
+
+            <div className="col-lg-12 d-flex justify-content-end">
+              <div >
+                <FacebookIcon />
+              </div>
+              <div >
+                < TwitterIcon />
+              </div>
+              <div >
+                <InstagramIcon />
+              </div>
+            </div>
+          </div>
+        </footer>
       </div>
     );
   }
