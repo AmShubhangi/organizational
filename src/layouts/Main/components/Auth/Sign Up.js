@@ -15,25 +15,12 @@ class SignUp extends React.Component {
 
     state = {
         formData: {
-            email: '',
-            username: '',
+            companyname: '',
+            workemail: '',
             password: '',
-            confirmpassword: ''
         },
         submitted: false,
     }
-
-    componentDidMount() {
-        // custom rule will have name 'isPasswordMatch'
-        ValidatorForm.addValidationRule('isPasswordMatch', (value) => {
-            const { formData } = this.state;
-            if (value !== formData.password) {
-                return false;
-            }
-            return true;
-        });
-    }
-
 
     handleChange = (event) => {
         const { formData } = this.state;
@@ -41,7 +28,7 @@ class SignUp extends React.Component {
         this.setState({ formData });
     }
 
-    handleSubmit = () => {  
+    handleSubmit = () => {
         this.setState({ submitted: true }, () => {
             setTimeout(() => this.setState({ submitted: false }), 5000);
         });
@@ -74,74 +61,65 @@ class SignUp extends React.Component {
                         >
                             <Card
                             >
-                                    <div className="my-top-header-login">
-                                        <h3 className="my-top-name-login">Sign Up</h3>
+                                <div className="my-top-header-login">
+                                    <h3 className="my-top-name-login">Sign Up</h3>
+                                </div>
+                                <Divider />
+                                <CardContent>
+                                    <TextValidator
+                                         fullWidth
+                                         label="Company Name"
+                                         name="companyname"
+                                         onChange={this.handleChange}
+                                         style={{ marginTop: '1rem' }}
+                                         type="text"
+                                         value={formData.companyname}
+                                         variant="outlined"
+                                         validators={['required']}
+                                         errorMessages={['this field is required']}
+                                    />
+
+                                    <TextValidator
+                                        fullWidth
+                                        label="Work Email"
+                                        name="workemail"
+                                        style={{ marginTop: '1rem' }}
+                                        onChange={this.handleChange}
+                                        type="text"
+                                        value={formData.workemail}
+                                        variant="outlined"
+                                        validators={['required', 'isEmail']}
+                                        errorMessages={['this field is required', 'email is not valid']}
+                                    />
+
+                                    <TextValidator
+                                        fullWidth
+                                        label="Password"
+                                        name="password"
+                                        onChange={this.handleChange}
+                                        style={{ marginTop: '1rem' }}
+                                        type="password"
+                                        value={formData.password}
+                                        variant="outlined"
+                                        validators={['required']}
+                                        errorMessages={['this field is required']}
+                                    />
+                                </CardContent>
+                                <Divider />
+                                <CardActions >
+                                    <div style={{ margin: '10px auto' }}>
+                                        <Button
+                                            color="primary"
+                                            variant="outlined"
+                                            type="submit"
+                                        >
+                                            {
+                                                (submitted && 'Your form is submitted!')
+                                                || (!submitted && 'Sign Up')
+                                            }
+                                        </Button>
                                     </div>
-                                    <Divider />
-                                    <CardContent>
-                                        <TextValidator
-                                            fullWidth
-                                            label="Email"
-                                            name="email"
-                                            onChange={this.handleChange}
-                                            type="text"
-                                            value={formData.email}
-                                            variant="outlined"
-                                            validators={['required', 'isEmail']}
-                                            errorMessages={['this field is required', 'email is not valid']}
-                                        />
-                                        <TextValidator
-                                            fullWidth
-                                            label="UserName"
-                                            name="username"
-                                            onChange={this.handleChange}
-                                            style={{ marginTop: '1rem' }}
-                                            type="text"
-                                            value={formData.username}
-                                            variant="outlined"
-                                            validators={['required']}
-                                            errorMessages={['this field is required']}
-                                        />
-                                        <TextValidator
-                                            fullWidth
-                                            label="Password"
-                                            name="password"
-                                            onChange={this.handleChange}
-                                            style={{ marginTop: '1rem' }}
-                                            type="password"
-                                            value={formData.password}
-                                            variant="outlined"
-                                            validators={['required']}
-                                            errorMessages={['this field is required']}
-                                        />
-                                        <TextValidator
-                                            fullWidth
-                                            label="Confirm Password"
-                                            name="confirmpassword"
-                                            onChange={this.handleChange}
-                                            style={{ marginTop: '1rem' }}
-                                            type="password"
-                                            value={formData.confirmpassword}
-                                            validators={['isPasswordMatch', 'required']}
-                                            errorMessages={['password mismatch', 'this field is required']}
-                                            variant="outlined"
-                                        />
-                                    </CardContent>
-                                    <Divider />
-                                    <CardActions >
-                                        <div style={{ margin: '10px auto' }}>
-                                            <Button
-                                                color="primary"
-                                                variant="outlined"
-                                                type="submit"
-                                            >
-                                                {
-                                                    (submitted && 'Your form is submitted!')
-                                                    || (!submitted && 'Sign Up')
-                                                }
-                                            </Button>
-                                        </div>
-                                    </CardActions>
+                                </CardActions>
                             </Card>
                         </Grid>
 
