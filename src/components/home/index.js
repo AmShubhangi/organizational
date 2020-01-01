@@ -38,9 +38,7 @@ class HomeComponent extends Component {
         </AppBar>
         <div className="container-fluid">
           <div className="row">
-            <div className="col-lg-6 p-5 home-bg home-min-height">
-
-
+            <div className="col-lg-6 p-5 home-bg home-min-height"> 
               <h1 className="display-4 font-weight-bolder home-top-margin">What is OG-Tool?</h1>
               <p>OG tool is a simple Workspace One tool to visualize organization groups and
 manipulate them using an interactive UI.</p>
@@ -60,20 +58,26 @@ manipulate them using an interactive UI.</p>
               <div className="stat-underline"></div>
               <div className="d-flex col-lg-9 ml-auto mr-auto mt-4 mb-4">
                 <div className="col-lg-4 text-center mt-4">
-                  < h5>Save time</ h5>
+                 <div className="service-border" >
+                 < h5>Save time</ h5>
                   <p>OG tool helps you update and manipulate Workspace One organization
 groups using a simple interactive UI. OG tool decreases the timeframe needed for such a
 task.</p>
+                 </div>
                 </div>
                 <div className="col-lg-4 text-center mt-4">
+                <div className="service-border" >
                   < h5>Better visualization</ h5>
-                  <p>OG tool provides you with an easy (drag-and-drop) and
-interactive diagram to visualize Workspace One groups structure in a better way.</p>
+                  <p>OG tool provides you with an easy (drag-and-drop)  <br/>and
+interactive diagram to visualize Workspace One groups structure in a  <br/>  better way.</p>
+                </div>
                 </div>
                 <div className="col-lg-4 text-center mt-4">
+                <div className="service-border" >
                   < h5>Export OGs</ h5>
-                  <p>with OG tool you can easily export your Workspace One groups structure
-or specific groups as a format of your choice.</p>
+                  <p>with OG tool you can easily export your  <br/> Workspace One groups  <br/>  structure
+or specific groups as  <br/> a format of  <br/> your choice.</p>
+                </div>
                 </div>
               </div>
             </div>

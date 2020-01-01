@@ -165,3 +165,10 @@ div#initechOrgChart {
 .react-transform-component.TransformComponent-module_container__3NwNd {
   padding: 20px !important;
 }
+.service-border{
+  padding: 20px;
+  box-shadow: 3px 3px 5px 6px #ccc;
+}
+.service-border h5{
+  color:#35477d;
+}
