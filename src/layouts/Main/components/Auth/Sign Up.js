@@ -1,136 +1,165 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import clsx from 'clsx';
-import { makeStyles } from '@material-ui/styles';
 import '../../../../assets/scss/index1.css';
 import {
     Card,
-    CardHeader,
     CardContent,
     CardActions,
     Divider,
     Button,
-    TextField
 } from '@material-ui/core';
 import { Grid } from '@material-ui/core';
+import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 
-const useStyles = makeStyles(() => ({
-    root: {},
-}));
+class SignUp extends React.Component {
 
-const SignIn = props => {
-    const { className, ...rest } = props;
+    state = {
+        formData: {
+            email: '',
+            username: '',
+            password: '',
+            confirmpassword: ''
+        },
+        submitted: false,
+    }
 
-    const classes = useStyles();
-
-    const [values, setValues] = useState({
-        password: '',
-        confirm: ''
-    });
-
-    const handleChange = event => {
-        setValues({
-            ...values,
-            [event.target.name]: event.target.value
+    componentDidMount() {
+        // custom rule will have name 'isPasswordMatch'
+        ValidatorForm.addValidationRule('isPasswordMatch', (value) => {
+            const { formData } = this.state;
+            if (value !== formData.password) {
+                return false;
+            }
+            return true;
         });
-    };
+    }
 
-    return (
-        <div className="padding" >
-            <Grid
-                container
-                spacing={4}
-            >
 
-                <Grid
-                    item
-                    md={3}
-                    xs={2}
+    handleChange = (event) => {
+        const { formData } = this.state;
+        formData[event.target.name] = event.target.value;
+        this.setState({ formData });
+    }
+
+    handleSubmit = () => {  
+        this.setState({ submitted: true }, () => {
+            setTimeout(() => this.setState({ submitted: false }), 5000);
+        });
+    }
+
+    render() {
+        const { formData, submitted } = this.state;
+
+        return (
+            <div className="padding" >
+                <ValidatorForm
+                    ref="form"
+                    onSubmit={this.handleSubmit}
                 >
-                </Grid>
-                <Grid
-                    item
-                    md={5}
-                    xs={12}
-                >
-                    <Card
-                        {...rest}
-                        className={clsx(classes.root, className)}
+                    <Grid
+                        container
+                        spacing={4}
                     >
-                        <form>
-                            <div className="my-top-header-login">
-                                <h3 className="my-top-name-login">Sign Up</h3>
-                            </div>
-                            <Divider />
-                            <CardContent>
-                                <TextField
-                                    fullWidth
-                                    label="Email"
-                                    name="Email"
-                                    // onChange={handleChange}
-                                    type="text"
-                                    // value={values.password}
-                                    variant="outlined"
-                                />
-                                <TextField
-                                    fullWidth
-                                    label="UserName"
-                                    name="text"
-                                    // onChange={handleChange}
-                                    style={{ marginTop: '1rem' }}
-                                    type="text"
-                                    // value={values.confirm}
-                                    variant="outlined"
-                                />
-                                <TextField
-                                    fullWidth
-                                    label="Password"
-                                    name="password"
-                                    // onChange={handleChange}
-                                    style={{ marginTop: '1rem' }}
-                                    type="password"
-                                    // value={values.confirm}
-                                    variant="outlined"
-                                />
-                                <TextField
-                                    fullWidth
-                                    label="Confirm Password"
-                                    name="Confirm password"
-                                    // onChange={handleChange}
-                                    style={{ marginTop: '1rem' }}
-                                    type="text"
-                                    // value={values.confirm}
-                                    variant="outlined"
-                                />
-                            </CardContent>
-                            <Divider />
-                            <CardActions >
-                                <div style={{ margin: '0 auto' }}>
-                                    <Button
-                                        color="primary"
-                                        variant="outlined"
-                                    >
-                                        Next
-                                  </Button>
-                                </div>
-                            </CardActions>
-                        </form>
-                    </Card>
-                </Grid>
 
-                <Grid
-                    item
-                    md={3}
-                    xs={2}
-                >
-                </Grid>
-            </Grid>
-        </div>
-    );
+                        <Grid
+                            item
+                            md={3}
+                            xs={2}
+                        >
+                        </Grid>
+                        <Grid
+                            item
+                            md={5}
+                            xs={12}
+                        >
+                            <Card
+                            >
+                                    <div className="my-top-header-login">
+                                        <h3 className="my-top-name-login">Sign Up</h3>
+                                    </div>
+                                    <Divider />
+                                    <CardContent>
+                                        <TextValidator
+                                            fullWidth
+                                            label="Email"
+                                            name="email"
+                                            onChange={this.handleChange}
+                                            type="text"
+                                            value={formData.email}
+                                            variant="outlined"
+                                            validators={['required', 'isEmail']}
+                                            errorMessages={['this field is required', 'email is not valid']}
+                                        />
+                                        <TextValidator
+                                            fullWidth
+                                            label="UserName"
+                                            name="username"
+                                            onChange={this.handleChange}
+                                            style={{ marginTop: '1rem' }}
+                                            type="text"
+                                            value={formData.username}
+                                            variant="outlined"
+                                            validators={['required']}
+                                            errorMessages={['this field is required']}
+                                        />
+                                        <TextValidator
+                                            fullWidth
+                                            label="Password"
+                                            name="password"
+                                            onChange={this.handleChange}
+                                            style={{ marginTop: '1rem' }}
+                                            type="password"
+                                            value={formData.password}
+                                            variant="outlined"
+                                            validators={['required']}
+                                            errorMessages={['this field is required']}
+                                        />
+                                        <TextValidator
+                                            fullWidth
+                                            label="Confirm Password"
+                                            name="confirmpassword"
+                                            onChange={this.handleChange}
+                                            style={{ marginTop: '1rem' }}
+                                            type="password"
+                                            value={formData.confirmpassword}
+                                            validators={['isPasswordMatch', 'required']}
+                                            errorMessages={['password mismatch', 'this field is required']}
+                                            variant="outlined"
+                                        />
+                                    </CardContent>
+                                    <Divider />
+                                    <CardActions >
+                                        <div style={{ margin: '10px auto' }}>
+                                            <Button
+                                                color="primary"
+                                                variant="outlined"
+                                                type="submit"
+                                            >
+                                                {
+                                                    (submitted && 'Your form is submitted!')
+                                                    || (!submitted && 'Sign Up')
+                                                }
+                                            </Button>
+                                        </div>
+                                    </CardActions>
+                            </Card>
+                        </Grid>
+
+                        <Grid
+                            item
+                            md={3}
+                            xs={2}
+                        >
+                        </Grid>
+                    </Grid>
+                </ValidatorForm>
+            </div>
+        );
+    }
 };
 
-SignIn.propTypes = {
+SignUp.propTypes = {
     className: PropTypes.string
 };
 
-export default SignIn;
+export default SignUp;
