@@ -28,7 +28,8 @@ class UserList extends React.Component {
     htmlToImage.toJpeg(document.getElementById('divToPrint'), { quality: 0.95 })
       .then(function (dataUrl) {
         var link = document.createElement('a');
-        link.download = 'my-image-name.jpeg';
+
+        link.download = 'OG-Structure.jpeg';
         link.href = dataUrl;
         link.click();
       });
@@ -41,7 +42,7 @@ class UserList extends React.Component {
         const imgData = canvas.toDataURL('image/png');
         const pdf = new jsPDF();
         pdf.addImage(imgData, 'JPEG', 0, 0);
-        pdf.save("download.pdf");
+        pdf.save("OG-Structure.pdf");
       });
   }
 
@@ -50,7 +51,6 @@ class UserList extends React.Component {
       return (
         <div className="initechNode" >
           <div className="parent-node">
-            {/* <img src="../icons/location.png" /> */}
             <PinDropSharpIcon />
             <h4>{node.Name}</h4>
           </div>
@@ -66,31 +66,32 @@ class UserList extends React.Component {
     return (
       <div className="root">
         <div className="content">
-          <div id="divToPrint" className="mt4">
+          <div className="full-width">
             <div className="donwload-group">
-              <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
-                <Button onClick={this.printDocument}><PictureAsPdfIcon />&nbsp;Export PDF</Button>
+              <ButtonGroup variant="text" id="download-button" color="primary" aria-label="text primary button group">
+                <Button onClick={this.printDocument} ><PictureAsPdfIcon />&nbsp;Export PDF</Button>
                 <Button onClick={this.downloadImage}><CloudDownloadIcon />&nbsp;Get Image</Button>
               </ButtonGroup>
             </div>
-            <div className="App" id="initechOrgChart">
-              <TransformWrapper
-              >
-                {({ zoomIn, zoomOut, resetTransform }) => (
-                  <React.Fragment>
-                    <div className="tools">
-                      <ButtonGroup variant="text" className="zoom-in-out" color="primary" aria-label="text primary button group">
-                        <Button onClick={zoomIn}><ZoomInIcon /></Button>
-                        <Button onClick={zoomOut}><ZoomOutIcon /></Button>
-                        <Button onClick={resetTransform}><RotateLeftIcon /></Button>
-                      </ButtonGroup>
-                    </div>
-                    <TransformComponent>
-                      <OrgChart tree={this.state.initechOrg} NodeComponent={MyNodeComponent} />
-                    </TransformComponent>
-                  </React.Fragment>
-                )}
-              </TransformWrapper>
+            <div id="divToPrint" className="mt4">
+              <div className="App" id="initechOrgChart">
+                <TransformWrapper>
+                  {({ zoomIn, zoomOut, resetTransform }) => (
+                    <React.Fragment>
+                      <div className="tools">
+                        <ButtonGroup variant="text" className="zoom-in-out" color="primary" aria-label="text primary button group">
+                          <Button onClick={zoomIn}><ZoomInIcon /></Button>
+                          <Button onClick={zoomOut}><ZoomOutIcon /></Button>
+                          <Button onClick={resetTransform}><RotateLeftIcon /></Button>
+                        </ButtonGroup>
+                      </div>
+                      <TransformComponent>
+                        <div id="divToPrint" ><OrgChart tree={this.state.initechOrg} NodeComponent={MyNodeComponent} /></div>
+                      </TransformComponent>
+                    </React.Fragment>
+                  )}
+                </TransformWrapper>
+              </div>
             </div>
           </div>
         </div>

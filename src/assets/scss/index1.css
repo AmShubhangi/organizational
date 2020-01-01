@@ -53,6 +53,7 @@ h3.my-top-name-login {
 
 .initechNode-info {
   padding: 7px;
+  text-align: left;
 }
 
 .parent-node {
@@ -74,9 +75,12 @@ h3.my-top-name-login {
 
 .mt4 {
   background-color: white;
-  /* width: 210mm; */
-  min-height: 297mm;
+  width: 80%;
+  height: auto;
+}
+.full-width {
   margin: 20px;
+  background: white;
 }
 
 div#initechOrgChart {
@@ -93,4 +97,7 @@ div#initechOrgChart {
 .tools {
   margin-top: -9%;
   margin-left: 90%;
+}
+.react-transform-component.TransformComponent-module_container__3NwNd {
+  padding: 20px !important;
 }
