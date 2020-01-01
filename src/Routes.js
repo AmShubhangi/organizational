@@ -17,7 +17,7 @@ import {
   NotFound as NotFoundView
 } from './views';
 import Login from "../src/layouts/Main/components/Auth/Login";
-import SignIn from "../src/layouts/Main/components/Auth/Sign Up";
+import SignUp from "../src/layouts/Main/components/Auth/Sign Up";
 
 const Routes = () => {
   return (
@@ -46,10 +46,10 @@ const Routes = () => {
         path="/login"
       />
       <RouteWithLayout
-        component={SignIn}
+        component={SignUp}
         exact
         layout={MainLayout}
-        path="/signin"
+        path="/register"
       />
       <RouteWithLayout
         component={ProductListView}

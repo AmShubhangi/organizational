@@ -10,10 +10,9 @@ import {
 } from '@material-ui/core';
 import { Grid } from '@material-ui/core';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
+import { Link } from 'react-router-dom';
 
 class Login extends React.Component {
-
-
   state = {
     formData: {
       email: '',
@@ -108,7 +107,7 @@ class Login extends React.Component {
                     </div>
                   </CardActions>
                   <div className="newuser">
-                    <a href="">Create Account?</a>
+                    <Link to='/register' >Create Account?</Link>
                   </div>
                 </form>
               </Card>

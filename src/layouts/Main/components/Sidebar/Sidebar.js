@@ -61,7 +61,7 @@ const Sidebar = props => {
     },
     {
       title: 'Sign Up',
-      href: '/signin',
+      href: '/register',
       icon: <PeopleIcon />
     },
     // {

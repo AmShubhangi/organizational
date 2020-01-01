@@ -12,7 +12,6 @@ import { Grid } from '@material-ui/core';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 
 class SignUp extends React.Component {
-
     state = {
         formData: {
             companyname: '',
