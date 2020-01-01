@@ -31,9 +31,73 @@ h3.my-top-name-login {
   background: lightblue;
 }
 .MuiTypography-colorTextSecondary {
-  color: #0e5779 !important;
-  text-align: center;
+    color: #0e5779 !important;
+    text-align: center;
 }
+.home-top-bg,.featur-bg{
+    background-image: url('../../assets/images/home-bg.jpeg');
+    background-size: cover;
+    background-position: center center;
+    
+}
+.MuiToolbar-root.MuiToolbar-regular.MuiToolbar-gutters{
+    justify-content: space-between;
+}
+.home-min-height{
+    min-height: 500px;
+}
+.home-bg{
+    background-color: #35477d;
+    color: white;
+}
+ 
+.MuiAppBar-colorPrimary {
+    color: black !important;
+    background-color: white !important;
+}
+.stat-underline{
+    width: 200px;
+    background-color: black;
+    padding: 3px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.icon-border{
+     padding: 18px;
+     border-radius: 50%;
+     border:2px solid #eee;
+     width: 100px;
+     margin:0px auto;
+     text-align: center;
+}
+.underline{
+    width: 50px;
+    background-color:  #eee;
+    padding: 1px;
+    margin:10px auto;
+}
+.underline-about{
+    width: 100px;
+    background-color:black;
+    padding: 3px;
+    text-align: left;
+    
+}
+.about-bg{
+    background-image: url('../../assets/images/\ logo.png');
+    background-size: cover;
+    background-position: center center;
+    width: 100px;
+    height: 100px;
+}
+.feature-icon{
+    font-size: 53px;
+    margin-right: 20px;
+}
+.home-top-margin{
+    margin-top: 100px;
+}
+ 
 
 .save-button {
   margin: 0 auto;
