@@ -47,14 +47,6 @@ class Password extends React.Component {
           ref="form"
           onSubmit={this.handleSubmit}
         >
-
-
-        </ValidatorForm>
-
-        <ValidatorForm
-          ref="form"
-          onSubmit={this.handleSubmit}
-        >
           <CardHeader
             className="blue-background"
             subheader="This information will let our application communicate with your WS1 server"
@@ -136,7 +128,7 @@ class Password extends React.Component {
               >
                 {
                   (submitted && 'Your form is submitted!')
-                  || (!submitted && 'Submit')
+                  || (!submitted && 'Save')
                 }
               </Button>
             </div>
