@@ -47,6 +47,7 @@ class UserList extends React.Component {
   }
 
   render() {
+    console.log(this.state.initechOrg);
     const MyNodeComponent = ({ node }) => {
       return (
         <div className="initechNode" >
