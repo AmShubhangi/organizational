@@ -9,7 +9,7 @@ import html2canvas from 'html2canvas';
 import htmlToImage from 'html-to-image';
 import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
 import CloudDownloadIcon from '@material-ui/icons/CloudDownload';
-import { Divider } from '@material-ui/core';
+import PinDropSharpIcon from '@material-ui/icons/PinDropSharp';
 
 class UserList extends React.Component {
   constructor() {
@@ -44,11 +44,13 @@ class UserList extends React.Component {
   render() {
     const MyNodeComponent = ({ node }) => {
       return (
-        <div  className="initechNode">
+        <div className="initechNode">
           <div className="parent-node">
+            {/* <img src="../icons/location.png" /> */}
+            <PinDropSharpIcon />
             <h4>{node.Name}</h4>
           </div>
-          <div  className="initechNode-info">
+          <div className="initechNode-info">
             <p>Identifier:{node.Id.Value}</p>
             <p>Users:{node.Users}</p>
             <p>Admins:{node.Admins}</p>

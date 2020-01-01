@@ -60,29 +60,6 @@
           "children": []
         },
         {
-          "Name": "Demos",
-          "GroupId": "demos",
-          "LocationGroupType": "Container",
-          "Country": "France",
-          "Locale": "en-AU",
-          "ParentLocationGroup": {
-            "Id": {
-              "Value": 570
-            },
-            "Uuid": "db863b4b-0d39-4148-bba8-b11d2641c888"
-          },
-          "CreatedOn": "10/13/2016 1:41:04 PM",
-          "LgLevel": 2,
-          "Users": "1",
-          "Admins": "1",
-          "Devices": "0",
-          "Id": {
-            "Value": 572
-          },
-          "Uuid": "3e263f0f-b51e-474b-a36a-45bae2f89b90",
-          "children": []
-        },
-        {
           "Name": "Sandboxes",
           "GroupId": "sb",
           "LocationGroupType": "Container",

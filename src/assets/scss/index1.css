@@ -9,22 +9,21 @@ h3.my-top-name {
 }
 
 h3.my-top-name-login {
-    color: black;
-    font-family: sans-serif;
-    font-weight: 500;
-    font-size: 24px;
-    text-align: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
+  color: black;
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
-.newuser
-{
-    margin: 15px;
-    text-align: right;
+.newuser {
+  margin: 15px;
+  text-align: right;
 }
 .padding {
-    padding: 32px;
+  padding: 32px;
 }
 
 .blue-background {
@@ -57,7 +56,12 @@ h3.my-top-name-login {
 }
 
 .parent-node {
-  padding: 0px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-left: 5px;
+  border-bottom: 1px solid black;
+  padding-right: 5px;
+  display: flex;
 }
 
 #initechOrgChart .orgNodeChildGroup .nodeGroupLineVerticalMiddle {
