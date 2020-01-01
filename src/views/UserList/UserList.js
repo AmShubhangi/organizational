@@ -10,6 +10,10 @@ import htmlToImage from 'html-to-image';
 import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
 import CloudDownloadIcon from '@material-ui/icons/CloudDownload';
 import PinDropSharpIcon from '@material-ui/icons/PinDropSharp';
+import ZoomOutIcon from '@material-ui/icons/ZoomOut';
+import ZoomInIcon from '@material-ui/icons/ZoomIn';
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 
 class UserList extends React.Component {
   constructor() {
@@ -44,7 +48,7 @@ class UserList extends React.Component {
   render() {
     const MyNodeComponent = ({ node }) => {
       return (
-        <div className="initechNode">
+        <div className="initechNode" >
           <div className="parent-node">
             {/* <img src="../icons/location.png" /> */}
             <PinDropSharpIcon />
@@ -70,25 +74,28 @@ class UserList extends React.Component {
               </ButtonGroup>
             </div>
             <div className="App" id="initechOrgChart">
-              <OrgChart tree={this.state.initechOrg} NodeComponent={MyNodeComponent} />
+              <TransformWrapper
+              >
+                {({ zoomIn, zoomOut, resetTransform }) => (
+                  <React.Fragment>
+                    <div className="tools">
+                      <ButtonGroup variant="text" className="zoom-in-out" color="primary" aria-label="text primary button group">
+                        <Button onClick={zoomIn}><ZoomInIcon /></Button>
+                        <Button onClick={zoomOut}><ZoomOutIcon /></Button>
+                        <Button onClick={resetTransform}><RotateLeftIcon /></Button>
+                      </ButtonGroup>
+                    </div>
+                    <TransformComponent>
+                      <OrgChart tree={this.state.initechOrg} NodeComponent={MyNodeComponent} />
+                    </TransformComponent>
+                  </React.Fragment>
+                )}
+              </TransformWrapper>
             </div>
           </div>
         </div>
       </div>
     );
-    // return (
-    //   // <div className={classes.root}>
-    //   //   <UsersToolbar />
-    //   //   <div className={classes.content}>
-    //   //     <UsersTable users={users} />
-    //   //   </div>
-    //   // </div>
-    //   <div className="root">
-    //     <div className="content">
-
-    //     </div>
-    //   </div>
-    // );
   }
 }
 
