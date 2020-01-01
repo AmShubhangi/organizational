@@ -7,9 +7,9 @@ import {
   CardContent,
   CardActions,
   Divider,
-  Button,
-  TextField
+  Button
 } from '@material-ui/core';
+import { Redirect } from 'react-router-dom';
 
 class Password extends React.Component {
   constructor() {
@@ -126,10 +126,7 @@ class Password extends React.Component {
                 type="submit"
                 disabled={submitted}
               >
-                {
-                  (submitted && 'Your form is submitted!')
-                  || (!submitted && 'Save')
-                }
+                {submitted ? <Redirect to='/og-map' /> : 'Save'}
               </Button>
             </div>
           </CardActions>
