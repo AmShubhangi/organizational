@@ -1,115 +1,130 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import clsx from 'clsx';
-import { makeStyles } from '@material-ui/styles';
 import '../../../../assets/scss/index1.css';
 import {
   Card,
-  CardHeader,
   CardContent,
   CardActions,
   Divider,
   Button,
-  TextField
 } from '@material-ui/core';
 import { Grid } from '@material-ui/core';
+import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 
-const useStyles = makeStyles(() => ({
-  root: {},
-}));
+class Login extends React.Component {
 
-const Login = props => {
-  const { className, ...rest } = props;
 
-  const classes = useStyles();
+  state = {
+    formData: {
+      email: '',
+      password: '',
+    },
+    submitted: false,
+  }
 
-  const [values, setValues] = useState({
-    password: '',
-    confirm: ''
-  });
+  handleChange = (event) => {
+    const { formData } = this.state;
+    formData[event.target.name] = event.target.value;
+    this.setState({ formData });
+  }
 
-  const handleChange = event => {
-    setValues({
-      ...values,
-      [event.target.name]: event.target.value
+  handleSubmit = () => {
+    this.setState({ submitted: true }, () => {
+      setTimeout(() => this.setState({ submitted: false }), 5000);
     });
-  };
+  }
 
-  return (
-    <div className="padding" >
-      <Grid
-        container
-        spacing={4}
-      >
 
-        <Grid
-          item
-          md={3}
-          xs={2}
+  render() {
+
+    const { formData, submitted } = this.state;
+    return (
+      <div className="padding" >
+        <ValidatorForm
+          ref="form"
+          onSubmit={this.handleSubmit}
         >
-        </Grid>
-        <Grid
-          item
-          md={5}
-          xs={12}
-        >
-          <Card
-            {...rest}
-            className={clsx(classes.root, className)}
+          <Grid
+            container
+            spacing={4}
           >
-            <form>
-              <div className="my-top-header-login">
-                <h3 className="my-top-name-login">Login</h3>
-              </div>
-              <Divider />
-              <CardContent>
-                <TextField
-                  fullWidth
-                  label="Email"
-                  name="Email"
-                  // onChange={handleChange}
-                  type="text"
-                  // value={values.password}
-                  variant="outlined"
-                />
-                <TextField
-                  fullWidth
-                  label="Password"
-                  name="password"
-                  // onChange={handleChange}
-                  style={{ marginTop: '1rem' }}
-                  type="password"
-                  // value={values.confirm}
-                  variant="outlined"
-                />
-              </CardContent>
-              <Divider />
-              <CardActions >
-                <div style={{ margin: '0 auto' }}>
-                  <Button
-                    color="primary"
-                    variant="outlined"
-                  >
-                    Login
-          </Button>
-                </div>
-              </CardActions>
-              <div className="newuser">
-                <a href="">Create Account?</a>
-              </div>
-            </form>
-          </Card>
-        </Grid>
 
-        <Grid
-          item
-          md={3}
-          xs={2}
-        >
-        </Grid>
-      </Grid>
-    </div>
-  );
+            <Grid
+              item
+              md={3}
+              xs={2}
+            >
+            </Grid>
+            <Grid
+              item
+              md={5}
+              xs={12}
+            >
+              <Card
+              >
+                <form>
+                  <div className="my-top-header-login">
+                    <h3 className="my-top-name-login">Login</h3>
+                  </div>
+                  <Divider />
+                  <CardContent>
+                    <TextValidator
+                      fullWidth
+                      label="Email"
+                      name="email"
+                      onChange={this.handleChange}
+                      type="text"
+                      value={formData.email}
+                      variant="outlined"
+                      validators={['required', 'isEmail']}
+                      errorMessages={['this field is required', 'email is not valid']}
+                    />
+                    <TextValidator
+                      fullWidth
+                      label="Password"
+                      name="password"
+                      onChange={this.handleChange}
+                      style={{ marginTop: '1rem' }}
+                      type="password"
+                      value={formData.password}
+                      variant="outlined"
+                      validators={['required']}
+                      errorMessages={['this field is required']}
+                    />
+                  </CardContent>
+                  <Divider />
+                  <CardActions >
+                    <div style={{ margin: '0 auto' }}>
+                      <Button
+                        color="primary"
+                        variant="outlined"
+                        type="submit"
+                      >
+                        {
+                          (submitted && 'Your form is submitted!')
+                          || (!submitted && 'Login')
+                        }
+                      </Button>
+                    </div>
+                  </CardActions>
+                  <div className="newuser">
+                    <a href="">Create Account?</a>
+                  </div>
+                </form>
+              </Card>
+            </Grid>
+
+            <Grid
+              item
+              md={3}
+              xs={2}
+            >
+            </Grid>
+          </Grid>
+        </ValidatorForm>
+      </div>
+    );
+  }
 };
 
 Login.propTypes = {
