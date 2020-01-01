@@ -16,6 +16,8 @@ import {
   SignIn as SignInView,
   NotFound as NotFoundView
 } from './views';
+import Login from "../src/layouts/Main/components/Auth/Login";
+import SignUp from "../src/layouts/Main/components/Auth/Sign Up";
 
 const Routes = () => {
   return (
@@ -35,7 +37,19 @@ const Routes = () => {
         component={UserListView}
         exact
         layout={MainLayout}
-        path="/users"
+        path="/og-map"
+      />
+      <RouteWithLayout
+        component={Login}
+        exact
+        layout={MainLayout}
+        path="/login"
+      />
+      <RouteWithLayout
+        component={SignUp}
+        exact
+        layout={MainLayout}
+        path="/register"
       />
       <RouteWithLayout
         component={ProductListView}
@@ -65,7 +79,7 @@ const Routes = () => {
         component={SettingsView}
         exact
         layout={MainLayout}
-        path="/settings"
+        path="/ws1-setting"
       />
       <RouteWithLayout
         component={SignUpView}

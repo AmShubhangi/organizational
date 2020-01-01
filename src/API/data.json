@@ -1,0 +1,157 @@
+{
+  "Name": "Global",
+  "GroupId": "Global",
+  "LocationGroupType": "Global",
+  "Country": "United States",
+  "Locale": "en-US",
+  "CreatedOn": "10/13/2016 12:57:39 PM",
+  "LgLevel": 0,
+  "Users": "5",
+  "Admins": "16",
+  "Devices": "0",
+  "Id": {
+    "Value": 7
+  },
+  "Uuid": "5a94f2d4-4896-435f-a083-ab1c19d76575",
+  "children": [
+    {
+      "Name": "Mobinergy Lab",
+      "GroupId": "mobinergy",
+      "LocationGroupType": "Container",
+      "Country": "France",
+      "Locale": "en-AU",
+      "ParentLocationGroup": {
+        "Id": {
+          "Value": 7
+        },
+        "Uuid": "5a94f2d4-4896-435f-a083-ab1c19d76575"
+      },
+      "CreatedOn": "10/13/2016 12:57:39 PM",
+      "LgLevel": 1,
+      "Users": "24",
+      "Admins": "19",
+      "Devices": "3",
+      "Id": {
+        "Value": 570
+      },
+      "Uuid": "db863b4b-0d39-4148-bba8-b11d2641c888",
+      "children": [
+        {
+          "Name": "Demos",
+          "GroupId": "demos",
+          "LocationGroupType": "Container",
+          "Country": "France",
+          "Locale": "en-AU",
+          "ParentLocationGroup": {
+            "Id": {
+              "Value": 570
+            },
+            "Uuid": "db863b4b-0d39-4148-bba8-b11d2641c888"
+          },
+          "CreatedOn": "10/13/2016 1:41:04 PM",
+          "LgLevel": 2,
+          "Users": "1",
+          "Admins": "1",
+          "Devices": "0",
+          "Id": {
+            "Value": 572
+          },
+          "Uuid": "3e263f0f-b51e-474b-a36a-45bae2f89b90",
+          "children": []
+        },
+        {
+          "Name": "Sandboxes",
+          "GroupId": "sb",
+          "LocationGroupType": "Container",
+          "Country": "France",
+          "Locale": "en-AU",
+          "ParentLocationGroup": {
+            "Id": {
+              "Value": 570
+            },
+            "Uuid": "db863b4b-0d39-4148-bba8-b11d2641c888"
+          },
+          "CreatedOn": "10/13/2016 2:44:14 PM",
+          "LgLevel": 2,
+          "Users": "2",
+          "Admins": "6",
+          "Devices": "0",
+          "Id": {
+            "Value": 574
+          },
+          "Uuid": "4a933415-0af3-4d63-85f3-807d965ed528",
+          "children": [
+            {
+              "Name": "Emil",
+              "GroupId": "emil",
+              "LocationGroupType": "Customer",
+              "Country": "Germany",
+              "Locale": "en-AU",
+              "ParentLocationGroup": {
+                "Id": {
+                  "Value": 574
+                },
+                "Uuid": "4a933415-0af3-4d63-85f3-807d965ed528"
+              },
+              "CreatedOn": "10/13/2016 2:44:26 PM",
+              "LgLevel": 3,
+              "Users": "0",
+              "Admins": "2",
+              "Devices": "0",
+              "Id": {
+                "Value": 575
+              },
+              "Uuid": "4a6c6349-b7c9-43b3-ad84-65251066d755",
+              "children": []
+            },
+            {
+              "Name": "Mohammed",
+              "GroupId": "medlab",
+              "LocationGroupType": "Customer",
+              "Country": "France",
+              "Locale": "en-AU",
+              "ParentLocationGroup": {
+                "Id": {
+                  "Value": 574
+                },
+                "Uuid": "4a933415-0af3-4d63-85f3-807d965ed528"
+              },
+              "CreatedOn": "10/13/2016 2:47:06 PM",
+              "LgLevel": 3,
+              "Users": "8",
+              "Admins": "2",
+              "Devices": "6",
+              "Id": {
+                "Value": 576
+              },
+              "Uuid": "11dcdb4d-b946-4ee2-bc62-1b836f79556a",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "Mobinergy Partners External Lab",
+      "GroupId": "",
+      "LocationGroupType": "Container",
+      "Country": "United States",
+      "Locale": "en-US",
+      "ParentLocationGroup": {
+        "Id": {
+          "Value": 7
+        },
+        "Uuid": "5a94f2d4-4896-435f-a083-ab1c19d76575"
+      },
+      "CreatedOn": "6/5/2017 10:36:36 AM",
+      "LgLevel": 1,
+      "Users": "1",
+      "Admins": "0",
+      "Devices": "8",
+      "Id": {
+        "Value": 643
+      },
+      "Uuid": "518bb105-cc11-4be4-8f29-beb27253fb07"
+    }
+  ]
+}

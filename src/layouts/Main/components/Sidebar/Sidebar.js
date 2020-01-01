@@ -5,13 +5,9 @@ import { makeStyles } from '@material-ui/styles';
 import { Divider, Drawer } from '@material-ui/core';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import PeopleIcon from '@material-ui/icons/People';
-import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
-import TextFieldsIcon from '@material-ui/icons/TextFields';
-import ImageIcon from '@material-ui/icons/Image';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import SettingsIcon from '@material-ui/icons/Settings';
-import LockOpenIcon from '@material-ui/icons/LockOpen';
-
+import AccountTreeIcon from '@material-ui/icons/AccountTree';
 import { Profile, SidebarNav } from './components';
 
 const useStyles = makeStyles(theme => ({
@@ -50,12 +46,22 @@ const Sidebar = props => {
     },
     {
       title: 'WSOne API Settings',
-      href: '/settings',
+      href: '/ws1-setting',
       icon: <SettingsIcon />
     },
     {
       title: 'OG Gesture',
-      href: '/users',
+      href: '/og-map',
+      icon: <AccountTreeIcon />
+    },
+    {
+      title: 'Login',
+      href: '/login',
+      icon: <PeopleIcon />
+    },
+    {
+      title: 'Sign Up',
+      href: '/register',
       icon: <PeopleIcon />
     },
     // {

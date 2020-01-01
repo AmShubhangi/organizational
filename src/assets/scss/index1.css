@@ -1,16 +1,34 @@
 h3.my-top-name {
-    font-family: sans-serif;
-    font-weight: 500;
-    font-size: 24px;
-    text-align: center;
-    margin-top: 50px;
-    color: black;
-    margin-bottom: 25px;
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 50px;
+  color: black;
+  margin-bottom: 25px;
+}
+
+h3.my-top-name-login {
+  color: black;
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.newuser {
+  margin: 15px;
+  text-align: right;
+}
+.padding {
+  padding: 32px;
 }
 
 .blue-background {
-    padding: 10px !important;
-    background: lightblue;
+  padding: 10px !important;
+  background: lightblue;
 }
 .MuiTypography-colorTextSecondary {
     color: #0e5779 !important;
@@ -78,4 +96,72 @@ h3.my-top-name {
 }
 .home-top-margin{
     margin-top: 100px;
+}
+ 
+
+.save-button {
+  margin: 0 auto;
+}
+
+.button-section {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* OG Tool Css */
+.initechNode {
+  border: solid 3px black;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.initechNode-info {
+  padding: 7px;
+  text-align: left;
+}
+
+.parent-node {
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-left: 5px;
+  border-bottom: 1px solid black;
+  padding-right: 5px;
+  display: flex;
+}
+
+#initechOrgChart .orgNodeChildGroup .nodeGroupLineVerticalMiddle {
+  border-right: solid 3px black;
+}
+
+#initechOrgChart .nodeLineBorderTop {
+  border-top: solid 3px black;
+}
+
+.mt4 {
+  background-color: white;
+  width: 80%;
+  height: auto;
+}
+.full-width {
+  margin: 20px;
+  background: white;
+}
+
+div#initechOrgChart {
+  padding: 40px;
+}
+.donwload-group {
+  padding: 20px;
+}
+
+.MuiFormHelperText-contained {
+  margin: 8px 4px 0 !important;
+}
+
+.tools {
+  margin-top: -9%;
+  margin-left: 90%;
+}
+.react-transform-component.TransformComponent-module_container__3NwNd {
+  padding: 20px !important;
 }

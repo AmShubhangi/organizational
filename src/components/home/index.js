@@ -28,7 +28,7 @@ class HomeComponent extends Component {
             </IconButton>
             <div className=" justify-content-between">
               <Button color="inherit">Home</Button>
-              <Button color="inherit">Service</Button>
+              <Button color="inherit"><a className="text-dark" style={{ textDecoration: 'none' }} href="#service">service</a></Button>
               <Button color="inherit"><a className="text-dark" style={{ textDecoration: 'none' }} href="#work">How it works?</a></Button>
               <Button color="inherit"><a className="text-dark" style={{ textDecoration: 'none' }} href="#Statistics">Statistics</a></Button>
               <Button color="inherit">Contact</Button>
@@ -55,15 +55,21 @@ manipulate them using an interactive UI.</p>
             </div>
           </div>
           <div className="row bg-white">
-          <div id="service" className="col-lg-12 ">
-          <h1 className=" text-center mt-4 ">Service</h1>
+            <div id="service" className="col-lg-12 ">
+              <h1 className=" text-center mt-4 ">Service</h1>
               <div className="stat-underline"></div>
               <div className="d-flex col-lg-9 ml-auto mr-auto mt-4">
-                <div className="col-lg-4 text-center">Save time</div>
-                <div className="col-lg-4 text-center">Better visualization</div>
-                <div className="col-lg-4 text-center">Export OGs</div>
+                <div className="col-lg-4 text-center">
+                  < h5>Save time</ h5>
+                </div>
+                <div className="col-lg-4 text-center">
+                  < h5>Better visualization</ h5>
+                </div>
+                <div className="col-lg-4 text-center">
+                  < h5>Export OGs</ h5>
+                </div>
               </div>
-          </div> 
+            </div>
             <div id="Statistics" className="col-lg-12 ">
               <h1 className=" text-center mt-4 ">Statistics</h1>
               <div className="stat-underline"></div>
