@@ -45,7 +45,7 @@ const Main = props => {
   const shouldOpenSidebar = isDesktop ? true : openSidebar;
 
   return (
-   
+
     <div
       className={clsx({
         [classes.root]: true,
@@ -60,7 +60,7 @@ const Main = props => {
       />
       <main className={classes.content}>
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </main>
     </div>
   );

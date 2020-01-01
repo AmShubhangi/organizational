@@ -85,3 +85,7 @@ div#initechOrgChart {
 .donwload-group {
   padding: 20px;
 }
+
+.MuiFormHelperText-contained {
+  margin: 8px 4px 0 !important;
+}
