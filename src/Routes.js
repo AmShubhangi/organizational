@@ -37,7 +37,7 @@ const Routes = () => {
         component={UserListView}
         exact
         layout={MainLayout}
-        path="/users"
+        path="/og-map"
       />
       <RouteWithLayout
         component={Login}

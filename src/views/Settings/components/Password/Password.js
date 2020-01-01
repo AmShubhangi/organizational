@@ -73,10 +73,10 @@ const Password = props => {
             fullWidth
             label="UEM Password"
             name="password"
-            onChange={handleChange}
+            // onChange={handleChange}
             style={{ marginTop: '1rem' }}
             type="password"
-            value={values.confirm}
+            // value={values.confirm}
             variant="outlined"
           />
           <TextField

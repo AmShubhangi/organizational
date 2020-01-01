@@ -7,7 +7,7 @@ import DashboardIcon from '@material-ui/icons/Dashboard';
 import PeopleIcon from '@material-ui/icons/People';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import SettingsIcon from '@material-ui/icons/Settings';
-
+import AccountTreeIcon from '@material-ui/icons/AccountTree';
 import { Profile, SidebarNav } from './components';
 
 const useStyles = makeStyles(theme => ({
@@ -51,8 +51,8 @@ const Sidebar = props => {
     },
     {
       title: 'OG Gesture',
-      href: '/users',
-      icon: <PeopleIcon />
+      href: '/og-map',
+      icon: <AccountTreeIcon />
     },
     {
       title: 'Login',
