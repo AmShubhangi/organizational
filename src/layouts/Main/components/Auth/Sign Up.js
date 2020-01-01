@@ -35,49 +35,41 @@ class SignUp extends React.Component {
 
     render() {
         const { formData, submitted } = this.state;
-
         return (
             <div className="padding" >
                 <ValidatorForm
                     ref="form"
-                    onSubmit={this.handleSubmit}
-                >
+                    onSubmit={this.handleSubmit}>
                     <Grid
                         container
-                        spacing={4}
-                    >
-
+                        spacing={4}>
                         <Grid
                             item
                             md={3}
-                            xs={2}
-                        >
+                            xs={2}>
                         </Grid>
                         <Grid
                             item
                             md={5}
-                            xs={12}
-                        >
-                            <Card
-                            >
+                            xs={12}>
+                            <Card>
                                 <div className="my-top-header-login">
-                                    <h3 className="my-top-name-login">Sign Up</h3>
+                                    <h3 className="my-top-name-login">Request Login</h3>
                                 </div>
                                 <Divider />
                                 <CardContent>
                                     <TextValidator
-                                         fullWidth
-                                         label="Company Name"
-                                         name="companyname"
-                                         onChange={this.handleChange}
-                                         style={{ marginTop: '1rem' }}
-                                         type="text"
-                                         value={formData.companyname}
-                                         variant="outlined"
-                                         validators={['required']}
-                                         errorMessages={['this field is required']}
+                                        fullWidth
+                                        label="Company Name"
+                                        name="companyname"
+                                        onChange={this.handleChange}
+                                        style={{ marginTop: '1rem' }}
+                                        type="text"
+                                        value={formData.companyname}
+                                        variant="outlined"
+                                        validators={['required']}
+                                        errorMessages={['this field is required']}
                                     />
-
                                     <TextValidator
                                         fullWidth
                                         label="Work Email"
@@ -90,7 +82,6 @@ class SignUp extends React.Component {
                                         validators={['required', 'isEmail']}
                                         errorMessages={['this field is required', 'email is not valid']}
                                     />
-
                                     <TextValidator
                                         fullWidth
                                         label="Password"
@@ -110,23 +101,20 @@ class SignUp extends React.Component {
                                         <Button
                                             color="primary"
                                             variant="outlined"
-                                            type="submit"
-                                        >
+                                            type="submit">
                                             {
                                                 (submitted && 'Your form is submitted!')
-                                                || (!submitted && 'Sign Up')
+                                                || (!submitted && 'Request')
                                             }
                                         </Button>
                                     </div>
                                 </CardActions>
                             </Card>
                         </Grid>
-
                         <Grid
                             item
                             md={3}
-                            xs={2}
-                        >
+                            xs={2}>
                         </Grid>
                     </Grid>
                 </ValidatorForm>

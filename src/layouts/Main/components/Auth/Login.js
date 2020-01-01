@@ -107,7 +107,7 @@ class Login extends React.Component {
                     </div>
                   </CardActions>
                   <div className="newuser">
-                    <Link to='/register' >Create Account?</Link>
+                    <Link to='/register' >Request Login!</Link>
                   </div>
                 </form>
               </Card>
