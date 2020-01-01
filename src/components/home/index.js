@@ -58,15 +58,22 @@ manipulate them using an interactive UI.</p>
             <div id="service" className="col-lg-12 ">
               <h1 className=" text-center mt-4 ">Service</h1>
               <div className="stat-underline"></div>
-              <div className="d-flex col-lg-9 ml-auto mr-auto mt-4">
-                <div className="col-lg-4 text-center">
+              <div className="d-flex col-lg-9 ml-auto mr-auto mt-4 mb-4">
+                <div className="col-lg-4 text-center mt-4">
                   < h5>Save time</ h5>
+                  <p>OG tool helps you update and manipulate Workspace One organization
+groups using a simple interactive UI. OG tool decreases the timeframe needed for such a
+task.</p>
                 </div>
-                <div className="col-lg-4 text-center">
+                <div className="col-lg-4 text-center mt-4">
                   < h5>Better visualization</ h5>
+                  <p>OG tool provides you with an easy (drag-and-drop) and
+interactive diagram to visualize Workspace One groups structure in a better way.</p>
                 </div>
-                <div className="col-lg-4 text-center">
+                <div className="col-lg-4 text-center mt-4">
                   < h5>Export OGs</ h5>
+                  <p>with OG tool you can easily export your Workspace One groups structure
+or specific groups as a format of your choice.</p>
                 </div>
               </div>
             </div>
