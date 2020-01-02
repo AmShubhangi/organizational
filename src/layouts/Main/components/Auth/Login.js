@@ -76,7 +76,7 @@ class Login extends React.Component {
                       value={formData.email}
                       variant="outlined"
                       validators={['required', 'isEmail']}
-                      errorMessages={['this field is required', 'email is not valid']}
+                      errorMessages={['This field is required', 'email is not valid']}
                     />
                     <TextValidator
                       fullWidth
@@ -88,7 +88,7 @@ class Login extends React.Component {
                       value={formData.password}
                       variant="outlined"
                       validators={['required']}
-                      errorMessages={['this field is required']}
+                      errorMessages={['This field is required']}
                     />
                   </CardContent>
                   <Divider />
