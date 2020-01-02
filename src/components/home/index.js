@@ -3,7 +3,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
 import PeopleOutlinedIcon from '@material-ui/icons/PeopleOutlined';
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
@@ -25,16 +24,16 @@ class HomeComponent extends Component {
       <div>
         <AppBar className="home-bg-color" position="static">
           <Toolbar>
-            <IconButton edge="start" color="inherit" aria-label="menu">
-              <MenuIcon />
+            <IconButton edge="start"   aria-label="menu">
+            WSOne OGs Tool
             </IconButton>
             <div className=" justify-content-between">
-              <Button color="inherit">Home</Button>
+              <Button color="inherit"><a className="text-dark" style={{ textDecoration: 'none' }} href="#service">Home</a></Button>
               <Button color="inherit"><a className="text-dark" style={{ textDecoration: 'none' }} href="#service">service</a></Button>
               <Button color="inherit"><a className="text-dark" style={{ textDecoration: 'none' }} href="#work">How it works?</a></Button>
               <Button color="inherit"><a className="text-dark" style={{ textDecoration: 'none' }} href="#Statistics">Statistics</a></Button>
-              <Button color="inherit">Contact</Button>
-              <Button color="inherit">Login</Button>
+              <Button color="inherit"><a className="text-dark" style={{ textDecoration: 'none' }} href="#service">Contact</a></Button>
+              <Button color="inherit"><a className="text-dark" style={{ textDecoration: 'none' }} href="#service">Login</a></Button>
             </div>
           </Toolbar>
         </AppBar>
