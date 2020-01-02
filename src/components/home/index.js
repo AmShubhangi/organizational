@@ -33,7 +33,7 @@ class HomeComponent extends Component {
 
               <Button color="inherit"><a className="text-dark" style={{ textDecoration: 'none' }} href="#service">Contact</a></Button>
 
-              <Link to='/login' className="text-dark" style={{ textDecoration: 'none' }}><Button color="inherit">Login?</Button></Link>
+              <Link to='/login' className="text-dark" style={{ textDecoration: 'none' }}><Button color="inherit">Login</Button></Link>
             </div>
           </Toolbar>
         </AppBar>
