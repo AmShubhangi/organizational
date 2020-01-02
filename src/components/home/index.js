@@ -145,7 +145,7 @@ visualize and export (Image, PDF, other types if possible) OGs.</p>
                 </div>
                 <div className="col-lg-2">
                   <div className=" mt-4">
-                    <img src={logo} width="300" height="300" />
+                    <img src={logo} width="300" height="300" alt="myLogo" />
                   </div>
                 </div>
               </div>
