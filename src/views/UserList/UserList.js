@@ -9,7 +9,6 @@ import html2canvas from 'html2canvas';
 import htmlToImage from 'html-to-image';
 import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
 import CloudDownloadIcon from '@material-ui/icons/CloudDownload';
-import PinDropSharpIcon from '@material-ui/icons/PinDropSharp';
 import ZoomOutIcon from '@material-ui/icons/ZoomOut';
 import ZoomInIcon from '@material-ui/icons/ZoomIn';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
@@ -54,7 +53,6 @@ class UserList extends React.Component {
       return (
         <div className="initechNode" >
           <div className="parent-node">
-            <PinDropSharpIcon />
             <h4 className="parent-size">{node.Name}</h4>
           </div>
           <div className="initechNode-info">
