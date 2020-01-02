@@ -50,13 +50,13 @@ class Login extends React.Component {
 
             <Grid
               item
-              md={2}
+              md={4}
               xs={2}
             >
             </Grid>
             <Grid
               item
-              md={5}
+              md={4}
               xs={12}>
               <Card>
                 <form>

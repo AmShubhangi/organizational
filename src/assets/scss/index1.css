@@ -80,7 +80,7 @@ header.MuiPaper-root.MuiAppBar-root.MuiAppBar-positionStatic.home-bg-color.MuiAp
 p.no-margin {
   margin-bottom: 0px;
 }
-h4.parent-size{
+h4.parent-size {
   font-size: 19px;
   margin-bottom: 0px;
 }
@@ -183,4 +183,13 @@ div#initechOrgChart {
 }
 .service-border h5 {
   color: #35477d;
+}
+a.my-top-nave-links {
+  color: white;
+  font-weight: 600;
+  padding: 7px;
+  text-decoration: none;
+}
+a.my-top-nave-links.is-active {
+  color: thistle;
 }

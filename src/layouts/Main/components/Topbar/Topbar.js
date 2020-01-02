@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, NavLink } from 'react-router-dom';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
-import { AppBar, Toolbar, Badge, Hidden, IconButton } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
+import { AppBar, Toolbar, Badge, Hidden, IconButton, Link } from '@material-ui/core';
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import SettingsIcon from '@material-ui/icons/Settings';
+import AccountTreeIcon from '@material-ui/icons/AccountTree';
 import InputIcon from '@material-ui/icons/Input';
 
 const useStyles = makeStyles(theme => ({
@@ -24,7 +27,9 @@ const Topbar = props => {
 
   const classes = useStyles();
 
-  const [notifications] = useState([]);
+  const logOut = () => {
+    return null;
+  }
 
   return (
     <AppBar
@@ -36,30 +41,18 @@ const Topbar = props => {
           <h2 style={{ color: 'white' }}>OG</h2>
         </RouterLink>
         <div className={classes.flexGrow} />
-        <Hidden mdDown>
-          <IconButton color="inherit">
-            <Badge
-              badgeContent={notifications.length}
-              color="primary"
-              variant="dot"
-            >
-            </Badge>
-          </IconButton>
+        <div>
+          <NavLink activeClassName='is-active' className="my-top-nave-links" to='/dashboard'><DashboardIcon /> &nbsp;Dashboard</NavLink>
+          <NavLink activeClassName='is-active' className="my-top-nave-links" to='/ws1-setting'><SettingsIcon /> &nbsp;WSOne API Settings</NavLink>
+          <NavLink activeClassName='is-active' className="my-top-nave-links" to='/og-map'  > <AccountTreeIcon /> &nbsp;OG Gesture</NavLink>
+          <NavLink activeClassName='is-active' className="my-top-nave-links" to='/account'><AccountBoxIcon /> &nbsp;Account</NavLink>
           <IconButton
             className={classes.signOutButton}
             color="inherit"
           >
-            <InputIcon />
+            <InputIcon onClick={logOut} />
           </IconButton>
-        </Hidden>
-        <Hidden lgUp>
-          <IconButton
-            color="inherit"
-            onClick={onSidebarOpen}
-          >
-            <MenuIcon />
-          </IconButton>
-        </Hidden>
+        </div>
       </Toolbar>
     </AppBar>
   );

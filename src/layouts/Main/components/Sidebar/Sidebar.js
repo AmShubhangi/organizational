@@ -3,10 +3,7 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { Divider, Drawer } from '@material-ui/core';
-import DashboardIcon from '@material-ui/icons/Dashboard';
-import AccountBoxIcon from '@material-ui/icons/AccountBox';
-import SettingsIcon from '@material-ui/icons/Settings';
-import AccountTreeIcon from '@material-ui/icons/AccountTree';
+
 import { Profile, SidebarNav } from './components';
 
 const useStyles = makeStyles(theme => ({
@@ -37,32 +34,32 @@ const Sidebar = props => {
 
   const classes = useStyles();
 
-  const pages = [
-    {
-      title: 'Dashboard',
-      href: '/dashboard',
-      icon: <DashboardIcon />
-    },
-    {
-      title: 'WSOne API Settings',
-      href: '/ws1-setting',
-      icon: <SettingsIcon />
-    },
-    {
-      title: 'OG Gesture',
-      href: '/og-map',
-      icon: <AccountTreeIcon />
-    },
-    {
-      title: 'Account',
-      href: '/account',
-      icon: <AccountBoxIcon />
-    }
-  ];
+  // const pages = [
+  //   {
+  //     title: 'Dashboard',
+  //     href: '/dashboard',
+  //     icon: <DashboardIcon />
+  //   },
+  //   {
+  //     title: 'WSOne API Settings',
+  //     href: '/ws1-setting',
+  //     icon: <SettingsIcon />
+  //   },
+  //   {
+  //     title: 'OG Gesture',
+  //     href: '/og-map',
+  //     icon: <AccountTreeIcon />
+  //   },
+  //   {
+  //     title: 'Account',
+  //     href: '/account',
+  //     icon: <AccountBoxIcon />
+  //   }
+  // ];
 
   return (
     <div>
-      {window.location.pathname !== '/dashboard' || window.location.pathname !== '/login' ?
+      {/* {window.location.pathname !== '/dashboard' || window.location.pathname !== '/login' ?
         <Drawer
           anchor="left"
           classes={{ paper: classes.drawer }}
@@ -81,7 +78,7 @@ const Sidebar = props => {
               pages={pages}
             />
           </div>
-        </Drawer> : ''}
+        </Drawer> : ''} */}
     </div>
   );
 };

@@ -41,7 +41,9 @@ class UserList extends React.Component {
       .then((canvas) => {
         const imgData = canvas.toDataURL('image/png');
         const pdf = new jsPDF();
+        pdf.setTextColor(150);
         pdf.addImage(imgData, 'JPEG', 0, 0);
+        pdf.text('Shen Zhi', 10, 10);
         pdf.save("OG-Structure.pdf");
       });
   }

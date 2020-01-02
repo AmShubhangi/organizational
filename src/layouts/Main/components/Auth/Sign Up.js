@@ -45,12 +45,12 @@ class SignUp extends React.Component {
                         spacing={4}>
                         <Grid
                             item
-                            md={2}
+                            md={4}
                             xs={2}>
                         </Grid>
                         <Grid
                             item
-                            md={5}
+                            md={4}
                             xs={12}>
                             <Card>
                                 <div className="my-top-header-login">
