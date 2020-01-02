@@ -57,10 +57,8 @@ class Login extends React.Component {
             <Grid
               item
               md={5}
-              xs={12}
-            >
-              <Card
-              >
+              xs={12}>
+              <Card>
                 <form>
                   <div className="my-top-header-login">
                     <h3 className="my-top-name-login">Login</h3>
