@@ -15,13 +15,11 @@ import CountUp from 'react-countup';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
-
+import { Link } from 'react-router-dom';
 
 class HomeComponent extends Component {
 
   render() {
-
-
     return (
       <div>
         <AppBar className="home-bg-color" position="static">
@@ -35,7 +33,7 @@ class HomeComponent extends Component {
               <Button color="inherit"><a className="text-dark" style={{ textDecoration: 'none' }} href="#work">How it works?</a></Button>
               <Button color="inherit"><a className="text-dark" style={{ textDecoration: 'none' }} href="#Statistics">Statistics</a></Button>
               <Button color="inherit">Contact</Button>
-              <Button color="inherit">Login</Button>
+              <Link to='/login'><Button color="inherit">Login?</Button></Link>
             </div>
           </Toolbar>
         </AppBar>
@@ -208,7 +206,7 @@ visualize and export (Image, PDF, other types if possible) OGs.</p>
         </div>
         <footer className="bg-dark p-3 text-light ">
           <div className="row">
-        
+
 
             <div className="col-lg-12 d-flex justify-content-end">
               <div >

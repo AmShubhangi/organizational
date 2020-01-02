@@ -18,6 +18,7 @@ import {
 } from './views';
 import Login from "../src/layouts/Main/components/Auth/Login";
 import SignUp from "../src/layouts/Main/components/Auth/Sign Up";
+import HomeComponent from 'components/home';
 
 const Routes = () => {
   return (
@@ -25,7 +26,13 @@ const Routes = () => {
       <Redirect
         exact
         from="/"
-        to="/dashboard"
+        to="/home"
+      />
+      <RouteWithLayout
+        component={HomeComponent}
+        exact
+        layout={MainLayout}
+        path="/home"
       />
       <RouteWithLayout
         component={DashboardView}

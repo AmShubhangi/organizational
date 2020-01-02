@@ -10,7 +10,7 @@ import {
 } from '@material-ui/core';
 import { Grid } from '@material-ui/core';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class Login extends React.Component {
   state = {
@@ -50,7 +50,7 @@ class Login extends React.Component {
 
             <Grid
               item
-              md={3}
+              md={2}
               xs={2}
             >
             </Grid>
@@ -99,10 +99,7 @@ class Login extends React.Component {
                         variant="outlined"
                         type="submit"
                       >
-                        {
-                          (submitted && 'Your form is submitted!')
-                          || (!submitted && 'Login')
-                        }
+                        {submitted ? <Redirect to='/ws1-setting' /> : 'Login'}
                       </Button>
                     </div>
                   </CardActions>

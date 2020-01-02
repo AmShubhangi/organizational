@@ -45,7 +45,7 @@ class SignUp extends React.Component {
                         spacing={4}>
                         <Grid
                             item
-                            md={3}
+                            md={2}
                             xs={2}>
                         </Grid>
                         <Grid
