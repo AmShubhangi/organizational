@@ -17,7 +17,7 @@ h3.my-top-name-login {
   margin-top: 15px;
   margin-bottom: 15px;
 }
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -34,78 +34,82 @@ html{
   background: lightblue;
 }
 .MuiTypography-colorTextSecondary {
-    color: #0e5779 !important;
-    text-align: center;
+  color: #0e5779 !important;
+  text-align: center;
 }
-.home-top-bg{
-    background-image: url('../../assets/images/home-bg.jpeg');
-    background-size: cover;
-    background-position: center center;
-    
-}
-.featur-bg{
-  background-image: url('../../assets/images/feature.jpg');
+.home-top-bg {
+  background-image: url("../../assets/images/home-bg.jpeg");
   background-size: cover;
   background-position: center center;
 }
-.MuiToolbar-root.MuiToolbar-regular.MuiToolbar-gutters{
-    justify-content: space-between;
+.featur-bg {
+  background-image: url("../../assets/images/feature.jpg");
+  background-size: cover;
+  background-position: center center;
 }
-.home-min-height{
-    min-height: 500px;
+.MuiToolbar-root.MuiToolbar-regular.MuiToolbar-gutters {
+  justify-content: space-between;
 }
-.home-bg{
-    background-color: #35477d;
-    color: white;
+.home-min-height {
+  min-height: 500px;
+}
+.home-bg {
+  background-color: #35477d;
+  color: white;
 }
 header.MuiPaper-root.MuiAppBar-root.MuiAppBar-positionStatic.home-bg-color.MuiAppBar-colorPrimary.MuiPaper-elevation4 {
   color: black !important;
   background-color: white !important;
 }
- 
-.stat-underline{
-    width: 200px;
-    background-color: black;
-    padding: 3px;
-    margin-left: auto;
-    margin-right: auto;
+
+.stat-underline {
+  width: 200px;
+  background-color: black;
+  padding: 3px;
+  margin-left: auto;
+  margin-right: auto;
 }
-.icon-border{
-     padding: 18px;
-     border-radius: 50%;
-     border:2px solid #eee;
-     width: 100px;
-     margin:0px auto;
-     text-align: center;
+.icon-border {
+  padding: 18px;
+  border-radius: 50%;
+  border: 2px solid #eee;
+  width: 100px;
+  margin: 0px auto;
+  text-align: center;
 }
-.underline{
-    width: 50px;
-    background-color:  #eee;
-    padding: 1px;
-    margin:10px auto;
+p.no-margin {
+  margin-bottom: 0px;
 }
-.underline-about{
-    width: 100px;
-    background-color:black;
-    padding: 3px;
-    text-align: left;
-    
+h4.parent-size{
+  font-size: 19px;
+  margin-bottom: 0px;
 }
-.about-bg{
-    background-image: url('../../assets/images/\ logo.png');
-    background-size: cover;
-    background-position: center center;
-    width: 100px;
-    height: 100px;
+.underline {
+  width: 50px;
+  background-color: #eee;
+  padding: 1px;
+  margin: 10px auto;
 }
-.feature-icon{
-    font-size: 53px;
-    margin-right: 20px;
+.underline-about {
+  width: 100px;
+  background-color: black;
+  padding: 3px;
+  text-align: left;
 }
-.home-top-margin{
-    margin-top: 100px;
+.about-bg {
+  background-image: url("../../assets/images/\ logo.png");
+  background-size: cover;
+  background-position: center center;
+  width: 100px;
+  height: 100px;
 }
- 
+.feature-icon {
+  font-size: 53px;
+  margin-right: 20px;
+}
+.home-top-margin {
+  margin-top: 100px;
+}
 
 .save-button {
   margin: 0 auto;
@@ -173,10 +177,10 @@ div#initechOrgChart {
 .react-transform-component.TransformComponent-module_container__3NwNd {
   padding: 20px !important;
 }
-.service-border{
+.service-border {
   padding: 20px;
   box-shadow: 3px 3px 5px 6px #ccc;
 }
-.service-border h5{
-  color:#35477d;
+.service-border h5 {
+  color: #35477d;
 }

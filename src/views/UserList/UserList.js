@@ -53,13 +53,13 @@ class UserList extends React.Component {
         <div className="initechNode" >
           <div className="parent-node">
             <PinDropSharpIcon />
-            <h4>{node.Name}</h4>
+            <h4 className="parent-size">{node.Name}</h4>
           </div>
           <div className="initechNode-info">
-            <p>Identifier:{node.Id.Value}</p>
-            <p>Users:{node.Users}</p>
-            <p>Admins:{node.Admins}</p>
-            <p>Devices:{node.Devices}</p>
+            <p className="no-margin">Identifier:{node.Id.Value}</p>
+            <p className="no-margin">Users:{node.Users}</p>
+            <p className="no-margin">Admins:{node.Admins}</p>
+            <p className="no-margin">Devices:{node.Devices}</p>
           </div>
         </div>
       );

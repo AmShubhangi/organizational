@@ -45,7 +45,7 @@ class SignUp extends React.Component {
                         spacing={4}>
                         <Grid
                             item
-                            md={3}
+                            md={2}
                             xs={2}>
                         </Grid>
                         <Grid
@@ -68,7 +68,7 @@ class SignUp extends React.Component {
                                         value={formData.companyname}
                                         variant="outlined"
                                         validators={['required']}
-                                        errorMessages={['this field is required']}
+                                        errorMessages={['This field is required']}
                                     />
                                     <TextValidator
                                         fullWidth
@@ -80,7 +80,7 @@ class SignUp extends React.Component {
                                         value={formData.workemail}
                                         variant="outlined"
                                         validators={['required', 'isEmail']}
-                                        errorMessages={['this field is required', 'email is not valid']}
+                                        errorMessages={['This field is required', 'email is not valid']}
                                     />
                                     <TextValidator
                                         fullWidth
@@ -92,7 +92,7 @@ class SignUp extends React.Component {
                                         value={formData.password}
                                         variant="outlined"
                                         validators={['required']}
-                                        errorMessages={['this field is required']}
+                                        errorMessages={['This field is required']}
                                     />
                                 </CardContent>
                                 <Divider />

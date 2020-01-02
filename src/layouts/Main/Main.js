@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/styles';
 import { useMediaQuery } from '@material-ui/core';
-
-
 import { Sidebar, Topbar } from './components';
+import HomeComponent from 'components/home';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -41,27 +40,28 @@ const Main = props => {
   const handleSidebarClose = () => {
     setOpenSidebar(false);
   };
-
   const shouldOpenSidebar = isDesktop ? true : openSidebar;
 
   return (
+    <div>
+      {window.location.pathname !== '/home' ? <div
+        className={clsx({
+          [classes.root]: true,
+          [classes.shiftContent]: isDesktop
+        })}
+      >
+        {window.location.pathname !== '/login' && window.location.pathname !== '/register' ? <Topbar onSidebarOpen={handleSidebarOpen} /> : ''}
 
-    <div
-      className={clsx({
-        [classes.root]: true,
-        [classes.shiftContent]: isDesktop
-      })}
-    >
-      <Topbar onSidebarOpen={handleSidebarOpen} />
-      <Sidebar
-        onClose={handleSidebarClose}
-        open={shouldOpenSidebar}
-        variant={isDesktop ? 'persistent' : 'temporary'}
-      />
-      <main className={classes.content}>
-        {children}
-        {/* <Footer /> */}
-      </main>
+        {window.location.pathname !== '/login' && window.location.pathname !== '/register' ? <Sidebar
+          onClose={handleSidebarClose}
+          open={shouldOpenSidebar}
+          variant={isDesktop ? 'persistent' : 'temporary'}
+        /> : ''}
+        <main className={classes.content}>
+          {children}
+          {/* <Footer /> */}
+        </main>
+      </div> : <HomeComponent />}
     </div>
   );
 };
