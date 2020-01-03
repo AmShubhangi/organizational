@@ -13,21 +13,38 @@ import ZoomOutIcon from '@material-ui/icons/ZoomOut';
 import ZoomInIcon from '@material-ui/icons/ZoomIn';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import RotateLeftIcon from '@material-ui/icons/RotateLeft';
+import _ from 'lodash';
 
 class UserList extends React.Component {
   constructor() {
     super();
-    var data = require('../../API/data.json');
-    this.state = {
-      initechOrg: data,
+    this.initechOrg = '';
+    var arry = require('../../API/clientData.json');
+    var map = {};
+    for (var i = 0; i < arry.length; i++) {
+      var obj = arry[i];
+      obj.children = [];
+      map[obj.Id.Value] = obj;
+      try {
+        var parent = obj.ParentLocationGroup.Id.Value; //Parent Id
+        if (!map[parent]) {
+          map[parent] = {
+            children: []
+          };
+        } else {
+          map[parent].children.push(obj);
+        }
+      } catch (error) {
+        console.log('error');
+      }
     }
+    this.initechOrg = map[arry[0].Id.Value]
   }
 
   downloadImage() {
     htmlToImage.toJpeg(document.getElementById('divToPrint'), { quality: 0.95 })
       .then(function (dataUrl) {
         var link = document.createElement('a');
-
         link.download = 'OG-Structure.jpeg';
         link.href = dataUrl;
         link.click();
@@ -48,7 +65,6 @@ class UserList extends React.Component {
   }
 
   render() {
-    console.log(this.state.initechOrg);
     const MyNodeComponent = ({ node }) => {
       return (
         <div className="initechNode" >
@@ -56,7 +72,7 @@ class UserList extends React.Component {
             <h4 className="parent-size">{node.Name}</h4>
           </div>
           <div className="initechNode-info">
-            <p className="no-margin">Identifier:{node.Id.Value}</p>
+            {/* <p className="no-margin">Identifier:{node.Id.Value}</p> */}
             <p className="no-margin">Users:{node.Users}</p>
             <p className="no-margin">Admins:{node.Admins}</p>
             <p className="no-margin">Devices:{node.Devices}</p>
@@ -87,7 +103,7 @@ class UserList extends React.Component {
                         </ButtonGroup>
                       </div>
                       <TransformComponent>
-                        <div id="divToPrint" ><OrgChart tree={this.state.initechOrg} NodeComponent={MyNodeComponent} /></div>
+                        <div id="divToPrint" ><OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} /></div>
                       </TransformComponent>
                     </React.Fragment>
                   )}

@@ -15,15 +15,15 @@ h3.my-top-name-login {
   font-size: 24px;
   text-align: center;
   margin-top: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 html {
   scroll-behavior: smooth;
 }
 
 .newuser {
-  margin: 15px;
-  text-align: right;
+  margin: 15px 19px 15px 19px;
+  display: flex;
 }
 .padding {
   padding: 32px;
@@ -195,4 +195,59 @@ a.my-top-nave-links {
 }
 a.my-top-nave-links.is-active {
   color: thistle;
+}
+
+/* By SHubhangi  ----- Login CSS*/
+.my-sign-in-button {
+  /* width: 445px; */
+  border-radius: 4px;
+  margin-top: 27px;
+  margin-bottom: 25px;
+  color: #fff !important;
+  border: 0px !important;
+  cursor: pointer;
+}
+h5.my-sub-text {
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  color: #555;
+}
+p.reg-text.text-center {
+  font-size: 13px;
+  color: #555;
+}
+a.reg-text-color {
+  font-size: 13px;
+  margin-left: 4px;
+  color: black;
+  font-weight: 500;
+}
+a:hover {
+  color: #277cfa;
+  text-decoration: none !important;
+}
+.MuiGrid-grid-md-3 {
+  max-width: 28% !important;
+  flex-basis: 28% !important;
+}
+.MuiCardActions-root.my-parent-button.MuiCardActions-spacing {
+  margin: 0px 18px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0px;
+  border-radius: 4px;
+  margin-top: 14px;
+  margin-bottom: 25px;
+  color: #fff !important;
+  background-image: -moz-linear-gradient(55deg, #75b2f0 0%, #277cfa);
+  background-image: -webkit-linear-gradient(55deg, #75b2f0 0%, #277cfa);
+  border: 0px !important;
+  cursor: pointer;
+}
+.MuiButton-root:hover {
+  background: none !important;
+}
+.MuiAppBar-colorPrimary {
+  background: #277cfa !important;
 }

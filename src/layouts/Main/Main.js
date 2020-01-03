@@ -49,7 +49,8 @@ const Main = props => {
           [classes.shiftContent]: isDesktop
         })}
       >
-        {window.location.pathname !== '/login' && window.location.pathname !== '/register' ? <Topbar onSidebarOpen={handleSidebarOpen} /> : ''}
+        {/* {window.location.pathname !== '/login' && window.location.pathname !== '/register' ? <Topbar onSidebarOpen={handleSidebarOpen} /> : ''} */}
+        <Topbar onSidebarOpen={handleSidebarOpen} />
 
         {window.location.pathname !== '/login' && window.location.pathname !== '/register' ? <Sidebar
           onClose={handleSidebarClose}
