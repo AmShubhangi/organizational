@@ -79,9 +79,10 @@ header.MuiPaper-root.MuiAppBar-root.MuiAppBar-positionStatic.home-bg-color.MuiAp
 }
 p.no-margin {
   margin-bottom: 0px;
+  font-size: 12px;
 }
 h4.parent-size {
-  font-size: 16px;
+  font-size: 12px;
   word-wrap: break-word;
   margin-bottom: 0px;
   width: 150px;
@@ -126,12 +127,17 @@ h4.parent-size {
 .initechNode {
   border: solid 3px black;
   border-radius: 3px;
+  width: 100px;
   display: inline-block;
+  margin: 0px 0px 0px 6px;
 }
 
 .initechNode-info {
   padding: 7px;
   text-align: left;
+}
+.my-donwload {
+  text-transform: capitalize !important;
 }
 
 .parent-node {
@@ -153,9 +159,8 @@ h4.parent-size {
 
 .mt4 {
   background-color: white;
-  width: 225mm;
+  width: 7043mm;
   height: auto;
-  max-width: 1000mm;
 }
 .full-width {
   margin: 20px;
@@ -175,7 +180,7 @@ div#initechOrgChart {
 
 .tools {
   margin-top: -95px;
-  margin-left: 90%;
+  margin-left: 75pc;
 }
 .react-transform-component.TransformComponent-module_container__3NwNd {
   padding: 20px !important;
@@ -195,6 +200,9 @@ a.my-top-nave-links {
 }
 a.my-top-nave-links.is-active {
   color: thistle;
+}
+a.my-top-nave-links:hover {
+  color: lightgrey !important;
 }
 
 /* By SHubhangi  ----- Login CSS*/

@@ -13,7 +13,6 @@ import ZoomOutIcon from '@material-ui/icons/ZoomOut';
 import ZoomInIcon from '@material-ui/icons/ZoomIn';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import RotateLeftIcon from '@material-ui/icons/RotateLeft';
-import _ from 'lodash';
 
 class UserList extends React.Component {
   constructor() {
@@ -86,8 +85,8 @@ class UserList extends React.Component {
           <div className="full-width">
             <div className="donwload-group">
               <ButtonGroup variant="text" id="download-button" color="primary" aria-label="text primary button group">
-                <Button onClick={this.printDocument} ><PictureAsPdfIcon />&nbsp;Export PDF</Button>
-                <Button onClick={this.downloadImage}><CloudDownloadIcon />&nbsp;Get Image</Button>
+                <Button onClick={this.printDocument} className="my-donwload" ><PictureAsPdfIcon />&nbsp;Export PDF</Button>
+                <Button onClick={this.downloadImage} className="my-donwload"><CloudDownloadIcon />&nbsp;Get Image</Button>
               </ButtonGroup>
             </div>
             <div id="divToPrint" className="mt4">

@@ -5,11 +5,11 @@ import {
     Card,
     CardContent,
     CardActions,
-    Divider,
     Button,
 } from '@material-ui/core';
 import { Grid } from '@material-ui/core';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
+import { Link } from 'react-router-dom';
 
 class SignUp extends React.Component {
     state = {
@@ -109,6 +109,9 @@ class SignUp extends React.Component {
                                         </Button>
                                     </div>
                                 </CardActions>
+                                <div className="newuser">
+                                    <p className="reg-text text-center"> Already have an account?</p> <Link to='/login' className="reg-text-color"> Login</Link>
+                                </div>
                             </Card>
                         </Grid>
                         <Grid
@@ -118,8 +121,7 @@ class SignUp extends React.Component {
                         </Grid>
                     </Grid>
                 </ValidatorForm>
-            </div>
-        );
+            </div>);
     }
 };
 
