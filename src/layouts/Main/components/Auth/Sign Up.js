@@ -42,21 +42,21 @@ class SignUp extends React.Component {
                     onSubmit={this.handleSubmit}>
                     <Grid
                         container
-                        spacing={4}>
+                        spacing={6}>
                         <Grid
                             item
-                            md={4}
+                            md={3}
                             xs={2}>
                         </Grid>
                         <Grid
                             item
-                            md={4}
+                            md={5}
                             xs={12}>
                             <Card>
                                 <div className="my-top-header-login">
                                     <h3 className="my-top-name-login">Request Login</h3>
+                                    <h5 className="my-sub-text">Register your first account to Sign in</h5>
                                 </div>
-                                <Divider />
                                 <CardContent>
                                     <TextValidator
                                         fullWidth
@@ -95,13 +95,13 @@ class SignUp extends React.Component {
                                         errorMessages={['This field is required']}
                                     />
                                 </CardContent>
-                                <Divider />
-                                <CardActions >
+                                <CardActions className="my-parent-button">
                                     <div style={{ margin: '10px auto' }}>
                                         <Button
                                             color="primary"
                                             variant="outlined"
-                                            type="submit">
+                                            type="submit"
+                                            className="my-sign-in-button">
                                             {
                                                 (submitted && 'Your form is submitted!')
                                                 || (!submitted && 'Request')

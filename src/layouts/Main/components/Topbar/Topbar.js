@@ -42,16 +42,19 @@ const Topbar = props => {
         </RouterLink>
         <div className={classes.flexGrow} />
         <div>
-          <NavLink activeClassName='is-active' className="my-top-nave-links" to='/dashboard'><DashboardIcon /> &nbsp;Dashboard</NavLink>
-          <NavLink activeClassName='is-active' className="my-top-nave-links" to='/ws1-setting'><SettingsIcon /> &nbsp;WSOne API Settings</NavLink>
-          <NavLink activeClassName='is-active' className="my-top-nave-links" to='/og-map'  > <AccountTreeIcon /> &nbsp;OG Gesture</NavLink>
-          <NavLink activeClassName='is-active' className="my-top-nave-links" to='/account'><AccountBoxIcon /> &nbsp;Account</NavLink>
-          <IconButton
-            className={classes.signOutButton}
-            color="inherit"
-          >
-            <InputIcon onClick={logOut} />
-          </IconButton>
+          {window.location.pathname !== '/login' && window.location.pathname !== '/register' ? <div>
+            <NavLink activeClassName='is-active' className="my-top-nave-links" to='/dashboard'><DashboardIcon /> &nbsp;Dashboard</NavLink>
+            <NavLink activeClassName='is-active' className="my-top-nave-links" to='/ws1-setting'><SettingsIcon /> &nbsp;WSOne API Settings</NavLink>
+            <NavLink activeClassName='is-active' className="my-top-nave-links" to='/og-map'  > <AccountTreeIcon /> &nbsp;OG Gesture</NavLink>
+            <NavLink activeClassName='is-active' className="my-top-nave-links" to='/account'><AccountBoxIcon /> &nbsp;Account</NavLink>
+            <IconButton
+              className={classes.signOutButton}
+              color="inherit"
+            >
+              <InputIcon onClick={logOut} />
+            </IconButton>
+          </div>
+            : ''}
         </div>
       </Toolbar>
     </AppBar>

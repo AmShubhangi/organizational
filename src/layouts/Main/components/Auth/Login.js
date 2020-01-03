@@ -35,7 +35,6 @@ class Login extends React.Component {
 
 
   render() {
-
     const { formData, submitted } = this.state;
     return (
       <div className="padding" >
@@ -45,29 +44,26 @@ class Login extends React.Component {
         >
           <Grid
             container
-            spacing={4}
+            spacing={6}
           >
-
             <Grid
               item
-              md={4}
-              xs={2}
-            >
-            </Grid>
+              md={3}
+              xs={12}></Grid>
             <Grid
               item
-              md={4}
+              md={5}
               xs={12}>
               <Card>
                 <form>
                   <div className="my-top-header-login">
                     <h3 className="my-top-name-login">Login</h3>
+                    <h5 className="my-sub-text">Sign in to your account to continue.</h5>
                   </div>
-                  <Divider />
                   <CardContent>
                     <TextValidator
                       fullWidth
-                      label="Email"
+                      label="Username"
                       name="email"
                       onChange={this.handleChange}
                       type="text"
@@ -89,31 +85,28 @@ class Login extends React.Component {
                       errorMessages={['This field is required']}
                     />
                   </CardContent>
-                  <Divider />
-                  <CardActions >
+                  <CardActions className="my-parent-button" >
                     <div style={{ margin: '0 auto' }}>
                       <Button
                         color="primary"
                         variant="outlined"
                         type="submit"
+                        className="my-sign-in-button"
                       >
-                        {submitted ? <Redirect to='/ws1-setting' /> : 'Login'}
+                        {submitted ? <Redirect to='/ws1-setting' /> : 'Log in'}
                       </Button>
                     </div>
                   </CardActions>
                   <div className="newuser">
-                    <Link to='/register' >Request Login!</Link>
+                    <p className="reg-text text-center">Don't have an account?</p> <Link to='/register' className="reg-text-color"> Register Now</Link>
                   </div>
                 </form>
               </Card>
             </Grid>
-
             <Grid
               item
               md={3}
-              xs={2}
-            >
-            </Grid>
+              xs={12}></Grid>
           </Grid>
         </ValidatorForm>
       </div>
