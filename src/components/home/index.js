@@ -3,224 +3,241 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
-import PeopleOutlinedIcon from '@material-ui/icons/PeopleOutlined';
-import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
-import DescriptionOutlinedIcon from '@material-ui/icons/DescriptionOutlined';
-import ArrowForwardOutlinedIcon from '@material-ui/icons/ArrowForwardOutlined';
 import logo from '../../assets/images/stat.png';
 import CountUp from 'react-countup';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import { Link } from 'react-router-dom';
+import studentimg from 'assets/images/student-849825_1920.jpg';
+import photo from 'assets/images/photo-1557804506-669a67965ba0.jpeg';
+import AccessTimeIcon from '@material-ui/icons/AccessTime';
+import DescriptionIcon from '@material-ui/icons/Description';
+import VisibilityIcon from '@material-ui/icons/Visibility';
+
 
 class HomeComponent extends Component {
-
   render() {
     return (
       <div>
-        <AppBar className="home-bg-color" position="static">
-          <Toolbar>
-            <IconButton edge="start" aria-label="menu">
-              WSOne OGs Tool
-            </IconButton>
-            <div className=" justify-content-between">
-              <Button color="inherit"><a className="text-dark" style={{ textDecoration: 'none' }} href="#service">Home</a></Button>
-              <Button color="inherit"><a className="text-dark" style={{ textDecoration: 'none' }} href="#service">service</a></Button>
-              <Button color="inherit"><a className="text-dark" style={{ textDecoration: 'none' }} href="#work">How it works?</a></Button>
-              <Button color="inherit"><a className="text-dark" style={{ textDecoration: 'none' }} href="#Statistics">Statistics</a></Button>
+        <div class="site-navbar-wrap p-0">
 
-              <Button color="inherit"><a className="text-dark" style={{ textDecoration: 'none' }} href="#service">Contact</a></Button>
+          <div class="site-navbar site-navbar-target js-sticky-header">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-6 col-lg-3">
+                  <h1 class="my-0 site-logo"><a href="index.html">WSOne OGs</a></h1>
+                </div>
+                <div class="col-6 col-lg-9">
+                  <nav class="site-navigation text-right" role="navigation">
+                    <div class="container">
 
-              <Link to='/login' className="text-dark" style={{ textDecoration: 'none' }}><Button color="inherit">Login</Button></Link>
-            </div>
-          </Toolbar>
-        </AppBar>
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-lg-6 p-5 home-bg home-min-height">
-              <h1 className="display-4 font-weight-bolder home-top-margin">What is OG-Tool?</h1>
-              <p>OG tool is a simple Workspace One tool to visualize organization groups and
-manipulate them using an interactive UI.</p>
+                      <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3 "><a href="#"
+                        class="site-menu-toggle js-menu-toggle text-black">
+                        <span class="icon-menu h3"></span>
+                      </a></div>
 
-              <div className=" ">
-                <button className="btn btn-primary">Sign Up for Execution</button>
-                <button className="btn btn-outline-light    ml-2">Learn More</button>
-              </div>
-
-            </div>
-            <div className="col-lg-6 home-top-bg">
-            </div>
-          </div>
-          <div className="row bg-white">
-            <div id="service" className="col-lg-12 ">
-              <h1 className=" text-center mt-4 ">Service</h1>
-              <div className="stat-underline"></div>
-              <div className="d-flex col-lg-9 ml-auto mr-auto mt-4 mb-4">
-                <div className="col-lg-4 text-center mt-4">
-                  <div className="service-border" >
-                    < h5>Save time</ h5>
-                    <p>OG tool helps you update and manipulate Workspace One organization
-  groups using a simple interactive UI. OG tool decreases the timeframe needed for such a
-task.</p>
-                  </div>
-                </div>
-                <div className="col-lg-4 text-center mt-4">
-                  <div className="service-border" >
-                    < h5>Better visualization</ h5>
-                    <p>OG tool provides you with an easy (drag-and-drop)  <br />and
-interactive diagram to visualize Workspace One groups structure in a  <br />  better way.</p>
-                  </div>
-                </div>
-                <div className="col-lg-4 text-center mt-4">
-                  <div className="service-border" >
-                    < h5>Export OGs</ h5>
-                    <p>with OG tool you can easily export your  <br /> Workspace One groups  <br />  structure
-or specific groups as  <br /> a format of  <br /> your choice.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="Statistics" className="col-lg-12 ">
-              <h1 className=" text-center mt-4 ">Statistics</h1>
-              <div className="stat-underline"></div>
-              <p className="text-secondary text-center mt-4">IT Admin of a company enters the company Workspace One tenant API credentials in
-  our OG tool.</p>
-              <div className="d-flex col-lg-9 ml-auto mr-auto mt-4">
-                <div className="col-lg-3 text-center">
-                  <div className="icon-border" >
-                    <AccountCircleOutlinedIcon style={{ fontSize: '53px' }} />
-                  </div>
-                  <h1 className="text-primary  mt-2"><CountUp end={156} duration={5} /></h1>
-                  <div className="underline"></div>
-                  <div className="">
-                    <p>Professors</p>
-                  </div>
-                </div>
-                <div className="col-lg-3 text-center">
-                  <div className="icon-border" >
-                    <PeopleOutlinedIcon style={{ fontSize: '53px' }} />
-                  </div>
-                  <h1 className="text-primary  mt-2"><CountUp end={12} duration={5} /></h1>
-                  <div className="underline"></div>
-                  <div className="">
-                    <p>Campuses</p>
-                  </div>
-                </div>
-                <div className="col-lg-3 text-center">
-                  <div className="icon-border" >
-                    <HomeOutlinedIcon style={{ fontSize: '53px' }} />
-                  </div>
-                  <h1 className="text-primary  mt-2"><CountUp end={3257} duration={5} /></h1>
-                  <div className="underline"></div>
-                  <div className="">
-                    <p>Students</p>
-                  </div>
-                </div>
-                <div className="col-lg-3 text-center">
-                  <div className="icon-border" >
-                    <DescriptionOutlinedIcon style={{ fontSize: '53px' }} />
-                  </div>
-                  <h1 className="text-primary  mt-2"><CountUp end={346} duration={5} /></h1>
-                  <div className="underline"></div>
-                  <div className="">
-                    <p>Courses</p>
-                  </div>
-                </div>
-              </div>
-              <div id="work" className="d-flex col-lg-9 ml-auto mr-auto mt-4">
-                <div className="col-lg-9 p-4">
-                  <h1 className="font-weight-bolder "> How it Works?</h1>
-                  <div className="underline-about"></div>
-                  <div className="mt-4 pr-4">
-                    <p>IT Admin of a company enters the company Workspace One tenant API credentials in
-    our OG tool, so the tool fetches the Organization Groups details from Workspace One and
-    display them in a form of a diagram to easily manipulate (Create, Read, Update, Delete),
-visualize and export (Image, PDF, other types if possible) OGs.</p>
-                  </div>
-                  <div className='mt-4'>
-                    <button className="btn btn-outline-dark">Learn More <ArrowForwardOutlinedIcon /></button>
-                  </div>
-                </div>
-                <div className="col-lg-2">
-                  <div className=" mt-4">
-                    <img src={logo} width="300" height="300" alt="myLogo" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-10 ml-auto mr-auto mt-5 d-flex">
-              <div className="col-lg-6 p-5">
-                <h1 className="font-weight-bolder text-center ">Our Featurs</h1>
-                <p className="text-center">IT Admin of a company enters the company Workspace One tenant API credentials in
-                   our OG tool</p>
-                <div className="d-flex">
-                  <div className="col-lg-6 d-flex">
-                    <div className="feature-icon">
-                      <AccountCircleOutlinedIcon style={{ fontSize: '53px' }} />
+                      <ul class="site-menu main-menu js-clone-nav d-none d-lg-block">
+                        <li><a href="#home-section" class="nav-link">Home</a></li>
+                        <li><a href="#service" class="nav-link">service</a></li>
+                        <li><a href="#work" class="nav-link">How it works?</a></li>
+                        <li><a href="#Statistics" class="nav-link">Statistics</a></li>
+                        <li><a href="#home-section" class="nav-link">Contact</a></li>
+                        <li><a href="/login" class="nav-link">Login</a></li>
+                      </ul>
                     </div>
-                    <div>
-                      <h1 className="text-primary  mt-2"><CountUp end={156} duration={5} /></h1>
-                      <p>Professors</p>
-                    </div>
-                  </div>
-                  <div className="col-lg-6 d-flex">
-                    <div className="feature-icon">
-                      <PeopleOutlinedIcon style={{ fontSize: '53px' }} />
-                    </div>
-                    <div>
-                      <h1 className="text-primary  mt-2"><CountUp end={12} duration={5} /></h1>
-                      <p>Campuses</p>
-                    </div>
-                  </div>
-
+                  </nav>
                 </div>
-                <div className="d-flex">
-                  <div className="col-lg-6 d-flex">
-                    <div className="feature-icon">
-                      <HomeOutlinedIcon style={{ fontSize: '53px' }} />
-                    </div>
-                    <div>
-                      <h1 className="text-primary  mt-2"><CountUp end={3257} duration={5} /></h1>
-                      <p>Students</p>
-                    </div>
-                  </div>
-                  <div className="col-lg-6 d-flex">
-                    <div className="feature-icon">
-                      <DescriptionOutlinedIcon style={{ fontSize: '53px' }} />
-                    </div>
-                    <div>
-                      <h1 className="text-primary  mt-2"><CountUp end={346} duration={5} /></h1>
-                      <p>Courses</p>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-              <div className="col-lg-6 featur-bg mb-5">
-
               </div>
             </div>
           </div>
         </div>
-        <footer className="bg-dark p-3 text-light ">
-          <div className="row">
 
-
-            <div className="col-lg-12 d-flex justify-content-end">
-              <div >
-                <FacebookIcon />
+        <div class="home-section padding-top-bottom">
+          <div class="container pb-5">
+            <div class="row">
+              <div class="col-md-6 mb-5">
+                <h1 class="text-white serif text-uppercase mb-4">What is OG-Tool?</h1>
+                <p class="text-white mb-5">OG tool is a simple Workspace One tool to visualize organization groups and
+                manipulate them using an interactive UI.</p>
+                <div class="two-btn">
+                  <p><a href="#service" class="btn btn-white px-4 py-3  btn1">Learn More</a></p>
+                  <p><a href="#" class="btn btn-white px-4 py-3">Register Now</a></p>
+                </div>
               </div>
-              <div >
-                < TwitterIcon />
-              </div>
-              <div >
-                <InstagramIcon />
+              <div class="col-md-6">
+                <img src={studentimg} alt="Image" class="img-fluid" />
               </div>
             </div>
           </div>
-        </footer>
+        </div>
+
+        <div class="padding-top-bottom bg-light" id="service">
+          <div class="container">
+            <div class="row mb-5">
+              <div class="col-md-7">
+                <h2 class="heading">How it helps?</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-lg-4 mb-4">
+                <div class="service h-100">
+                  <div className="icon-section">
+                    <span class="wrap-icon">
+                      <AccessTimeIcon className="services-icon" />
+                    </span>
+                  </div>
+                  <h3>Save time</h3>
+                  <p className="item-des">OG tool helps you update and manipulate Workspace One organization
+                    groups using a simple interactive UI. OG tool decreases the timeframe needed for such a
+                  task.</p>
+                </div>
+
+              </div>
+              <div class="col-md-6 col-lg-4 mb-4">
+                <div class="service h-100">
+                  <div className="icon-section">
+                    <span class="wrap-icon">
+                      <VisibilityIcon className="services-icon" />
+                    </span>
+                  </div>
+                  <h3>Better visualization</h3>
+                  <p className="item-des">OG tool provides you with an easy (drag-and-drop) and
+                  interactive diagram to visualize Workspace One groups structure in a better way.</p>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4 mb-4">
+                <div class="service h-100">
+                  <div className="icon-section">
+                    <span class="wrap-icon">
+                      <DescriptionIcon className="services-icon" />
+                    </span>
+                  </div>
+                  <h3>Export OGs</h3>
+                  <p className="item-des">with OG tool you can easily export your Workspace One groups structure
+                  or specific groups as a format of your choice.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="padding-top-bottom" id="work">
+          <div class="container">
+            <div class="row mb-5">
+              <div class="col-md-6">
+                <h2 class="heading">How it Works?</h2>
+                <p className="font-weight-bold">IT Admin of a company enters the company Workspace One tenant API credentials in
+                  our OG tool, so the tool fetches the Organization Groups details from Workspace One and
+                  display them in a form of a diagram to easily manipulate (Create, Read, Update, Delete),
+                visualize and export (Image, PDF, other types if possible) OGs.</p>
+              </div>
+              <div class="owl-carousel slide-one-item col-md-6">
+                <img src={photo} alt="Image" class="img-fluid" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-light" id="Statistics">
+          <div class="container padding-top-bottom">
+            <div class="row mb-5">
+              <div class="col-12">
+                <h2 class="heading">Statistics</h2>
+                <p className="font-weight-bold">IT Admin of a company enters the company Workspace One tenant API credentials in our OG tool.
+
+              </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-lg-4 mb-4">
+                <div class="service h-100 Statistics-item">
+                  <h3>Clients</h3>
+                  <h1 className="text-primary  mt-2"><CountUp end={10000} duration={5} /></h1>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4 mb-4">
+                <div class="service h-100 Statistics-item">
+                  <h3>Diagram Generated</h3>
+                  <h1 className="text-primary  mt-2"><CountUp end={23999} duration={5} /></h1>
+                </div>
+
+              </div>
+              <div class="col-md-6 col-lg-4 mb-4">
+                <div class="service h-100 Statistics-item">
+                  <h3>Organisation Group</h3>
+                  <h1 className="text-primary  mt-2"><CountUp end={23448} duration={5} /></h1>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="site-footer">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                  <div class="row mb-5">
+                    <div class="col-12">
+                      <h3 class="footer-heading mb-4">About Us</h3>
+                      <p>OG tool is a simple Workspace One tool to visualize organization groups and manipulate them using
+                      an interactive UI.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-5 ml-auto">
+
+                  <div class="row mb-7">
+                    <div class="col-md-12">
+                      <h3 class="footer-heading mb-4">Navigation</h3>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                      <ul class="list-unstyled">
+                        <li><a href="#home-section" class="nav-link">Home</a></li>
+                        <li><a href="#service" class="nav-link">service</a></li>
+                        <li><a href="#work" class="nav-link">How it works?</a></li>
+                        <li><a href="#Statistics" class="nav-link">Statistics</a></li>
+                        <li><a href="#service" class="nav-link">Contact</a></li>
+                        <li><a href="/login" class="nav-link">Login</a></li>
+                      </ul>
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <div class="col-lg-3 mb-5 mb-lg-0" id="contact-section">
+
+                  <div class="mb-5">
+                    <h3 class="footer-heading mb-4">Quick Contact</h3>
+                    <div class="Address">
+                      <span class="address">Phone:+33600000000</span>
+                      <span class="address">Email:ogwsone@gmail.com</span>
+                      <span class="address"> Address:7 Rue de Test, 75000 Paris</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="row pt-5 mt-5 text-center">
+                <div class="col-md-12">
+                  <div class="mb-4">
+                    <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                    <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                    <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                    <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+                  </div>
+                  <p>
+                    Copyright &copy;
+                  <script>document.write(new Date().getFullYear());</script> All rights reserved
+                </p>
+                </div>
+
+              </div>
+            </div>
+          </footer>
+        </div>
+
       </div>
     );
   }
