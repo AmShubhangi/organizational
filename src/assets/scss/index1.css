@@ -163,6 +163,7 @@ h4.parent-size {
 .mt4 {
   background-color: white;
   width: 7043mm;
+  max-width: 10000mm;
   height: auto;
 }
 .full-width {
@@ -171,7 +172,7 @@ h4.parent-size {
 }
 
 div#initechOrgChart {
-  padding: 40px;
+  padding: 40px 0px 40px;
 }
 .donwload-group {
   padding: 20px;

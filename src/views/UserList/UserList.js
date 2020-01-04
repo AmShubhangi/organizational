@@ -55,12 +55,13 @@ class UserList extends React.Component {
     html2canvas(input)
       .then((canvas) => {
         const imgData = canvas.toDataURL('image/png');
-        const pdf = new jsPDF();
+        const pdf = new jsPDF('l', 'mm', [28500, 1400]);
         pdf.setTextColor(150);
         pdf.addImage(imgData, 'JPEG', 0, 0);
-        pdf.text('John Doe', 10, 10);
+        pdf.text('John Doe', 5, 10);
         pdf.save("OG-Structure.pdf");
       });
+    
   }
 
   render() {
