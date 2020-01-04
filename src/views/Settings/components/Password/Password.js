@@ -124,6 +124,7 @@ class Password extends React.Component {
                 color="primary"
                 variant="outlined"
                 type="submit"
+                className="save-design"
                 disabled={submitted}
               >
                 {submitted ? <Redirect to='/og-map' /> : 'Save'}

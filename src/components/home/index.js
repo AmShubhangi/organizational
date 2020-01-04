@@ -9,12 +9,14 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import { Link } from 'react-router-dom';
-import studentimg from 'assets/images/student-849825_1920.jpg';
+import studentimg from 'assets/images/homepage.png';
 import photo from 'assets/images/photo-1557804506-669a67965ba0.jpeg';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import DescriptionIcon from '@material-ui/icons/Description';
 import VisibilityIcon from '@material-ui/icons/Visibility';
-
+import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
+import AccountTreeIcon from '@material-ui/icons/AccountTree';
+import BusinessIcon from '@material-ui/icons/Business';
 
 class HomeComponent extends Component {
   render() {
@@ -39,7 +41,7 @@ class HomeComponent extends Component {
 
                       <ul class="site-menu main-menu js-clone-nav d-none d-lg-block">
                         <li><a href="#home-section" class="nav-link">Home</a></li>
-                        <li><a href="#service" class="nav-link">service</a></li>
+                        <li><a href="#service" class="nav-link">Service</a></li>
                         <li><a href="#work" class="nav-link">How it works?</a></li>
                         <li><a href="#Statistics" class="nav-link">Statistics</a></li>
                         <li><a href="#home-section" class="nav-link">Contact</a></li>
@@ -56,7 +58,7 @@ class HomeComponent extends Component {
         <div class="home-section padding-top-bottom">
           <div class="container pb-5">
             <div class="row">
-              <div class="col-md-6 mb-5">
+              <div class="col-md-5 mb-5">
                 <h1 class="text-white serif text-uppercase mb-4">What is OG-Tool?</h1>
                 <p class="text-white mb-5">OG tool is a simple Workspace One tool to visualize organization groups and
                 manipulate them using an interactive UI.</p>
@@ -65,7 +67,7 @@ class HomeComponent extends Component {
                   <p><a href="#" class="btn btn-white px-4 py-3">Register Now</a></p>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-5 offset-1">
                 <img src={studentimg} alt="Image" class="img-fluid" />
               </div>
             </div>
@@ -145,28 +147,44 @@ class HomeComponent extends Component {
               <div class="col-12">
                 <h2 class="heading">Statistics</h2>
                 <p className="font-weight-bold">IT Admin of a company enters the company Workspace One tenant API credentials in our OG tool.
-
               </p>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6 col-lg-4 mb-4">
                 <div class="service h-100 Statistics-item">
+                  <div className="icon-section">
+                    <span class="wrap-icon">
+                      <SupervisorAccountIcon className="services-icon" />
+                    </span>
+                  </div>
                   <h3>Clients</h3>
-                  <h1 className="text-primary  mt-2"><CountUp end={10000} duration={5} /></h1>
+                  <h1 className="text-primary  mt-2"><p className="item-des  font-size"><CountUp end={10000} duration={5} />
+                  </p>
+                  </h1>
                 </div>
               </div>
               <div class="col-md-6 col-lg-4 mb-4">
                 <div class="service h-100 Statistics-item">
+                  <div className="icon-section">
+                    <span class="wrap-icon">
+                      <AccountTreeIcon className="services-icon" />
+                    </span>
+                  </div>
                   <h3>Diagram Generated</h3>
-                  <h1 className="text-primary  mt-2"><CountUp end={23999} duration={5} /></h1>
+                  <h1 className="text-primary  mt-2"><p className="item-des font-size"><CountUp end={23999} duration={5} /> </p></h1>
                 </div>
 
               </div>
               <div class="col-md-6 col-lg-4 mb-4">
                 <div class="service h-100 Statistics-item">
+                  <div className="icon-section">
+                    <span class="wrap-icon">
+                      <BusinessIcon className="services-icon" />
+                    </span>
+                  </div>
                   <h3>Organisation Group</h3>
-                  <h1 className="text-primary  mt-2"><CountUp end={23448} duration={5} /></h1>
+                  <h1 className="text-primary  mt-2 "><p className="item-des font-size"><CountUp end={23448} duration={5} /></p></h1>
                 </div>
               </div>
             </div>

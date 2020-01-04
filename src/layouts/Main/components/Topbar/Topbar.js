@@ -43,7 +43,6 @@ const Topbar = props => {
         <div className={classes.flexGrow} />
         <div>
           {window.location.pathname !== '/login' && window.location.pathname !== '/register' ? <div>
-            <NavLink activeClassName='is-active' className="my-top-nave-links" to='/dashboard'><DashboardIcon /> &nbsp;Dashboard</NavLink>
             <NavLink activeClassName='is-active' className="my-top-nave-links" to='/ws1-setting'><SettingsIcon /> &nbsp;WSOne API Settings</NavLink>
             <NavLink activeClassName='is-active' className="my-top-nave-links" to='/og-map'  > <AccountTreeIcon /> &nbsp;OG Gesture</NavLink>
             <NavLink activeClassName='is-active' className="my-top-nave-links" to='/account'><AccountBoxIcon /> &nbsp;Account</NavLink>
