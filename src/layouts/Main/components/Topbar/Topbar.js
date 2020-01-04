@@ -38,7 +38,7 @@ const Topbar = props => {
     >
       <Toolbar>
         <RouterLink to="/">
-          <h2 style={{ color: 'white' }}>OG</h2>
+          <h2 style={{ color: 'white' }}>WSOne OGs</h2>
         </RouterLink>
         <div className={classes.flexGrow} />
         <div>

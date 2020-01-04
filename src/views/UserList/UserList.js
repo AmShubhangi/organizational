@@ -13,10 +13,16 @@ import ZoomOutIcon from '@material-ui/icons/ZoomOut';
 import ZoomInIcon from '@material-ui/icons/ZoomIn';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import RotateLeftIcon from '@material-ui/icons/RotateLeft';
+import GetAppIcon from '@material-ui/icons/GetApp';
 
 class UserList extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    this.printDocument = this.printDocument.bind(this);
+
+    this.state = {
+      isLoading: false
+    }
     this.initechOrg = '';
     var arry = require('../../API/clientData.json');
     var map = {};
@@ -51,6 +57,7 @@ class UserList extends React.Component {
   }
 
   printDocument() {
+    this.setState({ isLoading: true })
     const input = document.getElementById('divToPrint');
     html2canvas(input)
       .then((canvas) => {
@@ -60,8 +67,8 @@ class UserList extends React.Component {
         pdf.addImage(imgData, 'JPEG', 0, 0);
         pdf.text('John Doe', 5, 10);
         pdf.save("OG-Structure.pdf");
+        this.setState({ isLoading: false })
       });
-    
   }
 
   render() {
@@ -84,9 +91,11 @@ class UserList extends React.Component {
       <div className="root">
         <div className="content">
           <div className="full-width">
+         
             <div className="donwload-group">
               <ButtonGroup variant="text" id="download-button" color="primary" aria-label="text primary button group">
-                <Button onClick={this.printDocument} className="my-donwload" ><PictureAsPdfIcon />&nbsp;Export PDF</Button>
+                <Button onClick={this.printDocument} className="my-donwload" disabled={this.state.isLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <PictureAsPdfIcon />}&nbsp;{this.state.isLoading ? "Genreating PDF" : "Export PDF"}</Button>
+
                 <Button onClick={this.downloadImage} className="my-donwload"><CloudDownloadIcon />&nbsp;Get Image</Button>
               </ButtonGroup>
             </div>

@@ -162,9 +162,9 @@ h4.parent-size {
 
 .mt4 {
   background-color: white;
-  width: 7043mm;
-  max-width: 10000mm;
-  height: auto;
+  width: 27000px;
+  max-width: 37000px;
+  /* max-width: 10000mm; */
 }
 .full-width {
   margin: 20px;
@@ -187,7 +187,7 @@ div#initechOrgChart {
   margin-left: 75pc;
 }
 .react-transform-component.TransformComponent-module_container__3NwNd {
-  padding: 20px !important;
+  padding: 20px 0px 20px 0px !important;
 }
 .service-border {
   padding: 20px;
@@ -1546,4 +1546,8 @@ a:hover {
 }
 .img-fluid {
   max-width: 500px;
+}
+
+i.fa.fa-spinner.fa-spin {
+  font-size: 20px;
 }
