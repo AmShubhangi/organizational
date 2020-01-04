@@ -79,14 +79,15 @@ header.MuiPaper-root.MuiAppBar-root.MuiAppBar-positionStatic.home-bg-color.MuiAp
 }
 p.no-margin {
   margin-bottom: 0px;
-  font-size: 12px;
+  font-size: 10px;
+  font-weight: 500;
   color: #287cfa;
 }
 h4.parent-size {
-  font-size: 12px;
+  font-size: 10px;
   word-wrap: break-word;
   margin-bottom: 0px;
-  width: 150px;
+  width: 100px;
   color: white;
 }
 .underline {
@@ -129,13 +130,13 @@ h4.parent-size {
 .initechNode {
   border: solid 1px #287cfa;
   border-radius: 3px;
-  width: 100px;
+  width: 62px;
   display: inline-block;
   margin: 0px 0px 0px 6px;
 }
 
 .initechNode-info {
-  padding: 7px;
+  padding: 1px;
   text-align: left;
 }
 .my-donwload {
@@ -160,11 +161,18 @@ h4.parent-size {
   border-top: solid 1px #287cfa;
 }
 
+.mt {
+  width: auto;
+  max-width: auto;
+  background-color: white;
+}
+.react-transform-component.TransformComponent-module_container__3NwNd {
+  background: white;
+}
 .mt4 {
   background-color: white;
-  width: 27000px;
-  max-width: 37000px;
-  /* max-width: 10000mm; */
+  width: 4743mm;
+  height: auto;
 }
 .full-width {
   margin: 20px;
@@ -187,7 +195,7 @@ div#initechOrgChart {
   margin-left: 75pc;
 }
 .react-transform-component.TransformComponent-module_container__3NwNd {
-  padding: 20px 0px 20px 0px !important;
+  padding: 20px !important;
 }
 .service-border {
   padding: 20px;
@@ -1546,8 +1554,4 @@ a:hover {
 }
 .img-fluid {
   max-width: 500px;
-}
-
-i.fa.fa-spinner.fa-spin {
-  font-size: 20px;
 }

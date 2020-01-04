@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
     padding: 0
   },
   inner: {
-    minWidth: 800
+    // minWidth: 800
   },
   statusContainer: {
     display: 'flex',
