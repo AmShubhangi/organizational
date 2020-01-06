@@ -190,12 +190,16 @@ div#initechOrgChart {
   margin: 8px 4px 0 !important;
 }
 
-.tools {
+.tools,
+.myTool {
   margin-top: -95px;
   margin-left: 75pc;
 }
 .react-transform-component.TransformComponent-module_container__3NwNd {
-  padding: 20px !important;
+  padding: 5px !important;
+}
+.myloader {
+  margin: 0 50%;
 }
 .service-border {
   padding: 20px;

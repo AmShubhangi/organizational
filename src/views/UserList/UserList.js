@@ -14,6 +14,7 @@ import ZoomInIcon from '@material-ui/icons/ZoomIn';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 import loader from '../../assets/images/25.gif';
+import Loading from 'react-fullscreen-loading';
 
 class UserList extends React.Component {
   constructor() {
@@ -87,42 +88,41 @@ class UserList extends React.Component {
       );
     };
     return (
-      // <div className="root">
-      // {/* <div className="content"> */}
-      <div className="full-width">
-        <div className="donwload-group">
-          <ButtonGroup variant="text" id="download-button" color="primary" aria-label="text primary button group">
-            <Button onClick={this.printDocument} className="my-donwload" disabled={this.state.isLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <PictureAsPdfIcon />}&nbsp;{this.state.isLoading ? "Genreating PDF" : "Export PDF"}</Button>
-
-            <Button onClick={this.downloadImage}><CloudDownloadIcon />&nbsp;Get Image</Button>
-          </ButtonGroup>
-        </div>
-        <div className="mt4">
-          <div className="App" id="initechOrgChart">
-            <TransformWrapper>
-              {({ zoomIn, zoomOut, resetTransform }) => (
-                <React.Fragment>
-                  <div className="tools">
-                    <ButtonGroup variant="text" className="zoom-in-out" color="primary" aria-label="text primary button group">
-                      <Button onClick={zoomIn}><ZoomInIcon /></Button>
-                      <Button onClick={zoomOut}><ZoomOutIcon /></Button>
-                      <Button onClick={resetTransform}><RotateLeftIcon /></Button>
-                    </ButtonGroup>
-                  </div>
-                  <TransformComponent>
-                    <div id="divToPrint" className="mt4">
-                      {this.state.isLoading ? <img style={{marginLeft:'600px'}} src={loader} /> : ''}
-                      <OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} />
-                    </div>
-                  </TransformComponent>
-                </React.Fragment>
-              )}
-            </TransformWrapper>
+      <div className="root">
+        <div className="content">
+          <div className="full-width">
+            <div className="donwload-group">
+              <ButtonGroup variant="text" id="download-button" color="primary" aria-label="text primary button group">
+                <Button onClick={this.printDocument} className="my-donwload" disabled={this.state.isLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <PictureAsPdfIcon />}&nbsp;{this.state.isLoading ? "Genreating PDF" : "Export PDF"}</Button>
+                <Button onClick={this.downloadImage}><CloudDownloadIcon />&nbsp;Get Image</Button>
+              </ButtonGroup>
+              {this.state.isLoading ? <Loading loading background="rgb(220, 232, 225)" loaderColor="#3498db" /> : ' '}
+            </div>
+            <div className="mt4">
+              <div className="App" id="initechOrgChart">
+                <TransformWrapper>
+                  {({ zoomIn, zoomOut, resetTransform }) => (
+                    <React.Fragment>
+                      <div className="tools">
+                        <ButtonGroup variant="text" className="zoom-in-out" color="primary" aria-label="text primary button group">
+                          <Button onClick={zoomIn}><ZoomInIcon /></Button>
+                          <Button onClick={zoomOut}><ZoomOutIcon /></Button>
+                          <Button onClick={resetTransform}><RotateLeftIcon /></Button>
+                        </ButtonGroup>
+                      </div>
+                      <TransformComponent>
+                        <div id="divToPrint" className="mt4">
+                          <OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} />
+                        </div>
+                      </TransformComponent>
+                    </React.Fragment>
+                  )}
+                </TransformWrapper>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      // </div>
-      // </div>
     );
   }
 }
