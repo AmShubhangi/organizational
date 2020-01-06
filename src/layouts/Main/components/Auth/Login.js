@@ -19,7 +19,6 @@ class Login extends React.Component {
     },
     submitted: false,
   }
-
   handleChange = (event) => {
     const { formData } = this.state;
     formData[event.target.name] = event.target.value;
@@ -32,7 +31,7 @@ class Login extends React.Component {
     });
   }
 
- 
+
 
   render() {
     const { formData, submitted } = this.state;

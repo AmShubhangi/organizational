@@ -26,6 +26,11 @@ class Password extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    this.setState({submitted : false});
+  }
+
+
   handleChange = (event) => {
     const { formData } = this.state;
     formData[event.target.name] = event.target.value;
@@ -37,6 +42,7 @@ class Password extends React.Component {
       setTimeout(() => this.setState({ submitted: false }), 5000);
     });
   }
+
 
   render() {
     const { formData, submitted } = this.state;

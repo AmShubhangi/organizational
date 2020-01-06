@@ -184,6 +184,9 @@ div#initechOrgChart {
 }
 .donwload-group {
   padding: 20px;
+  background-color: white;
+  top:45px;
+  z-index: 1;
 }
 
 .MuiFormHelperText-contained {
@@ -1581,4 +1584,10 @@ span.address {
 
 ul.list-unstyled.row {
   white-space: nowrap;
+}
+
+.tools.fixed-top {
+  top: 160px;
+  background: white;
+  z-index: 1;
 }
