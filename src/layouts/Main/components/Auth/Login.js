@@ -54,7 +54,6 @@ class Login extends React.Component {
               md={5}
               xs={12}>
               <Card>
-                <form>
                   <div className="my-top-header-login">
                     <h3 className="my-top-name-login">Login</h3>
                     <h5 className="my-sub-text">Sign in to your account to continue.</h5>
@@ -99,7 +98,6 @@ class Login extends React.Component {
                   <div className="newuser">
                     <p className="reg-text text-center">Don't have an account?</p> <Link to='/register' className="reg-text-color"> Register Now</Link>
                   </div>
-                </form>
               </Card>
             </Grid>
             <Grid

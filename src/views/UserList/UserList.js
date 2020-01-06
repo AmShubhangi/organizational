@@ -17,13 +17,15 @@ import loader from '../../assets/images/25.gif';
 import Loading from 'react-fullscreen-loading';
 
 class UserList extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.printDocument = this.printDocument.bind(this);
 
     this.state = {
-      isLoading: false
+      isLoading: false,
+      isimageLoading: false
     }
+    this.downloadImage = this.downloadImage.bind(this)
     this.initechOrg = '';
     var arry = require('../../API/clientData.json');
     var map = {};
@@ -44,15 +46,17 @@ class UserList extends React.Component {
         console.log('error');
       }
     }
-    this.initechOrg = map[arry[0].Id.Value]
+    this.initechOrg = map[arry[0].Id.Value];
   }
   downloadImage() {
+    this.setState({ isimageLoading: true });
     htmlToImage.toPng(document.getElementById('divToPrint'), { quality: 0.55 })
-      .then(function (dataUrl) {
+      .then((dataUrl) => {
         var link = document.createElement('a');
         link.download = 'OG-Structure.png';
         link.href = dataUrl;
         link.click();
+        this.setState({ isimageLoading: false })
       });
   }
 
@@ -68,7 +72,6 @@ class UserList extends React.Component {
         pdf.text('John Doe', 10, 10);
         pdf.save("OG-Structure.pdf");
         this.setState({ isLoading: false })
-
       });
   }
   render() {
@@ -94,9 +97,11 @@ class UserList extends React.Component {
             <div className="donwload-group">
               <ButtonGroup variant="text" id="download-button" color="primary" aria-label="text primary button group">
                 <Button onClick={this.printDocument} className="my-donwload" disabled={this.state.isLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <PictureAsPdfIcon />}&nbsp;{this.state.isLoading ? "Genreating PDF" : "Export PDF"}</Button>
-                <Button onClick={this.downloadImage}><CloudDownloadIcon />&nbsp;Get Image</Button>
+
+                <Button onClick={this.downloadImage} className="my-donwload" disabled={this.state.isimageLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <CloudDownloadIcon />}&nbsp;{this.state.isimageLoading ? "Genreating Image" : "Get Image"}</Button>
               </ButtonGroup>
               {this.state.isLoading ? <Loading loading background="rgb(220, 232, 225)" loaderColor="#3498db" /> : ' '}
+              {this.state.isimageLoading ? <Loading loading background="rgb(220, 232, 225)" loaderColor="#3498db" /> : ' '}
             </div>
             <div className="mt4">
               <div className="App" id="initechOrgChart">

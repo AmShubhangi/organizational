@@ -17,30 +17,30 @@ class HomeComponent extends Component {
   render() {
     return (
       <div>
-        <div class="site-navbar-wrap p-0">
+        <div className="site-navbar-wrap p-0">
 
-          <div class="site-navbar site-navbar-target js-sticky-header">
-            <div class="container">
-              <div class="row align-items-center">
-                <div class="col-6 col-lg-3">
-                  <h1 class="my-0 site-logo"><a href="index.html">WSOne OGs</a></h1>
+          <div className="site-navbar site-navbar-target js-sticky-header">
+            <div className="container">
+              <div className="row align-items-center">
+                <div className="col-6 col-lg-3">
+                  <h1 className="my-0 site-logo"><a href="index.html">WSOne OGs</a></h1>
                 </div>
-                <div class="col-6 col-lg-9">
-                  <nav class="site-navigation text-right" role="navigation">
-                    <div class="container">
+                <div className="col-6 col-lg-9">
+                  <nav className="site-navigation text-right" role="navigation">
+                    <div className="container">
 
-                      <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3 "><a href="#demo"
-                        class="site-menu-toggle js-menu-toggle text-black">
-                        <span class="icon-menu h3"></span>
+                      <div className="d-inline-block d-lg-none ml-md-0 mr-auto py-3 "><a href="#demo"
+                        className="site-menu-toggle js-menu-toggle text-black">
+                        <span className="icon-menu h3"></span>
                       </a></div>
 
-                      <ul class="site-menu main-menu js-clone-nav d-none d-lg-block">
-                        <li><a href="#home-section" class="nav-link">Home</a></li>
-                        <li><a href="#service" class="nav-link">Service</a></li>
-                        <li><a href="#work" class="nav-link">How it works?</a></li>
-                        <li><a href="#Statistics" class="nav-link">Statistics</a></li>
-                        <li><a href="#home-section" class="nav-link">Contact</a></li>
-                        <li><a href="/login" class="nav-link">Login</a></li>
+                      <ul className="site-menu main-menu js-clone-nav d-none d-lg-block">
+                        <li><a href="#home-section" className="nav-link">Home</a></li>
+                        <li><a href="#service" className="nav-link">Service</a></li>
+                        <li><a href="#work" className="nav-link">How it works?</a></li>
+                        <li><a href="#Statistics" className="nav-link">Statistics</a></li>
+                        <li><a href="#home-section" className="nav-link">Contact</a></li>
+                        <li><a href="/login" className="nav-link">Login</a></li>
                       </ul>
                     </div>
                   </nav>
@@ -50,37 +50,37 @@ class HomeComponent extends Component {
           </div>
         </div>
 
-        <div class="home-section padding-top-bottom">
-          <div class="container pb-5">
-            <div class="row">
-              <div class="col-md-5 mb-5">
-                <h1 class="text-white serif text-uppercase mb-4">What is OG-Tool?</h1>
-                <p class="text-white mb-5">OG tool is a simple Workspace One tool to visualize organization groups and
+        <div className="home-section padding-top-bottom">
+          <div className="container pb-5">
+            <div className="row">
+              <div className="col-md-5 mb-5">
+                <h1 className="text-white serif text-uppercase mb-4">What is OG-Tool?</h1>
+                <p className="text-white mb-5">OG tool is a simple Workspace One tool to visualize organization groups and
                 manipulate them using an interactive UI.</p>
-                <div class="two-btn">
-                  <p><a href="#service" class="btn btn-white px-4 py-3  btn1">Learn More</a></p>
-                  <p><a href="#demo" class="btn btn-white px-4 py-3">Register Now</a></p>
+                <div className="two-btn">
+                  <p><a href="#service" className="btn btn-white px-4 py-3  btn1">Learn More</a></p>
+                  <p><a href="#demo" className="btn btn-white px-4 py-3">Register Now</a></p>
                 </div>
               </div>
-              <div class="col-md-5 offset-1">
-                <img src={studentimg} class="img-fluid" alt="studentimg" />
+              <div className="col-md-5 offset-1">
+                <img src={studentimg} className="img-fluid" alt="studentimg" />
               </div>
             </div>
           </div>
         </div>
 
-        <div class="padding-top-bottom bg-light" id="service">
-          <div class="container">
-            <div class="row mb-5">
-              <div class="col-md-7">
-                <h2 class="heading">How it helps?</h2>
+        <div className="padding-top-bottom bg-light" id="service">
+          <div className="container">
+            <div className="row mb-5">
+              <div className="col-md-7">
+                <h2 className="heading">How it helps?</h2>
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-6 col-lg-4 mb-4">
-                <div class="service h-100">
+            <div className="row">
+              <div className="col-md-6 col-lg-4 mb-4">
+                <div className="service h-100">
                   <div className="icon-section">
-                    <span class="wrap-icon">
+                    <span className="wrap-icon">
                       <AccessTimeIcon className="services-icon" />
                     </span>
                   </div>
@@ -91,10 +91,10 @@ class HomeComponent extends Component {
                 </div>
 
               </div>
-              <div class="col-md-6 col-lg-4 mb-4">
-                <div class="service h-100">
+              <div className="col-md-6 col-lg-4 mb-4">
+                <div className="service h-100">
                   <div className="icon-section">
-                    <span class="wrap-icon">
+                    <span className="wrap-icon">
                       <VisibilityIcon className="services-icon" />
                     </span>
                   </div>
@@ -103,10 +103,10 @@ class HomeComponent extends Component {
                   interactive diagram to visualize Workspace One groups structure in a better way.</p>
                 </div>
               </div>
-              <div class="col-md-6 col-lg-4 mb-4">
-                <div class="service h-100">
+              <div className="col-md-6 col-lg-4 mb-4">
+                <div className="service h-100">
                   <div className="icon-section">
-                    <span class="wrap-icon">
+                    <span className="wrap-icon">
                       <DescriptionIcon className="services-icon" />
                     </span>
                   </div>
@@ -119,37 +119,37 @@ class HomeComponent extends Component {
           </div>
         </div>
 
-        <div class="padding-top-bottom" id="work">
-          <div class="container">
-            <div class="row mb-5">
-              <div class="col-md-6">
-                <h2 class="heading">How it Works?</h2>
+        <div className="padding-top-bottom" id="work">
+          <div className="container">
+            <div className="row mb-5">
+              <div className="col-md-6">
+                <h2 className="heading">How it Works?</h2>
                 <p className="font-weight-bold">IT Admin of a company enters the company Workspace One tenant API credentials in
                   our OG tool, so the tool fetches the Organization Groups details from Workspace One and
                   display them in a form of a diagram to easily manipulate (Create, Read, Update, Delete),
                 visualize and export (Image, PDF, other types if possible) OGs.</p>
               </div>
-              <div class="owl-carousel slide-one-item col-md-6">
-                <img src={photo} class="img-fluid" alt="Service" />
+              <div className="owl-carousel slide-one-item col-md-6">
+                <img src={photo} className="img-fluid" alt="Service" />
               </div>
             </div>
           </div>
         </div>
 
-        <div class="bg-light" id="Statistics">
-          <div class="container padding-top-bottom">
-            <div class="row mb-5">
-              <div class="col-12">
-                <h2 class="heading">Statistics</h2>
+        <div className="bg-light" id="Statistics">
+          <div className="container padding-top-bottom">
+            <div className="row mb-5">
+              <div className="col-12">
+                <h2 className="heading">Statistics</h2>
                 <p className="font-weight-bold">IT Admin of a company enters the company Workspace One tenant API credentials in our OG tool.
               </p>
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-6 col-lg-4 mb-4">
-                <div class="service h-100 Statistics-item">
+            <div className="row">
+              <div className="col-md-6 col-lg-4 mb-4">
+                <div className="service h-100 Statistics-item">
                   <div className="icon-section">
-                    <span class="wrap-icon">
+                    <span className="wrap-icon">
                       <SupervisorAccountIcon className="services-icon" />
                     </span>
                   </div>
@@ -159,10 +159,10 @@ class HomeComponent extends Component {
                   </h1>
                 </div>
               </div>
-              <div class="col-md-6 col-lg-4 mb-4">
-                <div class="service h-100 Statistics-item">
+              <div className="col-md-6 col-lg-4 mb-4">
+                <div className="service h-100 Statistics-item">
                   <div className="icon-section">
-                    <span class="wrap-icon">
+                    <span className="wrap-icon">
                       <AccountTreeIcon className="services-icon" />
                     </span>
                   </div>
@@ -171,10 +171,10 @@ class HomeComponent extends Component {
                 </div>
 
               </div>
-              <div class="col-md-6 col-lg-4 mb-4">
-                <div class="service h-100 Statistics-item">
+              <div className="col-md-6 col-lg-4 mb-4">
+                <div className="service h-100 Statistics-item">
                   <div className="icon-section">
-                    <span class="wrap-icon">
+                    <span className="wrap-icon">
                       <BusinessIcon className="services-icon" />
                     </span>
                   </div>
@@ -185,38 +185,38 @@ class HomeComponent extends Component {
             </div>
           </div>
 
-          <footer class="site-footer">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                  <div class="row mb-5">
-                    <div class="col-12">
-                      <h3 class="footer-heading mb-4">About Us</h3>
+          <footer className="site-footer">
+            <div className="container">
+              <div className="row">
+                <div className="col-lg-4 mb-5 mb-lg-0">
+                  <div className="row mb-5">
+                    <div className="col-12">
+                      <h3 className="footer-heading mb-4">About Us</h3>
                       <p>OG tool is a simple Workspace One tool to visualize organization groups and manipulate them using
                       an interactive UI.</p>
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-5 ml-auto">
+                <div className="col-lg-5 ml-auto">
 
-                  <div class="row mb-7">
-                    <div class="col-md-12">
-                      <h3 class="footer-heading mb-4">Navigation</h3>
+                  <div className="row mb-7">
+                    <div className="col-md-12">
+                      <h3 className="footer-heading mb-4">Navigation</h3>
                     </div>
-                    <div class="col-md-12">
+                    <div className="col-md-12">
 
-                      <ul class="list-unstyled row">
-                        <div class="col-md-4">
-                          <li><a href="#home-section" class="nav-link">Home</a></li>
-                          <li><a href="#service" class="nav-link">service</a></li>
+                      <ul className="list-unstyled row">
+                        <div className="col-md-4">
+                          <li><a href="#home-section" className="nav-link">Home</a></li>
+                          <li><a href="#service" className="nav-link">service</a></li>
                         </div>
-                        <div class="col-md-4">
-                          <li><a href="#work" class="nav-link">How it works?</a></li>
-                          <li><a href="#Statistics" class="nav-link">Statistics</a></li>
+                        <div className="col-md-4">
+                          <li><a href="#work" className="nav-link">How it works?</a></li>
+                          <li><a href="#Statistics" className="nav-link">Statistics</a></li>
                         </div>
-                        <div class="col-md-4">
-                          <li><a href="#service" class="nav-link">Contact</a></li>
-                          <li><a href="/login" class="nav-link">Login</a></li>
+                        <div className="col-md-4">
+                          <li><a href="#service" className="nav-link">Contact</a></li>
+                          <li><a href="/login" className="nav-link">Login</a></li>
                         </div>
                       </ul>
 
@@ -227,26 +227,26 @@ class HomeComponent extends Component {
                 </div>
 
 
-                <div class="col-lg-3 mb-5 mb-lg-0" id="contact-section">
+                <div className="col-lg-3 mb-5 mb-lg-0" id="contact-section">
 
-                  <div class="mb-5">
-                    <h3 class="footer-heading mb-4">Quick Contact</h3>
-                    <div class="Address">
-                      <span class="address">Phone:+33600000000</span>
-                      <span class="address">Email:ogwsone@gmail.com</span>
-                      <span class="address"> Address:7 Rue de Test, 75000 Paris</span>
+                  <div className="mb-5">
+                    <h3 className="footer-heading mb-4">Quick Contact</h3>
+                    <div className="Address">
+                      <span className="address">Phone:+33600000000</span>
+                      <span className="address">Email:ogwsone@gmail.com</span>
+                      <span className="address"> Address:7 Rue de Test, 75000 Paris</span>
                     </div>
                   </div>
                 </div>
 
               </div>
-              <div class="row text-center">
-                <div class="col-md-12">
-                  <div class="mb-4">
-                    <a href="#demo" class="pl-0 pr-3"><span class="icon-facebook"><FacebookIcon /></span></a>
-                    <a href="#demo" class="pl-3 pr-3"><span class="icon-twitter"><TwitterIcon /></span></a>
-                    <a href="#demo" class="pl-3 pr-3"><span class="icon-instagram"><InstagramIcon /></span></a>
-                    <a href="#demo" class="pl-3 pr-3"><span class="icon-linkedin"><LinkedInIcon /></span></a>
+              <div className="row text-center">
+                <div className="col-md-12">
+                  <div className="mb-4">
+                    <a href="#demo" className="pl-0 pr-3"><span className="icon-facebook"><FacebookIcon /></span></a>
+                    <a href="#demo" className="pl-3 pr-3"><span className="icon-twitter"><TwitterIcon /></span></a>
+                    <a href="#demo" className="pl-3 pr-3"><span className="icon-instagram"><InstagramIcon /></span></a>
+                    <a href="#demo" className="pl-3 pr-3"><span className="icon-linkedin"><LinkedInIcon /></span></a>
                   </div>
                   <p>
                     Copyright &copy;
