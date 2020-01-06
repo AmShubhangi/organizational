@@ -96,7 +96,7 @@ class SignUp extends React.Component {
                                     />
                                 </CardContent>
                                 <CardActions className="my-parent-button">
-                                    <div style={{ margin: '10px auto' }}>
+                                    <div className="login">
                                         <Button
                                             type="submit"
                                             className="btn btn-primary btn-lg btn-block"
