@@ -1,14 +1,5 @@
 import React, { Component } from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import logo from '../../assets/images/stat.png';
 import CountUp from 'react-countup';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import { Link } from 'react-router-dom';
 import studentimg from 'assets/images/homepage.png';
 import photo from 'assets/images/photo-1557804506-669a67965ba0.jpeg';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
@@ -17,6 +8,10 @@ import VisibilityIcon from '@material-ui/icons/Visibility';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 import AccountTreeIcon from '@material-ui/icons/AccountTree';
 import BusinessIcon from '@material-ui/icons/Business';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 class HomeComponent extends Component {
   render() {
@@ -34,7 +29,7 @@ class HomeComponent extends Component {
                   <nav class="site-navigation text-right" role="navigation">
                     <div class="container">
 
-                      <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3 "><a href="#"
+                      <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3 "><a href="#demo"
                         class="site-menu-toggle js-menu-toggle text-black">
                         <span class="icon-menu h3"></span>
                       </a></div>
@@ -64,11 +59,11 @@ class HomeComponent extends Component {
                 manipulate them using an interactive UI.</p>
                 <div class="two-btn">
                   <p><a href="#service" class="btn btn-white px-4 py-3  btn1">Learn More</a></p>
-                  <p><a href="#" class="btn btn-white px-4 py-3">Register Now</a></p>
+                  <p><a href="#demo" class="btn btn-white px-4 py-3">Register Now</a></p>
                 </div>
               </div>
               <div class="col-md-5 offset-1">
-                <img src={studentimg} alt="Image" class="img-fluid" />
+                <img src={studentimg} class="img-fluid" alt="studentimg" />
               </div>
             </div>
           </div>
@@ -135,7 +130,7 @@ class HomeComponent extends Component {
                 visualize and export (Image, PDF, other types if possible) OGs.</p>
               </div>
               <div class="owl-carousel slide-one-item col-md-6">
-                <img src={photo} alt="Image" class="img-fluid" />
+                <img src={photo} class="img-fluid" alt="Service" />
               </div>
             </div>
           </div>
@@ -248,10 +243,10 @@ class HomeComponent extends Component {
               <div class="row text-center">
                 <div class="col-md-12">
                   <div class="mb-4">
-                    <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-                    <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-                    <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-                    <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+                    <a href="#demo" class="pl-0 pr-3"><span class="icon-facebook"><FacebookIcon /></span></a>
+                    <a href="#demo" class="pl-3 pr-3"><span class="icon-twitter"><TwitterIcon /></span></a>
+                    <a href="#demo" class="pl-3 pr-3"><span class="icon-instagram"><InstagramIcon /></span></a>
+                    <a href="#demo" class="pl-3 pr-3"><span class="icon-linkedin"><LinkedInIcon /></span></a>
                   </div>
                   <p>
                     Copyright &copy;

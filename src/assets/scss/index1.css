@@ -1506,8 +1506,9 @@ svg.MuiSvgIcon-root.services-icon {
   margin-top: 27px;
   margin-bottom: 25px;
   color: #fff !important;
-  border: 0px !important;
+  border: none !important;
   cursor: pointer;
+  width: 545px;
 }
 h5.my-sub-text {
   font-size: 14px;

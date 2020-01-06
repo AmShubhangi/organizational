@@ -13,9 +13,6 @@ import ZoomOutIcon from '@material-ui/icons/ZoomOut';
 import ZoomInIcon from '@material-ui/icons/ZoomIn';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import RotateLeftIcon from '@material-ui/icons/RotateLeft';
-import _ from 'lodash';
-import domtoimage from 'dom-to-image';
-import { saveAs } from 'file-saver';
 import loader from '../../assets/images/25.gif';
 
 class UserList extends React.Component {
