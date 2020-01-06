@@ -23,7 +23,7 @@ class HomeComponent extends Component {
             <div className="container">
               <div className="row align-items-center">
                 <div className="col-6 col-lg-3">
-                  <h1 className="my-0 site-logo"><a href="index.html">WSOne OGs</a></h1>
+                  <h1 className="my-0 site-logo"><a href="#">WSOne OGs</a></h1>
                 </div>
                 <div className="col-6 col-lg-9">
                   <nav className="site-navigation text-right" role="navigation">

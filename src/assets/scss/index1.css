@@ -80,7 +80,7 @@ header.MuiPaper-root.MuiAppBar-root.MuiAppBar-positionStatic.home-bg-color.MuiAp
 p.no-margin {
   margin-bottom: 0px;
   font-size: 10px;
-  font-weight: 500;
+  font-weight: 700;
   color: #287cfa;
 }
 h4.parent-size {
@@ -88,6 +88,7 @@ h4.parent-size {
   word-wrap: break-word;
   margin-bottom: 0px;
   width: 100px;
+  font-weight: 700;
   color: white;
 }
 .underline {
@@ -355,6 +356,10 @@ h6 {
   color: #fff;
 }
 
+.MuiButton-label {
+  font-weight: 700;
+}
+
 .btn.btn-white {
   background: #fff;
   border: 2px solid transparent;
@@ -365,7 +370,8 @@ h6 {
   border: 2px solid #fff;
 }
 .btn.btn-outline-primary,
-.btn-primary:not(:disabled):not(.disabled):active,.btn-primary:focus {
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:focus {
   color: #1c63fb;
   border-color: #1c63fb !important;
   background-color: transparent !important;
@@ -571,6 +577,7 @@ h6 {
   .site-navbar .site-navigation .site-menu > li > a {
     padding: 20px 10px;
     color: #257cfa;
+    font-weight: 600;
     font-size: 16px;
     text-decoration: none !important;
   }
@@ -1540,7 +1547,7 @@ a.reg-text-color {
   font-size: 13px;
   margin-left: 4px;
   color: black;
-  font-weight: 500;
+  font-weight: 700;
 }
 a:hover {
   color: #277cfa;
