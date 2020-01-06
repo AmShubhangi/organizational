@@ -16,6 +16,7 @@ import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 import _ from 'lodash';
 import domtoimage from 'dom-to-image';
 import { saveAs } from 'file-saver';
+import loader from '../../assets/images/25.gif';
 
 class UserList extends React.Component {
   constructor() {
@@ -113,6 +114,7 @@ class UserList extends React.Component {
                   </div>
                   <TransformComponent>
                     <div id="divToPrint" className="mt4">
+                      {this.state.isLoading ? <img src={loader} /> : ''}
                       <OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} />
                     </div>
                   </TransformComponent>
