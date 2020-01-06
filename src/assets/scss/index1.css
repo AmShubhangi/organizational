@@ -574,6 +574,9 @@ h6 {
     display: inline-block;
     padding: 10px 5px;
   }
+  h2.my-0.site-logo {
+    color: white;
+  }
   .site-navbar .site-navigation .site-menu > li > a {
     padding: 20px 10px;
     color: #257cfa;
