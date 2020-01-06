@@ -208,15 +208,23 @@ class HomeComponent extends Component {
                     <div class="col-md-12">
                       <h3 class="footer-heading mb-4">Navigation</h3>
                     </div>
-                    <div class="col-md-6 col-lg-6">
-                      <ul class="list-unstyled">
-                        <li><a href="#home-section" class="nav-link">Home</a></li>
-                        <li><a href="#service" class="nav-link">service</a></li>
-                        <li><a href="#work" class="nav-link">How it works?</a></li>
-                        <li><a href="#Statistics" class="nav-link">Statistics</a></li>
-                        <li><a href="#service" class="nav-link">Contact</a></li>
-                        <li><a href="/login" class="nav-link">Login</a></li>
+                    <div class="col-md-12">
+
+                      <ul class="list-unstyled row">
+                        <div class="col-md-4">
+                          <li><a href="#home-section" class="nav-link">Home</a></li>
+                          <li><a href="#service" class="nav-link">service</a></li>
+                        </div>
+                        <div class="col-md-4">
+                          <li><a href="#work" class="nav-link">How it works?</a></li>
+                          <li><a href="#Statistics" class="nav-link">Statistics</a></li>
+                        </div>
+                        <div class="col-md-4">
+                          <li><a href="#service" class="nav-link">Contact</a></li>
+                          <li><a href="/login" class="nav-link">Login</a></li>
+                        </div>
                       </ul>
+
                     </div>
 
                   </div>
@@ -237,7 +245,7 @@ class HomeComponent extends Component {
                 </div>
 
               </div>
-              <div class="row pt-5 mt-5 text-center">
+              <div class="row text-center">
                 <div class="col-md-12">
                   <div class="mb-4">
                     <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
