@@ -365,7 +365,8 @@ h6 {
   border: 2px solid #fff;
 }
 .btn.btn-outline-primary,
-.btn-primary:not(:disabled):not(.disabled):active,.btn-primary:focus {
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:focus {
   color: #1c63fb;
   border-color: #1c63fb !important;
   background-color: transparent !important;
@@ -568,11 +569,25 @@ h6 {
     display: inline-block;
     padding: 10px 5px;
   }
-  .site-navbar .site-navigation .site-menu > li > a {
-    padding: 20px 10px;
+  #navbar-Collapse > ul > li > a {
+    padding: 10px;
     color: #257cfa;
-    font-size: 16px;
+    font-size: 18px;
     text-decoration: none !important;
+    font-weight: 900;
+  }
+
+  @media screen and (max-width: 768px) {
+    #navbar-Collapse > ul > li > a {
+      padding: 10px;
+      color: #257cfa !important;
+      font-size: 18px;
+      text-decoration: none !important;
+      font-weight: 900 !important;
+    }
+  }
+  .collapse {
+    transition: all 1s ease !important;
   }
   .site-navbar .site-navigation .site-menu > li > a:hover {
     color: #8ba0bd;
@@ -1571,7 +1586,9 @@ a:hover {
   background: #277cfa !important;
 }
 .img-fluid {
-  max-width: 500px;
+  width: 100%;
+  height: auto;
+  min-width: 400px;
 }
 
 /* 06-01-2020 */
