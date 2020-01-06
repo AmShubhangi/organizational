@@ -12,48 +12,50 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
-
+ 
 class HomeComponent extends Component {
+
+  constructor(props) {
+    super(props);
+    this.toggleNavbar = this.toggleNavbar.bind(this);
+    this.state = {
+      collapsed: true,
+    };
+  }
+  toggleNavbar() {
+    this.setState({
+      collapsed: !this.state.collapsed,
+    });
+  }
   render() {
+    const collapsed = this.state.collapsed;
+    const classOne = collapsed ? 'collapse navbar-collapse collapsed ' : 'collapse navbar-collapse show  ';
+    const classTwo = collapsed ? 'navbar-toggler navbar-toggler-right  ' : 'navbar-toggler navbar-toggler-right';
     return (
       <div>
-        <div className="site-navbar-wrap p-0">
-
-          <div className="site-navbar site-navbar-target js-sticky-header">
-            <div className="container">
-              <div className="row align-items-center">
-                <div className="col-6 col-lg-3">
-                  <h1 className="my-0 site-logo"><a href="index.html">WSOne OGs</a></h1>
-                </div>
-                <div className="col-6 col-lg-9">
-                  <nav className="site-navigation text-right" role="navigation">
-                    <div className="container">
-
-                      <div className="d-inline-block d-lg-none ml-md-0 mr-auto py-3 "><a href="#demo"
-                        className="site-menu-toggle js-menu-toggle text-black">
-                        <span className="icon-menu h3"></span>
-                      </a></div>
-
-                      <ul className="site-menu main-menu js-clone-nav d-none d-lg-block">
-                        <li><a href="#home" className="nav-link">Home</a></li>
-                        <li><a href="#service" className="nav-link">Service</a></li>
-                        <li><a href="#work" className="nav-link">How it works?</a></li>
-                        <li><a href="#Statistics" className="nav-link">Statistics</a></li>
-                        <li><a href="#home-section" className="nav-link">Contact</a></li>
-                        <li><a href="/login" className="nav-link">Login</a></li>
-                      </ul>
-                    </div>
-                  </nav>
-                </div>
-              </div>
+        <nav className="navbar  navbar-expand-lg navbar-light bg-light">
+          <div className="container">
+            <h2 className=""><a className="site-logo" href="index.html">WSOne OGs</a></h2>
+            <button onClick={this.toggleNavbar} className={`${classTwo}`} type="button" data-toggle="collapse" data-target="#navbar-Collapse" aria-controls="navbar-Collapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon" />
+            </button>
+            <div className={`${classOne}`} id="navbar-Collapse">
+              <ul className="navbar-nav ml-auto "> 
+                <li><a href="#home-section" className="nav-link  ">Home</a></li>
+                <li><a href="#service" className="nav-link  ">Service</a></li>
+                <li><a href="#work" className="nav-link  ">How it works?</a></li>
+                <li><a href="#Statistics" className="nav-link  ">Statistics</a></li>
+                <li><a href="#home-section" className="nav-link  ">Contact</a></li>
+                <li><a href="/login" className="nav-link  ">Login</a></li>
+              </ul>
             </div>
           </div>
-        </div>
-
+        </nav> 
+        
         <div className="home padding-top-bottom" id="home">
           <div className="container pb-5">
             <div className="row">
-              <div className="col-md-5 mb-5">
+              <div className="col-md-5 col-sm-12 col-12 mb-5">
                 <h1 className="text-white serif text-uppercase mb-4">What is OG-Tool?</h1>
                 <p className="text-white mb-5">OG tool is a simple Workspace One tool to visualize organization groups and
                 manipulate them using an interactive UI.</p>
@@ -62,7 +64,7 @@ class HomeComponent extends Component {
                   <p><a href="#demo" className="btn btn-white px-4 py-3">Register Now</a></p>
                 </div>
               </div>
-              <div className="col-md-5 offset-1">
+              <div className="col-md-7 col-sm-12 col-12">
                 <img src={studentimg} className="img-fluid" alt="studentimg" />
               </div>
             </div>

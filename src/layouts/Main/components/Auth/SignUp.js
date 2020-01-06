@@ -99,8 +99,7 @@ class SignUp extends React.Component {
                                     <div className="login">
                                         <Button
                                             type="submit"
-                                            className="btn btn-primary btn-lg btn-block"
-                                        >
+                                            className="btn btn-primary btn-lg btn-block">
                                             {
                                                 (submitted && 'Your form is submitted!')
                                                 || (!submitted && 'Request')
