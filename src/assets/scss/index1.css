@@ -1416,7 +1416,10 @@ h6 {
   }
 
   a.nav-link {
-    padding: 0 !important;
+    padding: 20px 10px;
+  }
+  a.footer-nav-link {
+    padding: 0;
   }
 
   .author > div {
