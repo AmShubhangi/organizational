@@ -13,6 +13,7 @@ import ZoomOutIcon from '@material-ui/icons/ZoomOut';
 import ZoomInIcon from '@material-ui/icons/ZoomIn';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import RotateLeftIcon from '@material-ui/icons/RotateLeft';
+import loader from '../../assets/images/25.gif';
 
 class UserList extends React.Component {
   constructor() {
@@ -110,6 +111,7 @@ class UserList extends React.Component {
                   </div>
                   <TransformComponent>
                     <div id="divToPrint" className="mt4">
+                      {this.state.isLoading ? <img src={loader} /> : ''}
                       <OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} />
                     </div>
                   </TransformComponent>

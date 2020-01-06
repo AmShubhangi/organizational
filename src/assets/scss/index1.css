@@ -1115,7 +1115,7 @@ h6 {
   }
   button.MuiButtonBase-root.MuiButton-root.MuiButton-outlined.save-design.MuiButton-outlinedPrimary,
   .save-design {
-    background: #287cfa;
+    background: #287cfa !important;
     color: white;
     border: #287cfa;
   }
@@ -1505,8 +1505,9 @@ svg.MuiSvgIcon-root.services-icon {
   margin-top: 27px;
   margin-bottom: 25px;
   color: #fff !important;
-  border: 0px !important;
+  border: none !important;
   cursor: pointer;
+  width: 545px;
 }
 h5.my-sub-text {
   font-size: 14px;
@@ -1564,3 +1565,4 @@ span.address {
 ul.list-unstyled.row {
   white-space: nowrap;
 }
+
