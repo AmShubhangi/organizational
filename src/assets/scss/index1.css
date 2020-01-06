@@ -1566,3 +1566,9 @@ ul.list-unstyled.row {
   white-space: nowrap;
 }
 
+.imagedownload
+{
+  text-transform: capitalize !important; 
+}
+
+
