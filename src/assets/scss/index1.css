@@ -130,13 +130,13 @@ h4.parent-size {
 .initechNode {
   border: solid 1px #287cfa;
   border-radius: 3px;
-  width: 62px;
+  width: 65px;
   display: inline-block;
   margin: 0px 0px 0px 6px;
 }
 
 .initechNode-info {
-  padding: 1px;
+  padding: 3px;
   text-align: left;
 }
 .my-donwload {
