@@ -1415,6 +1415,10 @@ h6 {
     }
   }
 
+  a.nav-link {
+    padding: 0 !important;
+  }
+
   .author > div {
     width: 50%;
     padding: 2rem;
