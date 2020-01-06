@@ -1115,7 +1115,7 @@ h6 {
   }
   button.MuiButtonBase-root.MuiButton-root.MuiButton-outlined.save-design.MuiButton-outlinedPrimary,
   .save-design {
-    background: #287cfa;
+    background: #287cfa !important;
     color: white;
     border: #287cfa;
   }
