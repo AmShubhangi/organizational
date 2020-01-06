@@ -35,12 +35,12 @@ class HomeComponent extends Component {
                       </a></div>
 
                       <ul className="site-menu main-menu js-clone-nav d-none d-lg-block">
-                        <li><a href="#home" className="nav-link">Home</a></li>
-                        <li><a href="#service" className="nav-link">Service</a></li>
-                        <li><a href="#work" className="nav-link">How it works?</a></li>
-                        <li><a href="#Statistics" className="nav-link">Statistics</a></li>
-                        <li><a href="#home-section" className="nav-link">Contact</a></li>
-                        <li><a href="/login" className="nav-link">Login</a></li>
+                        <li><a href="#home" className="header-nav-link">Home</a></li>
+                        <li><a href="#service" className="header-nav-link">Service</a></li>
+                        <li><a href="#work" className="header-nav-link">How it works?</a></li>
+                        <li><a href="#Statistics" className="header-nav-link">Statistics</a></li>
+                        <li><a href="#home-section" className="header-nav-link">Contact</a></li>
+                        <li><a href="/login" className="header-nav-link">Login</a></li>
                       </ul>
                     </div>
                   </nav>

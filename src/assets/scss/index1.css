@@ -1420,8 +1420,8 @@ h6 {
     }
   }
 
-  a.nav-link {
-    padding: 20px 10px;
+  .nav-link{
+    padding: 0 !important;
   }
 
   .btn.btn-primary:hover,
