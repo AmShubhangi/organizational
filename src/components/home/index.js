@@ -19,7 +19,7 @@ class HomeComponent extends Component {
       <div>
         <div className="site-navbar-wrap p-0">
 
-          <div className="site-navbar site-navbar-target js-sticky-footer">
+          <div className="site-navbar site-navbar-target js-sticky-header">
             <div className="container">
               <div className="row align-items-center">
                 <div className="col-6 col-lg-3">
@@ -35,7 +35,7 @@ class HomeComponent extends Component {
                       </a></div>
 
                       <ul className="site-menu main-menu js-clone-nav d-none d-lg-block">
-                        <li><a href="#home-section" className="nav-link">Home</a></li>
+                        <li><a href="#home" className="nav-link">Home</a></li>
                         <li><a href="#service" className="nav-link">Service</a></li>
                         <li><a href="#work" className="nav-link">How it works?</a></li>
                         <li><a href="#Statistics" className="nav-link">Statistics</a></li>
@@ -50,7 +50,7 @@ class HomeComponent extends Component {
           </div>
         </div>
 
-        <div className="home-section padding-top-bottom">
+        <div className="home padding-top-bottom" id="home">
           <div className="container pb-5">
             <div className="row">
               <div className="col-md-5 mb-5">
@@ -207,16 +207,16 @@ class HomeComponent extends Component {
 
                       <ul className="list-unstyled row">
                         <div className="col-md-4">
-                          <li><a href="#home-section" className="footer-nav-link">Home</a></li>
-                          <li><a href="#service" className="footer-nav-link">service</a></li>
+                          <li><a href="#home" className="nav-link">Home</a></li>
+                          <li><a href="#service" className="nav-link">service</a></li>
                         </div>
                         <div className="col-md-4">
-                          <li><a href="#work" className="footer-nav-link">How it works?</a></li>
-                          <li><a href="#Statistics" className="footer-nav-link">Statistics</a></li>
+                          <li><a href="#work" className="nav-link">How it works?</a></li>
+                          <li><a href="#Statistics" className="nav-link">Statistics</a></li>
                         </div>
                         <div className="col-md-4">
-                          <li><a href="#service" className="footer-nav-link">Contact</a></li>
-                          <li><a href="/login" className="footer-nav-link">Login</a></li>
+                          <li><a href="#service" className="nav-link">Contact</a></li>
+                          <li><a href="/login" className="nav-link">Login</a></li>
                         </div>
                       </ul>
 
