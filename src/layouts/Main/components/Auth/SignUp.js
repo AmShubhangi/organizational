@@ -96,12 +96,11 @@ class SignUp extends React.Component {
                                     />
                                 </CardContent>
                                 <CardActions className="my-parent-button">
-                                    <div style={{ margin: '10px auto' }}>
+                                    <div className="login">
                                         <Button
-                                            color="primary"
-                                            variant="outlined"
                                             type="submit"
-                                            className="my-sign-in-button">
+                                            className="btn btn-primary btn-lg btn-block"
+                                        >
                                             {
                                                 (submitted && 'Your form is submitted!')
                                                 || (!submitted && 'Request')

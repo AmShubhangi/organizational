@@ -354,13 +354,7 @@ h6 {
 .btn.btn-primary {
   color: #fff;
 }
-.btn.btn-primary:hover,
-.btn.btn-primary:focus,
-.btn.btn-primary:active {
-  border-color: #1c63fb !important;
-  color: #1c63fb !important;
-  background-color: transparent !important;
-}
+
 .btn.btn-white {
   background: #fff;
   border: 2px solid transparent;
@@ -370,7 +364,8 @@ h6 {
   color: #fff;
   border: 2px solid #fff;
 }
-.btn.btn-outline-primary {
+.btn.btn-outline-primary,
+.btn-primary:not(:disabled):not(.disabled):active,.btn-primary:focus {
   color: #1c63fb;
   border-color: #1c63fb !important;
   background-color: transparent !important;
@@ -1417,6 +1412,17 @@ h6 {
 
   a.nav-link {
     padding: 20px 10px;
+  }
+
+  .btn.btn-primary:hover,
+  .btn.btn-primary:focus,
+  .btn.btn-primary:active {
+    color: white !important;
+  }
+
+  .login {
+    margin: 0 auto;
+    width: 100%;
   }
   a.footer-nav-link {
     padding: 0;

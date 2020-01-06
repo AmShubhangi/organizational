@@ -55,50 +55,48 @@ class Login extends React.Component {
               md={5}
               xs={12}>
               <Card>
-                  <div className="my-top-header-login">
-                    <h3 className="my-top-name-login">Login</h3>
-                    <h5 className="my-sub-text">Sign in to your account to continue.</h5>
+                <div className="my-top-header-login">
+                  <h3 className="my-top-name-login">Login</h3>
+                  <h5 className="my-sub-text">Sign in to your account to continue.</h5>
+                </div>
+                <CardContent>
+                  <TextValidator
+                    fullWidth
+                    label="Email"
+                    name="email"
+                    onChange={this.handleChange}
+                    type="text"
+                    value={formData.email}
+                    variant="outlined"
+                    validators={['required', 'isEmail']}
+                    errorMessages={['This field is required', 'email is not valid']}
+                  />
+                  <TextValidator
+                    fullWidth
+                    label="Password"
+                    name="password"
+                    onChange={this.handleChange}
+                    style={{ marginTop: '1rem' }}
+                    type="password"
+                    value={formData.password}
+                    variant="outlined"
+                    validators={['required']}
+                    errorMessages={['This field is required']}
+                  />
+                </CardContent>
+                <CardActions className="my-parent-button" >
+                  <div className="login">
+                    <Button
+                      type="submit"
+                      className="btn btn-primary btn-lg btn-block"
+                    >
+                      {submitted ? <Redirect to='/ws1-setting' /> : 'Log in'}
+                    </Button>
                   </div>
-                  <CardContent>
-                    <TextValidator
-                      fullWidth
-                      label="Email"
-                      name="email"
-                      onChange={this.handleChange}
-                      type="text"
-                      value={formData.email}
-                      variant="outlined"
-                      validators={['required', 'isEmail']}
-                      errorMessages={['This field is required', 'email is not valid']}
-                    />
-                    <TextValidator
-                      fullWidth
-                      label="Password"
-                      name="password"
-                      onChange={this.handleChange}
-                      style={{ marginTop: '1rem' }}
-                      type="password"
-                      value={formData.password}
-                      variant="outlined"
-                      validators={['required']}
-                      errorMessages={['This field is required']}
-                    />
-                  </CardContent>
-                  <CardActions className="my-parent-button" >
-                    <div style={{ margin: '0 auto' }}>
-                      <Button
-                        color="primary"
-                        variant="outlined"
-                        type="submit"
-                        className="my-sign-in-button"
-                      >
-                        {submitted ? <Redirect to='/ws1-setting' /> : 'Log in'}
-                      </Button>
-                    </div>
-                  </CardActions>
-                  <div className="newuser">
-                    <p className="reg-text text-center">Don't have an account?</p> <Link to='/register' className="reg-text-color"> Register Now</Link>
-                  </div>
+                </CardActions>
+                <div className="newuser">
+                  <p className="reg-text text-center">Don't have an account?</p> <Link to='/register' className="reg-text-color"> Register Now</Link>
+                </div>
               </Card>
             </Grid>
             <Grid
