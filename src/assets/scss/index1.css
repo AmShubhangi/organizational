@@ -175,7 +175,7 @@ h4.parent-size {
   height: auto;
 }
 .full-width {
-  margin: 20px;
+  /* margin: 20px; */
   background: white;
 }
 
@@ -196,6 +196,7 @@ div#initechOrgChart {
 }
 .react-transform-component.TransformComponent-module_container__3NwNd {
   padding: 20px !important;
+  margin-top: 100px;
 }
 .service-border {
   padding: 20px;
@@ -1564,3 +1565,4 @@ span.address {
 ul.list-unstyled.row {
   white-space: nowrap;
 }
+ 

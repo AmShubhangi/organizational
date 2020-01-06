@@ -114,7 +114,7 @@ class UserList extends React.Component {
                   </div>
                   <TransformComponent>
                     <div id="divToPrint" className="mt4">
-                      {this.state.isLoading ? <img src={loader} /> : ''}
+                      {this.state.isLoading ? <img style={{marginLeft:'600px'}} src={loader} /> : ''}
                       <OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} />
                     </div>
                   </TransformComponent>
