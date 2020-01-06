@@ -62,7 +62,7 @@ class Login extends React.Component {
                   <CardContent>
                     <TextValidator
                       fullWidth
-                      label="Username"
+                      label="Email"
                       name="email"
                       onChange={this.handleChange}
                       type="text"

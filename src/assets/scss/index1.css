@@ -445,7 +445,7 @@ h6 {
 
   .site-footer {
     padding-top: 7rem;
-    padding-bottom: 4rem;
+    padding-bottom: 0rem;
     background: #333333;
   }
   .site-footer p {
@@ -1554,4 +1554,13 @@ a:hover {
 }
 .img-fluid {
   max-width: 500px;
+}
+
+/* 06-01-2020 */
+span.address {
+  display: block;
+}
+
+ul.list-unstyled.row {
+  white-space: nowrap;
 }
