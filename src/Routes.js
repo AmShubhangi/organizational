@@ -12,7 +12,7 @@ import {
   NotFound as NotFoundView
 } from './views';
 import Login from "../src/layouts/Main/components/Auth/Login";
-import SignUp from "../src/layouts/Main/components/Auth/Sign Up";
+import SignUp from "./layouts/Main/components/Auth/SignUp";
 import HomeComponent from 'components/home';
 
 const Routes = () => {

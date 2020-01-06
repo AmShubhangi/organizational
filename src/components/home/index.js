@@ -51,7 +51,8 @@ class HomeComponent extends Component {
             </div>
           </div>
         </nav> 
-        <div className="home-section padding-top-bottom">
+        
+        <div className="home padding-top-bottom" id="home">
           <div className="container pb-5">
             <div className="row">
               <div className="col-md-5 col-sm-12 col-12 mb-5">
@@ -208,16 +209,16 @@ class HomeComponent extends Component {
 
                       <ul className="list-unstyled row">
                         <div className="col-md-4">
-                          <li><a href="#home-section" className="footer-nav-link">Home</a></li>
-                          <li><a href="#service" className="footer-nav-link">service</a></li>
+                          <li><a href="#home" className="nav-link">Home</a></li>
+                          <li><a href="#service" className="nav-link">service</a></li>
                         </div>
                         <div className="col-md-4">
-                          <li><a href="#work" className="footer-nav-link">How it works?</a></li>
-                          <li><a href="#Statistics" className="footer-nav-link">Statistics</a></li>
+                          <li><a href="#work" className="nav-link">How it works?</a></li>
+                          <li><a href="#Statistics" className="nav-link">Statistics</a></li>
                         </div>
                         <div className="col-md-4">
-                          <li><a href="#service" className="footer-nav-link">Contact</a></li>
-                          <li><a href="/login" className="footer-nav-link">Login</a></li>
+                          <li><a href="#service" className="nav-link">Contact</a></li>
+                          <li><a href="/login" className="nav-link">Login</a></li>
                         </div>
                       </ul>
 

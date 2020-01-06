@@ -80,7 +80,7 @@ header.MuiPaper-root.MuiAppBar-root.MuiAppBar-positionStatic.home-bg-color.MuiAp
 p.no-margin {
   margin-bottom: 0px;
   font-size: 10px;
-  font-weight: 500;
+  font-weight: 700;
   color: #287cfa;
 }
 h4.parent-size {
@@ -88,6 +88,7 @@ h4.parent-size {
   word-wrap: break-word;
   margin-bottom: 0px;
   width: 100px;
+  font-weight: 700;
   color: white;
 }
 .underline {
@@ -130,13 +131,13 @@ h4.parent-size {
 .initechNode {
   border: solid 1px #287cfa;
   border-radius: 3px;
-  width: 62px;
+  width: 65px;
   display: inline-block;
   margin: 0px 0px 0px 6px;
 }
 
 .initechNode-info {
-  padding: 1px;
+  padding: 3px;
   text-align: left;
 }
 .my-donwload {
@@ -355,6 +356,10 @@ h6 {
   color: #fff;
 }
 
+.MuiButton-label {
+  font-weight: 700;
+}
+
 .btn.btn-white {
   background: #fff;
   border: 2px solid transparent;
@@ -560,7 +565,7 @@ h6 {
   .site-navbar .site-navigation .site-menu {
     margin-bottom: 0;
   }
-  .site-navbar .site-navigation .site-menu a {
+  /* .site-navbar .site-navigation .site-menu a {
     text-decoration: none !important;
     display: inline-block;
     font-weight: 500;
@@ -569,12 +574,21 @@ h6 {
     display: inline-block;
     padding: 10px 5px;
   }
-  #navbar-Collapse > ul > li > a {
-    padding: 10px;
+  
+  .site-navbar .site-navigation .site-menu > li > a {
+    padding: 20px 10px;
     color: #257cfa;
-    font-size: 18px;
+    font-weight: 600;
+    font-size: 16px;
     text-decoration: none !important;
     font-weight: 900;
+  } */
+  #navbar-Collapse > ul > li > a {
+    padding: 10px !important;
+    color: #257cfa !important;
+    font-size: 18px;
+    text-decoration: none !important;
+    font-weight: 900 !important;
   }
 
   @media screen and (max-width: 768px) {
@@ -1425,8 +1439,8 @@ h6 {
     }
   }
 
-  a.nav-link {
-    padding: 20px 10px;
+  .nav-link{
+    padding: 0 !important;
   }
 
   .btn.btn-primary:hover,
@@ -1492,7 +1506,7 @@ a.btn.btn-white.px-4.py-3.btn1 {
   margin-right: 15px;
 }
 
-.home-section {
+.home {
   background-color: #247cfa;
 }
 
@@ -1555,7 +1569,7 @@ a.reg-text-color {
   font-size: 13px;
   margin-left: 4px;
   color: black;
-  font-weight: 500;
+  font-weight: 700;
 }
 a:hover {
   color: #277cfa;
