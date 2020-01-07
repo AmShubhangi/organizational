@@ -52,6 +52,7 @@ class UserList extends React.Component {
 
   downloadImage() {
     this.setState({ isimageLoading: true });
+
     htmlToImage.toPng(document.getElementById('divToPrint'), { quality: 0.55 })
       .then((dataUrl) => {
         var link = document.createElement('a');
@@ -63,14 +64,14 @@ class UserList extends React.Component {
   }
 
   printDocument() {
-    window.scrollBy(-100000, -1000);
+    window.scroll(0, 150);
     setTimeout(() => {
       this.setState({ isLoading: true })
       const input = document.getElementById('divToPrint');
       html2canvas(input)
         .then((canvas) => {
           const imgData = canvas.toDataURL('image/png');
-          const pdf = new jsPDF('l', 'mm', [75000, 1500]);
+          const pdf = new jsPDF('l', 'mm', [75000, 2500], true);
           pdf.setTextColor(150);
           pdf.addImage(imgData, 'PNG', 0, 0);
           pdf.text('John Doe', 10, 10);
