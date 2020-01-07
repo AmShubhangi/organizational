@@ -14,7 +14,6 @@ import ZoomInIcon from '@material-ui/icons/ZoomIn';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 import Loading from 'react-fullscreen-loading';
-import colorpicker from '/home/thinkpad/Documents/organizational/src/assets/images/colorpicker1.jpg';
 
 class UserList extends React.Component {
   constructor(props) {
@@ -23,6 +22,7 @@ class UserList extends React.Component {
     this.state = {
       isLoading: false,
       isimageLoading: false,
+      backgroundPicker: 'blue',
     }
     this.downloadImage = this.downloadImage.bind(this);
     this.getcolor = this.getcolor.bind(this);
@@ -50,7 +50,6 @@ class UserList extends React.Component {
     this.initechOrg = map[arry[0].Id.Value];
   }
 
-
   downloadImage() {
     this.setState({ isimageLoading: true });
     htmlToImage.toPng(document.getElementById('divToPrint'), { quality: 0.55 })
@@ -71,7 +70,7 @@ class UserList extends React.Component {
       html2canvas(input)
         .then((canvas) => {
           const imgData = canvas.toDataURL('image/png');
-          const pdf = new jsPDF('l', 'mm', [25000, 1500]);
+          const pdf = new jsPDF('l', 'mm', [75000, 1500]);
           pdf.setTextColor(150);
           pdf.addImage(imgData, 'PNG', 0, 0);
           pdf.text('John Doe', 10, 10);
@@ -84,18 +83,15 @@ class UserList extends React.Component {
   getcolor(event) {
     const div = document.getElementById(event.target.parentNode.id);
     div.style.backgroundColor = event.target.value;
-    console.log(div);
-    // document.getElementById(event.target.parentNode.id).style.backgroundColor = this.state.bgcolor;
+    // console.log(div);
   }
 
   render() {
-
     const MyNodeComponent = ({ node }) => {
       return (
         <div className="initechNode" >
-          <div className="parent-node" id={node.Name}>
+          <div className="parent-node" id={node.Id.Value}>
             <h4 className="parent-size">{node.Name}</h4>
-            <img src={colorpicker} className="color"></img>
             <input type="color" onChange={this.getcolor} className="colorpicker"></input>
           </div>
           <div className="initechNode-info">
