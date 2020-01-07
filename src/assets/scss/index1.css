@@ -134,7 +134,7 @@ h4.parent-size {
 .initechNode {
   border: solid 1px #287cfa;
   border-radius: 3px;
-  width: 65px;
+  width: 100px;
   display: inline-block;
   margin: 0px 0px 0px 6px;
 }
@@ -148,13 +148,12 @@ h4.parent-size {
 }
 
 .parent-node {
-  padding-bottom: 5px;
-  padding-top: 5px;
-  padding-left: 5px;
-  border-bottom: 1px solid #287cfa;
-  padding-right: 5px;
+
+  padding: 5px;
+  border-bottom: 1px solid #287cfa; 
   display: flex;
   background: #287cfa;
+  justify-content: space-between;
 }
 
 #initechOrgChart .orgNodeChildGroup .nodeGroupLineVerticalMiddle {
@@ -1628,5 +1627,26 @@ ul.list-unstyled.row {
 /* 07-01-2020 */
 
 img.color {
-  height: 12px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+#xxx{
+  background-image: url('../../assets/images/picker.png');
+  background-size: cover;
+  background-position: center center;
+  width: 10px;
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
 }
