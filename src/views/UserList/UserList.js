@@ -19,7 +19,6 @@ class UserList extends React.Component {
   constructor(props) {
     super(props);
     this.printDocument = this.printDocument.bind(this);
-
     this.state = {
       isLoading: false,
       isimageLoading: false
@@ -47,6 +46,8 @@ class UserList extends React.Component {
     }
     this.initechOrg = map[arry[0].Id.Value];
   }
+
+
   downloadImage() {
     this.setState({ isimageLoading: true });
     htmlToImage.toPng(document.getElementById('divToPrint'), { quality: 0.55 })
@@ -60,25 +61,28 @@ class UserList extends React.Component {
   }
 
   printDocument() {
-    this.setState({ isLoading: true })
-    const input = document.getElementById('divToPrint');
-    html2canvas(input)
-      .then((canvas) => {
-        const imgData = canvas.toDataURL('image/png');
-        const pdf = new jsPDF('l', 'mm', [25000, 1500]);
-        pdf.setTextColor(150);
-        pdf.addImage(imgData, 'PNG', 0, 0);
-        pdf.text('John Doe', 10, 10);
-        pdf.save("OG-Structure.pdf");
-        this.setState({ isLoading: false })
-      });
+    window.scrollBy(-100000, -1000);
+    setTimeout(() => {
+      this.setState({ isLoading: true })
+      const input = document.getElementById('divToPrint');
+      html2canvas(input)
+        .then((canvas) => {
+          const imgData = canvas.toDataURL('image/png');
+          const pdf = new jsPDF('l', 'mm', [25000, 1500]);
+          pdf.setTextColor(150);
+          pdf.addImage(imgData, 'PNG', 0, 0);
+          pdf.text('John Doe', 10, 10);
+          pdf.save("OG-Structure.pdf");
+          this.setState({ isLoading: false })
+        });
+    }, 2000)
   }
   render() {
     const MyNodeComponent = ({ node }) => {
       return (
         <div className="initechNode" >
           <div className="parent-node">
-            <h4 className="parent-size">{node.Name}</h4>
+            <h4 className="parent-size" >{node.Name}</h4>
           </div>
           <div className="initechNode-info">
             {/* <p className="no-margin">Identifier:{node.Id.Value}</p> */}
@@ -93,10 +97,9 @@ class UserList extends React.Component {
       <div className="root">
         <div className="content">
           <div className="full-width">
-            <div className="donwload-group">
+            <div className="donwload-group fixed-top">
               <ButtonGroup variant="text" id="download-button" color="primary" aria-label="text primary button group">
                 <Button onClick={this.printDocument} className="my-donwload" disabled={this.state.isLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <PictureAsPdfIcon />}&nbsp;{this.state.isLoading ? "Genreating PDF" : "Export PDF"}</Button>
-
                 <Button onClick={this.downloadImage} className="my-donwload" disabled={this.state.isimageLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <CloudDownloadIcon />}&nbsp;{this.state.isimageLoading ? "Genreating Image" : "Get Image"}</Button>
               </ButtonGroup>
               {this.state.isLoading ? <Loading loading background="rgb(220, 232, 225)" loaderColor="#3498db" /> : ' '}
@@ -107,7 +110,7 @@ class UserList extends React.Component {
                 <TransformWrapper>
                   {({ zoomIn, zoomOut, resetTransform }) => (
                     <React.Fragment>
-                      <div className="tools">
+                      <div className="tools fixed-top">
                         <ButtonGroup variant="text" className="zoom-in-out" color="primary" aria-label="text primary button group">
                           <Button onClick={zoomIn}><ZoomInIcon /></Button>
                           <Button onClick={zoomOut}><ZoomOutIcon /></Button>
@@ -115,7 +118,7 @@ class UserList extends React.Component {
                         </ButtonGroup>
                       </div>
                       <TransformComponent>
-                        <div id="divToPrint" className="mt4">
+                        <div id="divToPrint" className="mt4" >
                           <OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} />
                         </div>
                       </TransformComponent>

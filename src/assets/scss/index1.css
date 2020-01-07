@@ -189,6 +189,9 @@ div#initechOrgChart {
 }
 .donwload-group {
   padding: 20px;
+  background-color: white;
+  top:45px;
+  z-index: 1;
 }
 
 .MuiFormHelperText-contained {
@@ -568,7 +571,7 @@ h6 {
   .site-navbar .site-navigation .site-menu {
     margin-bottom: 0;
   }
-  .site-navbar .site-navigation .site-menu a {
+  /* .site-navbar .site-navigation .site-menu a {
     text-decoration: none !important;
     display: inline-block;
     font-weight: 500;
@@ -577,15 +580,34 @@ h6 {
     display: inline-block;
     padding: 10px 5px;
   }
-  h2.my-0.site-logo {
-    color: white;
-  }
+  
   .site-navbar .site-navigation .site-menu > li > a {
     padding: 20px 10px;
     color: #257cfa;
     font-weight: 600;
     font-size: 16px;
     text-decoration: none !important;
+    font-weight: 900;
+  } */
+  #navbar-Collapse > ul > li > a {
+    padding: 10px !important;
+    color: #257cfa !important;
+    font-size: 18px;
+    text-decoration: none !important;
+    font-weight: 900 !important;
+  }
+
+  @media screen and (max-width: 768px) {
+    #navbar-Collapse > ul > li > a {
+      padding: 10px;
+      color: #257cfa !important;
+      font-size: 18px;
+      text-decoration: none !important;
+      font-weight: 900 !important;
+    }
+  }
+  .collapse {
+    transition: all 1s ease !important;
   }
   .site-navbar .site-navigation .site-menu > li > a:hover {
     color: #8ba0bd;
@@ -1584,7 +1606,9 @@ a:hover {
   background: #277cfa !important;
 }
 .img-fluid {
-  max-width: 500px;
+  width: 100%;
+  height: auto;
+  min-width: 400px;
 }
 
 /* 06-01-2020 */
@@ -1594,4 +1618,10 @@ span.address {
 
 ul.list-unstyled.row {
   white-space: nowrap;
+}
+
+.tools.fixed-top {
+  top: 160px;
+  background: white;
+  z-index: 1;
 }
