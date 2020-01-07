@@ -51,9 +51,7 @@ class UserList extends React.Component {
       }
     }
     this.initechOrg = map[arry[0].Id.Value];
-  }
-
-
+  } 
 
   downloadImage() {
     this.setState({ isimageLoading: true });
@@ -75,7 +73,7 @@ class UserList extends React.Component {
       html2canvas(input)
         .then((canvas) => {
           const imgData = canvas.toDataURL('image/png');
-          const pdf = new jsPDF('l', 'mm', [25000, 1500]);
+          const pdf = new jsPDF('l', 'mm', [75000, 1500]);
           pdf.setTextColor(150);
           pdf.addImage(imgData, 'PNG', 0, 0);
           pdf.text('John Doe', 10, 10);
@@ -88,8 +86,7 @@ class UserList extends React.Component {
   getcolor(event) {
     const div = document.getElementById(event.target.parentNode.id);
     div.style.backgroundColor = event.target.value;
-    console.log(div);
-    // document.getElementById(event.target.parentNode.id).style.backgroundColor = this.state.bgcolor;
+    // console.log(div);
   }
  
   render() {
