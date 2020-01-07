@@ -1622,3 +1622,10 @@ ul.list-unstyled.row {
   background: white;
   z-index: 1;
 }
+
+
+/* 07-01-2020 */
+
+img.color {
+    height: 12px;
+}

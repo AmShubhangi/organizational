@@ -14,6 +14,7 @@ import ZoomInIcon from '@material-ui/icons/ZoomIn';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 import Loading from 'react-fullscreen-loading';
+import colorpicker from '/home/thinkpad/Documents/organizational/src/assets/images/colorpicker1.jpg';
 
 class UserList extends React.Component {
   constructor(props) {
@@ -21,9 +22,11 @@ class UserList extends React.Component {
     this.printDocument = this.printDocument.bind(this);
     this.state = {
       isLoading: false,
-      isimageLoading: false
+      isimageLoading: false,
     }
-    this.downloadImage = this.downloadImage.bind(this)
+    this.downloadImage = this.downloadImage.bind(this);
+    this.getcolor = this.getcolor.bind(this);
+
     this.initechOrg = '';
     var arry = require('../../API/clientData.json');
     var map = {};
@@ -77,12 +80,23 @@ class UserList extends React.Component {
         });
     }, 2000)
   }
+
+  getcolor(event) {
+    const div = document.getElementById(event.target.parentNode.id);
+    div.style.backgroundColor = event.target.value;
+    console.log(div);
+    // document.getElementById(event.target.parentNode.id).style.backgroundColor = this.state.bgcolor;
+  }
+
   render() {
+
     const MyNodeComponent = ({ node }) => {
       return (
         <div className="initechNode" >
-          <div className="parent-node">
-            <h4 className="parent-size" >{node.Name}</h4>
+          <div className="parent-node" id={node.Name}>
+            <h4 className="parent-size">{node.Name}</h4>
+            <img src={colorpicker} className="color"></img>
+            <input type="color" onChange={this.getcolor} className="colorpicker"></input>
           </div>
           <div className="initechNode-info">
             {/* <p className="no-margin">Identifier:{node.Id.Value}</p> */}
