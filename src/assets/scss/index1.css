@@ -134,7 +134,7 @@ h4.parent-size {
 .initechNode {
   border: solid 1px #287cfa;
   border-radius: 3px;
-  width: 100px;
+  width: 65px;
   display: inline-block;
   margin: 0px 0px 0px 6px;
 }
@@ -148,9 +148,8 @@ h4.parent-size {
 }
 
 .parent-node {
-
   padding: 5px;
-  border-bottom: 1px solid #287cfa; 
+  border-bottom: 1px solid #287cfa;
   display: flex;
   background: #287cfa;
   justify-content: space-between;
@@ -1641,8 +1640,8 @@ img.color {
   height: 1px;
   overflow: hidden;
 }
-#xxx{
-  background-image: url('../../assets/images/picker.png');
+#xxx {
+  background-image: url("../../assets/images/picker.png");
   background-size: cover;
   background-position: center center;
   width: 10px;
