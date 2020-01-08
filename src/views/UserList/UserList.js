@@ -14,7 +14,6 @@ import ZoomInIcon from '@material-ui/icons/ZoomIn';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 import Loading from 'react-fullscreen-loading';
-import colorpicker from '../../assets/images/picker.png';
 
 class UserList extends React.Component {
   constructor(props) {
@@ -51,7 +50,7 @@ class UserList extends React.Component {
       }
     }
     this.initechOrg = map[arry[0].Id.Value];
-  } 
+  }
 
   downloadImage() {
     this.setState({ isimageLoading: true });
@@ -78,7 +77,7 @@ class UserList extends React.Component {
           pdf.addImage(imgData, 'PNG', 0, 0);
           pdf.text('John Doe', 10, 10);
           pdf.save("OG-Structure.pdf");
-          this.setState({ isLoading: false })
+          this.setState({ isLoading: false });
         });
     }, 2000)
   }
@@ -86,16 +85,19 @@ class UserList extends React.Component {
   getcolor(event) {
     const div = document.getElementById(event.target.parentNode.id);
     div.style.backgroundColor = event.target.value;
-    // console.log(div);
+    const bgColor=div.style.backgroundColor;
+    this.setState({  color: bgColor });
   }
- 
+
   render() {
     const MyNodeComponent = ({ node }) => {
       return (
         <div className="initechNode" >
-          <div className="parent-node" id={node.Name}>
-            <h4 className="parent-size">{node.Name}</h4> 
-            <input type="color" id="xxx" className="btn btn-outline"  onChange={this.getcolor}></input>
+          <div className="parent-node"
+            id={node.Name}>
+            <h4 className="parent-size">{node.Name}</h4>
+            <input type="color" id="color-picker"
+              className="btn btn-outline" onChange={this.getcolor}></input>
           </div>
           <div className="initechNode-info">
             {/* <p className="no-margin">Identifier:{node.Id.Value}</p> */}
@@ -125,9 +127,9 @@ class UserList extends React.Component {
                     <React.Fragment>
                       <div className="tools fixed-top">
                         <ButtonGroup variant="text" className="zoom-in-out" color="primary" aria-label="text primary button group">
-                          <Button onClick={zoomIn}><ZoomInIcon /></Button>
-                          <Button onClick={zoomOut}><ZoomOutIcon /></Button>
-                          <Button onClick={resetTransform}><RotateLeftIcon /></Button>
+                          <Button className="my-donwload" onClick={zoomIn}><ZoomInIcon /></Button>
+                          <Button className="my-donwload" onClick={zoomOut}><ZoomOutIcon /></Button>
+                          <Button className="my-donwload" onClick={resetTransform}><RotateLeftIcon /></Button>
                         </ButtonGroup>
                       </div>
                       <TransformComponent>
