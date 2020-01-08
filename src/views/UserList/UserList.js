@@ -82,7 +82,7 @@ class UserList extends React.Component {
           pdf.save("OG-Structure.pdf");
           this.setState({ isLoading: false });
         });
-    }, 2000)
+    },100)
   }
 
   getcolor(event) {

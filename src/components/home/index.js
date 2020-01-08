@@ -240,9 +240,9 @@ class HomeComponent extends Component {
                   <div className="mb-5">
                     <h3 className="footer-heading mb-4">Quick Contact</h3>
                     <div className="Address">
-                      <span className="address">Phone:+33600000000</span>
-                      <span className="address">Email:ogwsone@gmail.com</span>
-                      <span className="address"> Address:7 Rue de Test, 75000 Paris</span>
+                      <span className="address"><span style={{color:'#b3b3b3'}} >Phone:</span> +33600000000</span>
+                      <span className="address"><span style={{color:'#b3b3b3'}} >Email:</span> ogwsone@gmail.com</span>
+                      <span className="address"><span style={{color:'#b3b3b3'}} >Address:</span> 7 Rue de Test, 75000 Paris</span>
                     </div>
                   </div>
                 </div>
