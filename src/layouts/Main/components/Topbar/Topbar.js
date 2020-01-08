@@ -8,10 +8,14 @@ import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import SettingsIcon from '@material-ui/icons/Settings';
 import AccountTreeIcon from '@material-ui/icons/AccountTree';
 import InputIcon from '@material-ui/icons/Input';
+import logo from '../../../../assets/images/home-logo.png';
+import color from '@material-ui/core/colors/lime';
+
 
 const useStyles = makeStyles(theme => ({
   root: {
-    boxShadow: 'none'
+    boxShadow: 'none',
+    color:'#257cfa'
   },
   flexGrow: {
     flexGrow: 1
@@ -37,7 +41,9 @@ const Topbar = props => {
     >
       <Toolbar>
         <RouterLink to="/">
-          <h2 className="my-0 site-logo text-white">WSOne OGs</h2>
+          <h2 className="my-0 site-logo text-white">
+            <img src={logo} width="150" height="35"></img>
+          </h2>
         </RouterLink>
         <div className={classes.flexGrow} />
         <div>

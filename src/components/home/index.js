@@ -12,7 +12,11 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
- 
+import logo from '../../assets/images/home-logo.png';
+
+
+
+
 class HomeComponent extends Component {
 
   constructor(props) {
@@ -34,13 +38,15 @@ class HomeComponent extends Component {
     return (
       <div>
         <nav className="navbar  navbar-expand-lg navbar-light bg-light">
-          <div className="container">
-            <h2 className=""><a className="site-logo" href="index.html">WSOne OGs</a></h2>
+          <div className="container"> 
+              <a className="site-logo" href="index.html">
+                <img src={logo} width="150" height="35"></img>
+              </a> 
             <button onClick={this.toggleNavbar} className={`${classTwo}`} type="button" data-toggle="collapse" data-target="#navbar-Collapse" aria-controls="navbar-Collapse" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon" />
             </button>
             <div className={`${classOne}`} id="navbar-Collapse">
-              <ul className="navbar-nav ml-auto "> 
+              <ul className="navbar-nav ml-auto ">
                 <li><a href="#home-section" className="nav-link  ">Home</a></li>
                 <li><a href="#service" className="nav-link  ">Service</a></li>
                 <li><a href="#work" className="nav-link  ">How it works?</a></li>
@@ -50,8 +56,8 @@ class HomeComponent extends Component {
               </ul>
             </div>
           </div>
-        </nav> 
-        
+        </nav>
+
         <div className="home padding-top-bottom" id="home">
           <div className="container pb-5">
             <div className="row">

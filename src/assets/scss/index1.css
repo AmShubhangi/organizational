@@ -145,6 +145,7 @@ h4.parent-size {
 }
 .my-donwload {
   text-transform: capitalize !important;
+  color: #287cfa !important;
 }
 
 .parent-node {
@@ -214,16 +215,16 @@ div#initechOrgChart {
   color: #35477d;
 }
 a.my-top-nave-links {
-  color: white;
+  color: #257cfa !important ;
   font-weight: 600;
   padding: 7px;
   text-decoration: none;
 }
 a.my-top-nave-links.is-active {
-  color: lightgrey;
+  color: #257cfa !important;
 }
 a.my-top-nave-links:hover {
-  color: lightgrey !important;
+  color: #257cfa !important;
 }
 
 /* 03-01-2020 */
@@ -1600,7 +1601,7 @@ a:hover {
   background: none !important;
 }
 .MuiAppBar-colorPrimary {
-  background: #277cfa !important;
+  background: #eee !important;
 }
 .img-fluid {
   width: 100%;
@@ -1640,7 +1641,7 @@ img.color {
   height: 1px;
   overflow: hidden;
 }
-#xxx {
+#color-picker {
   background-image: url("../../assets/images/picker.png");
   background-size: cover;
   background-position: center center;
