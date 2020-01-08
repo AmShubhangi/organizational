@@ -19,15 +19,13 @@ import colorpicker from '../../assets/images/picker.png';
 class UserList extends React.Component {
   constructor(props) {
     super(props);
+    this.downloadImage = this.downloadImage.bind(this);
     this.printDocument = this.printDocument.bind(this);
     this.state = {
       isLoading: false,
       isimageLoading: false,
       color: []
     }
-
-
-    this.downloadImage = this.downloadImage.bind(this);
     this.getcolor = this.getcolor.bind(this);
 
     this.initechOrg = '';
@@ -55,21 +53,23 @@ class UserList extends React.Component {
 
   downloadImage() {
     this.setState({ isimageLoading: true });
-
-    htmlToImage.toPng(document.getElementById('divToPrint'), { quality: 0.55 })
-      .then((dataUrl) => {
-        var link = document.createElement('a');
-        link.download = 'OG-Structure.png';
-        link.href = dataUrl;
-        link.click();
-        this.setState({ isimageLoading: false })
-      });
+    setTimeout(() => {
+      const input = document.getElementById('divToPrint');
+      htmlToImage.toPng(input, { quality: 0.55 })
+        .then((dataUrl) => {
+          var link = document.createElement('a');
+          link.download = 'OG-Structure.png';
+          link.href = dataUrl;
+          link.click();
+          this.setState({ isimageLoading: false })
+        });
+    }, 1000)
   }
 
   printDocument() {
     window.scroll(0, 150);
+    this.setState({ isLoading: true })
     setTimeout(() => {
-      this.setState({ isLoading: true })
       const input = document.getElementById('divToPrint');
       html2canvas(input)
         .then((canvas) => {
@@ -81,13 +81,12 @@ class UserList extends React.Component {
           pdf.save("OG-Structure.pdf");
           this.setState({ isLoading: false })
         });
-    }, 2000)
+    }, 500)
   }
 
   getcolor(event) {
     const div = document.getElementById(event.target.parentNode.id);
     div.style.backgroundColor = event.target.value;
-    // console.log(div);
   }
 
   render() {
@@ -114,9 +113,9 @@ class UserList extends React.Component {
             <div className="donwload-group fixed-top">
               <ButtonGroup variant="text" id="download-button" color="primary" aria-label="text primary button group">
                 <Button onClick={this.printDocument} className="my-donwload" disabled={this.state.isLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <PictureAsPdfIcon />}&nbsp;{this.state.isLoading ? "Genreating PDF" : "Export PDF"}</Button>
-                <Button onClick={this.downloadImage} className="my-donwload" disabled={this.state.isimageLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <CloudDownloadIcon />}&nbsp;{this.state.isimageLoading ? "Genreating Image" : "Get Image"}</Button>
+                <Button onClick={this.downloadImage} className="my-donwload" disabled={this.state.isimageLoading}>{this.state.isimageLoading ? <i class="fa fa-spinner fa-spin"></i> : <CloudDownloadIcon />}&nbsp;{this.state.isimageLoading ? "Genreating Image" : "Get Image"}</Button>
               </ButtonGroup>
-              {this.state.isLoading ? <Loading loading background="rgb(220, 232, 225)" loaderColor="#3498db" /> : ' '}
+              {this.state.isLoading ? <Loading loading background="rgb(220, 232, 225)" loaderColor="#3498db" loaderText="genert" /> : ' '}
               {this.state.isimageLoading ? <Loading loading background="rgb(220, 232, 225)" loaderColor="#3498db" /> : ' '}
             </div>
             <div className="mt4">
