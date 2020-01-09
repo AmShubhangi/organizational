@@ -15,6 +15,7 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 import LoadingOverlay from 'react-loading-overlay';
 
+
 class UserList extends React.Component {
   constructor(props) {
     super(props);
@@ -71,7 +72,7 @@ class UserList extends React.Component {
   }
 
   printDocument() {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     setTimeout(() => {
       const input = document.getElementById('divToPrint');
       this.setState({ isLoading: true })
@@ -98,8 +99,12 @@ class UserList extends React.Component {
   componentDidMount() {
     var elem = document.getElementById(this.initechOrg.Name);
     console.log(elem);
-    window.scrollTo(elem.offsetLeft - 700,0);
+    window.scrollTo(elem.offsetLeft - 700, 0);
   }
+
+
+
+
 
   render() {
     const MyNodeComponent = ({ node }) => {

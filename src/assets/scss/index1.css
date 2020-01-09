@@ -223,7 +223,7 @@ a.my-top-nave-links {
   text-decoration: none;
 }
 a.my-top-nave-links.is-active {
-  color:#257cfa !important !important;
+  color:#257cfa  !important;
 }
 a.my-top-nave-links:hover {
   color:#257cfa !important;
@@ -1678,6 +1678,10 @@ h3.title {
   transition: 0.3s all ease-in-out;
   position: relative;
   top: 0;
+}
+
+div#divToPrint {
+  cursor: zoom-in;
 }
 
 
