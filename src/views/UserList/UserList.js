@@ -13,7 +13,7 @@ import ZoomOutIcon from '@material-ui/icons/ZoomOut';
 import ZoomInIcon from '@material-ui/icons/ZoomIn';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import RotateLeftIcon from '@material-ui/icons/RotateLeft';
-import Loading from 'react-fullscreen-loading';
+import LoadingOverlay from 'react-loading-overlay';
 
 class UserList extends React.Component {
   constructor(props) {
@@ -50,10 +50,10 @@ class UserList extends React.Component {
   }
 
   downloadImage() {
+    window.scroll(0, 150);
     this.setState({ isimageLoading: true });
     setTimeout(() => {
-      const input = document.getElementById('divToPrint');
-      htmlToImage.toPng(input, { quality: 0.55 })
+      htmlToImage.toPng(document.getElementById('divToPrint'), { quality: 0.55 })
         .then((dataUrl) => {
           var link = document.createElement('a');
           link.download = 'OG-Structure.png';
@@ -61,7 +61,7 @@ class UserList extends React.Component {
           link.click();
           this.setState({ isimageLoading: false })
         });
-    }, 1000)
+    }, 3000)
   }
 
   printDocument() {
@@ -79,12 +79,14 @@ class UserList extends React.Component {
           pdf.save("OG-Structure.pdf");
           this.setState({ isLoading: false });
         });
-    }, 500)
+    },100)
   }
 
   getcolor(event) {
     const div = document.getElementById(event.target.parentNode.id);
     div.style.backgroundColor = event.target.value;
+    const bgColor = div.style.backgroundColor;
+    this.setState({ color: bgColor });
   }
 
   render() {
@@ -107,42 +109,48 @@ class UserList extends React.Component {
       );
     };
     return (
-      <div className="root">
-        <div className="content">
-          <div className="full-width">
-            <div className="donwload-group fixed-top">
-              <ButtonGroup variant="text" id="download-button" color="primary" aria-label="text primary button group">
-                <Button onClick={this.printDocument} className="my-donwload" disabled={this.state.isLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <PictureAsPdfIcon />}&nbsp;{this.state.isLoading ? "Genreating PDF" : "Export PDF"}</Button>
-                <Button onClick={this.downloadImage} className="my-donwload" disabled={this.state.isimageLoading}>{this.state.isimageLoading ? <i class="fa fa-spinner fa-spin"></i> : <CloudDownloadIcon />}&nbsp;{this.state.isimageLoading ? "Genreating Image" : "Get Image"}</Button>
-              </ButtonGroup>
-              {this.state.isLoading ? <Loading loading background="rgb(220, 232, 225)" loaderColor="#3498db" loaderText="genert" /> : ' '}
-              {this.state.isimageLoading ? <Loading loading background="rgb(220, 232, 225)" loaderColor="#3498db" /> : ' '}
-            </div>
-            <div className="mt4">
-              <div className="App" id="initechOrgChart">
-                <TransformWrapper>
-                  {({ zoomIn, zoomOut, resetTransform }) => (
-                    <React.Fragment>
-                      <div className="tools fixed-top">
-                        <ButtonGroup variant="text" className="zoom-in-out" color="primary" aria-label="text primary button group">
-                          <Button className="my-donwload" onClick={zoomIn}><ZoomInIcon /></Button>
-                          <Button className="my-donwload" onClick={zoomOut}><ZoomOutIcon /></Button>
-                          <Button className="my-donwload" onClick={resetTransform}><RotateLeftIcon /></Button>
-                        </ButtonGroup>
-                      </div>
-                      <TransformComponent>
-                        <div id="divToPrint" className="mt4" >
-                          <OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} />
+      <LoadingOverlay
+        active={this.state.isimageLoading ? this.state.isimageLoading : this.state.isLoading}
+        spinner
+        text='Exporting File!'
+      >
+        <div className="root">
+          <div className="content">
+            <div className="full-width">
+              <div className="donwload-group fixed-top">
+                <h4 className="export">Export as :</h4>
+                <ButtonGroup variant="text" id="download-button" color="primary" aria-label="text primary button group">
+                  <Button onClick={this.printDocument} className="my-donwload" disabled={this.state.isLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <PictureAsPdfIcon />}&nbsp;{this.state.isLoading ? "Exporting PDF" : "PDF"}</Button>
+                  <Button onClick={this.downloadImage} className="my-donwload" disabled={this.state.isimageLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <CloudDownloadIcon />}&nbsp;{this.state.isimageLoading ? "Exporting Image" : "Image"}</Button>
+                </ButtonGroup>
+                {/* {this.state.isLoading ? <Loading loading background="rgb(220, 232, 225)" loaderColor="#3498db" /> : ' '} */}
+              </div>
+              <div className="mt4">
+                <div className="App" id="initechOrgChart">
+                  <TransformWrapper>
+                    {({ zoomIn, zoomOut, resetTransform }) => (
+                      <React.Fragment>
+                        <div className="tools fixed-top">
+                          <ButtonGroup variant="text" className="zoom-in-out" color="primary" aria-label="text primary button group">
+                            <Button className="my-donwload" onClick={zoomIn}><ZoomInIcon /></Button>
+                            <Button className="my-donwload" onClick={zoomOut}><ZoomOutIcon /></Button>
+                            <Button className="my-donwload" onClick={resetTransform}><RotateLeftIcon /></Button>
+                          </ButtonGroup>
                         </div>
-                      </TransformComponent>
-                    </React.Fragment>
-                  )}
-                </TransformWrapper>
+                        <TransformComponent>
+                          <div id="divToPrint" className="mt4" >
+                            <OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} />
+                          </div>
+                        </TransformComponent>
+                      </React.Fragment>
+                    )}
+                  </TransformWrapper>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </LoadingOverlay>
     );
   }
 }

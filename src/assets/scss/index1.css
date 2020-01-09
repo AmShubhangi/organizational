@@ -188,8 +188,10 @@ div#initechOrgChart {
 .donwload-group {
   padding: 20px 0px 0px 0px;
   background-color: white;
-  top: 45px;
+  top: 50px;
+  left: 10px;
   z-index: 1;
+  display: flex;
 }
 
 .MuiFormHelperText-contained {
@@ -1613,13 +1615,14 @@ a:hover {
 span.address {
   display: block;
 }
+ 
 
 ul.list-unstyled.row {
   white-space: nowrap;
 }
 
 .tools.fixed-top {
-  top: 160px;
+  top: 166px;
   background: white;
   z-index: 1;
 }
@@ -1649,4 +1652,16 @@ img.color {
   padding: 10px;
   border-radius: 50%;
   border: none;
+}
+
+/* 08-01-2020 */
+._loading_overlay_content.css-42igfv {
+  margin-top: 300px;
+}
+
+h4.export {
+  font-size: 14px;
+  color: #287cfa;
+  font-weight: 700;
+  margin-top: 10px;
 }
