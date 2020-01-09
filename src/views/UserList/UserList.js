@@ -96,18 +96,19 @@ class UserList extends React.Component {
 
   componentDidMount() {
     var elem = document.getElementById(this.initechOrg.Name);
-    console.log(elem);
     window.scrollTo(elem.offsetLeft - 700, 0);
   }
 
-
-
-
+  myZoomIn(e) {
+    var zoomIn = document.getElementById('zoom');
+    zoomIn.style.transform = 'scale(1.5)';
+  }
 
   render() {
     const MyNodeComponent = ({ node }) => {
       return (
-        <div className="initechNode" id={node.Name} >
+        <div className="initechNode" id={node.Name}>
+
           <div className="parent-node"
             id={node.Name} >
             <h4 className="parent-size">{node.Name}</h4>
@@ -135,12 +136,14 @@ class UserList extends React.Component {
               <div className="donwload-group fixed-top">
                 <h4 className="export">Export as :</h4>
                 <ButtonGroup variant="text" id="download-button" color="primary" aria-label="text primary button group">
+
                   <Button onClick={this.printDocument} className="my-donwload" disabled={this.state.isLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <PictureAsPdfIcon />}&nbsp;{this.state.isLoading ? "Exporting PDF" : "PDF"}</Button>
                   <Button onClick={this.downloadImage} className="my-donwload" disabled={this.state.isimageLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <CloudDownloadIcon />}&nbsp;{this.state.isimageLoading ? "Exporting Image" : "Image"}</Button>
                 </ButtonGroup>
                 {/* {this.state.isLoading ? <Loading loading background="rgb(220, 232, 225)" loaderColor="#3498db" /> : ' '} */}
               </div>
               <div className="mt4">
+
                 <div className="App" id="initechOrgChart">
                   <TransformWrapper>
                     {({ zoomIn, zoomOut, resetTransform }) => (
@@ -153,10 +156,12 @@ class UserList extends React.Component {
                           </ButtonGroup>
                         </div>
                         <TransformComponent>
-                          <div id="divToPrint" className="mt4" >
-                            <OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} />
+                          <div id="divToPrint" className="mt4">
+                            <div class="contain">
+                              <input type="checkbox" id="zoomCheck" />
+                              <label for="zoomCheck">
+                                <p> <OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} /></p></label></div>
                           </div>
-
                         </TransformComponent>
                       </React.Fragment>
                     )}

@@ -223,7 +223,7 @@ a.my-top-nave-links {
   text-decoration: none;
 }
 a.my-top-nave-links.is-active {
-  color:#257cfa  !important;
+  color: #257cfa !important;
 }
 a.my-top-nave-links:hover {
   color: #257cfa !important;
@@ -1615,7 +1615,6 @@ a:hover {
 span.address {
   display: block;
 }
- 
 
 ul.list-unstyled.row {
   white-space: nowrap;
@@ -1680,8 +1679,16 @@ h3.title {
   top: 0;
 }
 
-div#divToPrint {
+input[type="checkbox"] {
+  display: none;
+}
+
+.contain p {
+  transition: transform 0.25s ease;
   cursor: zoom-in;
 }
 
-
+input[type="checkbox"]:checked ~ label > p {
+  transform: scale(2);
+  cursor: zoom-out;
+}
