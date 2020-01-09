@@ -19,15 +19,13 @@ import LoadingOverlay from 'react-loading-overlay';
 class UserList extends React.Component {
   constructor(props) {
     super(props);
+    this.downloadImage = this.downloadImage.bind(this);
     this.printDocument = this.printDocument.bind(this);
     this.state = {
       isLoading: false,
       isimageLoading: false,
-      color: []
     }
     this.myRef = React.createRef();
-
-
     this.downloadImage = this.downloadImage.bind(this);
     this.getcolor = this.getcolor.bind(this);
 

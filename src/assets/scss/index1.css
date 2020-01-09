@@ -145,7 +145,7 @@ h4.parent-size {
 }
 .my-donwload {
   text-transform: capitalize !important;
-  color:#287cfa !important; 
+  color: #287cfa !important;
 }
 
 .parent-node {
@@ -226,7 +226,7 @@ a.my-top-nave-links.is-active {
   color:#257cfa  !important;
 }
 a.my-top-nave-links:hover {
-  color:#257cfa !important;
+  color: #257cfa !important;
 }
 
 /* 03-01-2020 */
@@ -1644,8 +1644,8 @@ img.color {
   height: 1px;
   overflow: hidden;
 }
-#color-picker{
-  background-image: url('../../assets/images/picker.png');
+#color-picker {
+  background-image: url("../../assets/images/picker.png");
   background-size: cover;
   background-position: center center;
   width: 10px;
