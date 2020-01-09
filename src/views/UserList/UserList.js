@@ -71,21 +71,21 @@ class UserList extends React.Component {
   }
 
   printDocument() {
-    window.scroll(0, window.scrollY);
+    window.scrollTo(0,0);
     setTimeout(() => {
-      this.setState({ isLoading: true })
       const input = document.getElementById('divToPrint');
+      this.setState({ isLoading: true })
       html2canvas(input)
         .then((canvas) => {
           const imgData = canvas.toDataURL('image/png');
-          const pdf = new jsPDF('l', 'mm', [75000, 2500], true);
+          const pdf = new jsPDF('l', 'mm', [75000, 1500], true);
           pdf.setTextColor(150);
           pdf.addImage(imgData, 'PNG', 0, 0);
           pdf.text('John Doe', 10, 10);
           pdf.save("OG-Structure.pdf");
           this.setState({ isLoading: false });
         });
-    }, 100)
+    }, 2000)
   }
 
   getcolor(event) {
