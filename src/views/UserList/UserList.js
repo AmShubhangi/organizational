@@ -24,6 +24,8 @@ class UserList extends React.Component {
       isLoading: false,
       isimageLoading: false,
     }
+    this.myRef = React.createRef();
+    this.downloadImage = this.downloadImage.bind(this);
     this.getcolor = this.getcolor.bind(this);
 
     this.initechOrg = '';
@@ -49,8 +51,10 @@ class UserList extends React.Component {
     this.initechOrg = map[arry[0].Id.Value];
   }
 
+
+
   downloadImage() {
-    window.scroll(0, 150);
+    window.scroll(0, 100);
     this.setState({ isimageLoading: true });
     setTimeout(() => {
       htmlToImage.toPng(document.getElementById('divToPrint'), { quality: 0.55 })
@@ -65,21 +69,21 @@ class UserList extends React.Component {
   }
 
   printDocument() {
-    window.scroll(0, 150);
-    this.setState({ isLoading: true })
+    window.scrollTo(0,0);
     setTimeout(() => {
       const input = document.getElementById('divToPrint');
+      this.setState({ isLoading: true })
       html2canvas(input)
         .then((canvas) => {
           const imgData = canvas.toDataURL('image/png');
-          const pdf = new jsPDF('l', 'mm', [75000, 2500], true);
+          const pdf = new jsPDF('l', 'mm', [75000, 1500], true);
           pdf.setTextColor(150);
           pdf.addImage(imgData, 'PNG', 0, 0);
           pdf.text('John Doe', 10, 10);
           pdf.save("OG-Structure.pdf");
           this.setState({ isLoading: false });
         });
-    },100)
+    }, 2000)
   }
 
   getcolor(event) {
@@ -89,12 +93,18 @@ class UserList extends React.Component {
     this.setState({ color: bgColor });
   }
 
+  componentDidMount() {
+    var elem = document.getElementById(this.initechOrg.Name);
+    console.log(elem);
+    window.scrollTo(elem.offsetLeft - 700,0);
+  }
+
   render() {
     const MyNodeComponent = ({ node }) => {
       return (
-        <div className="initechNode" >
+        <div className="initechNode" id={node.Name} >
           <div className="parent-node"
-            id={node.Name}>
+            id={node.Name} >
             <h4 className="parent-size">{node.Name}</h4>
             <input type="color" id="color-picker"
               className="btn btn-outline" onChange={this.getcolor}></input>
@@ -141,12 +151,15 @@ class UserList extends React.Component {
                           <div id="divToPrint" className="mt4" >
                             <OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} />
                           </div>
+
                         </TransformComponent>
                       </React.Fragment>
                     )}
                   </TransformWrapper>
                 </div>
               </div>
+
+
             </div>
           </div>
         </div>

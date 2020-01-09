@@ -189,7 +189,7 @@ div#initechOrgChart {
   padding: 20px 0px 0px 0px;
   background-color: white;
   top: 50px;
-  left: 10px;
+  padding-left: 10px;
   z-index: 1;
   display: flex;
 }
@@ -1665,3 +1665,19 @@ h4.export {
   font-weight: 700;
   margin-top: 10px;
 }
+
+h3.title {
+  text-align: center;
+}
+
+.service.h-100 {
+  padding: 30px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-top: 2px solid #1c63fb;
+  transition: 0.3s all ease-in-out;
+  position: relative;
+  top: 0;
+}
+
+
