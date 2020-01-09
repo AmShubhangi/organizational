@@ -92,7 +92,7 @@ class HomeComponent extends Component {
                       <AccessTimeIcon className="services-icon" />
                     </span>
                   </div>
-                  <h3>Save time</h3>
+                  <h3 className="title">Save time</h3>
                   <p className="item-des">OG tool helps you update and manipulate Workspace One organization
                     groups using a simple interactive UI. OG tool decreases the timeframe needed for such a
                   task.</p>
@@ -106,7 +106,7 @@ class HomeComponent extends Component {
                       <VisibilityIcon className="services-icon" />
                     </span>
                   </div>
-                  <h3>Better visualization</h3>
+                  <h3 className="title">Better visualization</h3>
                   <p className="item-des">OG tool provides you with an easy (drag-and-drop) and
                   interactive diagram to visualize Workspace One groups structure in a better way.</p>
                 </div>
@@ -118,7 +118,7 @@ class HomeComponent extends Component {
                       <DescriptionIcon className="services-icon" />
                     </span>
                   </div>
-                  <h3>Export OGs</h3>
+                  <h3 className="title">Export OGs</h3>
                   <p className="item-des">with OG tool you can easily export your Workspace One groups structure
                   or specific groups as a format of your choice.</p>
                 </div>
@@ -161,7 +161,7 @@ class HomeComponent extends Component {
                       <SupervisorAccountIcon className="services-icon" />
                     </span>
                   </div>
-                  <h3>Clients</h3>
+                  <h3 className="title">Clients</h3>
                   <h1 className="text-primary  mt-2"><p className="item-des  font-size"><CountUp end={10000} duration={5} />
                   </p>
                   </h1>
@@ -174,7 +174,7 @@ class HomeComponent extends Component {
                       <AccountTreeIcon className="services-icon" />
                     </span>
                   </div>
-                  <h3>Diagram Generated</h3>
+                  <h3 className="title">Diagram Generated</h3>
                   <h1 className="text-primary  mt-2"><p className="item-des font-size"><CountUp end={23999} duration={5} /> </p></h1>
                 </div>
 
@@ -186,7 +186,7 @@ class HomeComponent extends Component {
                       <BusinessIcon className="services-icon" />
                     </span>
                   </div>
-                  <h3>Organisation Group</h3>
+                  <h3 className="title">Organisation Group</h3>
                   <h1 className="text-primary  mt-2 "><p className="item-des font-size"><CountUp end={23448} duration={5} /></p></h1>
                 </div>
               </div>

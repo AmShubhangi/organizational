@@ -24,6 +24,7 @@ class UserList extends React.Component {
       isimageLoading: false,
       color: []
     }
+    this.myRef = React.createRef();
 
 
     this.downloadImage = this.downloadImage.bind(this);
@@ -52,8 +53,10 @@ class UserList extends React.Component {
     this.initechOrg = map[arry[0].Id.Value];
   }
 
+
+
   downloadImage() {
-    window.scroll(0, 150);
+    window.scroll(0, 100);
     this.setState({ isimageLoading: true });
     setTimeout(() => {
       htmlToImage.toPng(document.getElementById('divToPrint'), { quality: 0.55 })
@@ -68,7 +71,7 @@ class UserList extends React.Component {
   }
 
   printDocument() {
-    window.scroll(0, 150);
+    window.scroll(0, window.scrollY);
     setTimeout(() => {
       this.setState({ isLoading: true })
       const input = document.getElementById('divToPrint');
@@ -82,7 +85,7 @@ class UserList extends React.Component {
           pdf.save("OG-Structure.pdf");
           this.setState({ isLoading: false });
         });
-    },100)
+    }, 100)
   }
 
   getcolor(event) {
@@ -92,12 +95,18 @@ class UserList extends React.Component {
     this.setState({ color: bgColor });
   }
 
+  componentDidMount() {
+    var elem = document.getElementById(this.initechOrg.Name);
+    console.log(elem);
+    window.scrollTo(elem.offsetLeft - 700,0);
+  }
+
   render() {
     const MyNodeComponent = ({ node }) => {
       return (
-        <div className="initechNode" >
+        <div className="initechNode" id={node.Name} >
           <div className="parent-node"
-            id={node.Name}>
+            id={node.Name} >
             <h4 className="parent-size">{node.Name}</h4>
             <input type="color" id="color-picker"
               className="btn btn-outline" onChange={this.getcolor}></input>
@@ -144,12 +153,15 @@ class UserList extends React.Component {
                           <div id="divToPrint" className="mt4" >
                             <OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} />
                           </div>
+
                         </TransformComponent>
                       </React.Fragment>
                     )}
                   </TransformWrapper>
                 </div>
               </div>
+
+
             </div>
           </div>
         </div>
