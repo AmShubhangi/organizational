@@ -72,6 +72,25 @@ class UserList extends React.Component {
   printDocument() {
     window.scrollTo(0, 0);
     const input = document.getElementById('divToPrint');
+<<<<<<< HEAD
+    // input.style.transform = 'scale(0)';
+    input.style.transition = 'all 1s ease';
+    
+    // setTimeout(() => {
+    //   this.setState({ isLoading: true })
+    //   html2canvas(input)
+    //     .then((canvas) => {
+    //       const imgData = canvas.toDataURL('image/png');
+    //       const pdf = new jsPDF('l', 'mm', [75000, 1500], true);
+    //       pdf.setTextColor(150);
+    //       pdf.addImage(imgData, 'PNG', 0, 0);
+    //       pdf.text('John Doe', 10, 10);
+    //       pdf.save("OG-Structure.pdf");
+    //       this.setState({ isLoading: false });
+    //     });
+    // }, 3000)
+  } 
+=======
     // input.style.transform = 'scale(0.5)';
     setTimeout(() => {
       this.setState({ isLoading: true })
@@ -87,6 +106,7 @@ class UserList extends React.Component {
         });
     }, 2000)
   }
+>>>>>>> 62e6f027c81776cc89df1555512260d3eeb26075
   getcolor(event) {
     const div = document.getElementById(event.target.parentNode.id);
     div.style.backgroundColor = event.target.value;

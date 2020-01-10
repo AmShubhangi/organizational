@@ -1684,7 +1684,7 @@ input[type="checkbox"] {
 }
 
 .contain p {
-  transition: all 1s ease;
+  transition: transform 1s ease;
   cursor: zoom-in;
 }
 
