@@ -100,12 +100,7 @@ class UserList extends React.Component {
 
   IncreaseWidth() {
     const div = document.getElementById('divToPrint');
-    if (div.style.width = "4743mm") {
-      div.style.width = "20062mm"
-    }
-    else if (div.style.width = "20062mm") {
-      div.style.width = "20062mm"
-    }
+    div.style.width = "20062mm";
   }
 
   render() {
