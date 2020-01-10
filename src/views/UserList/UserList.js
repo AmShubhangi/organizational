@@ -55,7 +55,7 @@ class UserList extends React.Component {
   downloadImage() {
     window.scroll(0, 100);
     const input = document.getElementById('divToPrint');
-    input.style.transform = 'scale(0.5)';
+    // input.style.transform = 'scale(0.5)';
     this.setState({ isimageLoading: true });
     setTimeout(() => {
       htmlToImage.toPng(document.getElementById('divToPrint'), { quality: 0.55 })
@@ -66,32 +66,26 @@ class UserList extends React.Component {
           link.click();
           this.setState({ isimageLoading: false })
         });
-    }, 4000)
+    }, 3000)
   }
 
   printDocument() {
     window.scrollTo(0, 0);
     const input = document.getElementById('divToPrint');
-    input.style.transform = 'scale(0.5)';
-    if(input.style.transform == 'scale(0.5)'){
-        alert("hello");
-    } 
-    else{
-      alert(" heeeh");
-    }
-    // setTimeout(() => {
-    //   this.setState({ isLoading: true })
-    //   html2canvas(input)
-    //     .then((canvas) => {
-    //       const imgData = canvas.toDataURL('image/png');
-    //       const pdf = new jsPDF('l', 'mm', [75000, 1500], true);
-    //       pdf.setTextColor(150);
-    //       pdf.addImage(imgData, 'PNG', 0, 0);
-    //       pdf.text('John Doe', 10, 10);
-    //       pdf.save("OG-Structure.pdf");
-    //       this.setState({ isLoading: false });
-    //     });
-    // }, 3000)
+    // input.style.transform = 'scale(0.5)';
+    setTimeout(() => {
+      this.setState({ isLoading: true })
+      html2canvas(input)
+        .then((canvas) => {
+          const imgData = canvas.toDataURL('image/png');
+          const pdf = new jsPDF('l', 'mm', [75000, 1500], true);
+          pdf.setTextColor(150);
+          pdf.addImage(imgData, 'PNG', 0, 0);
+          pdf.text('John Doe', 10, 10);
+          pdf.save("OG-Structure.pdf");
+          this.setState({ isLoading: false });
+        });
+    }, 2000)
   } 
   getcolor(event) {
     const div = document.getElementById(event.target.parentNode.id);
