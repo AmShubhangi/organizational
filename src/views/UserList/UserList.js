@@ -27,7 +27,7 @@ class UserList extends React.Component {
     }
     this.myRef = React.createRef();
     this.downloadImage = this.downloadImage.bind(this);
-    this.getcolor = this.getcolor.bind(this); 
+    this.getcolor = this.getcolor.bind(this);
 
     this.initechOrg = '';
     var arry = require('../../API/clientData.json');
@@ -51,7 +51,7 @@ class UserList extends React.Component {
     }
     this.initechOrg = map[arry[0].Id.Value];
   }
- 
+
   downloadImage() {
     window.scroll(0, 100);
     const input = document.getElementById('divToPrint');
@@ -86,22 +86,32 @@ class UserList extends React.Component {
           this.setState({ isLoading: false });
         });
     }, 2000)
-  } 
+  }
   getcolor(event) {
     const div = document.getElementById(event.target.parentNode.id);
     div.style.backgroundColor = event.target.value;
     const bgColor = div.style.backgroundColor;
     this.setState({ color: bgColor });
-  } 
+  }
   componentDidMount() {
     var elem = document.getElementById(this.initechOrg.Name);
     window.scrollTo(elem.offsetLeft - 700, 0);
-  } 
- 
+  }
+
+  IncreaseWidth() {
+    const div = document.getElementById('divToPrint');
+    if (div.style.width = "4743mm") {
+      div.style.width = "20062mm"
+    }
+    else if (div.style.width = "20062mm") {
+      div.style.width = "20062mm"
+    }
+  }
+
   render() {
     const MyNodeComponent = ({ node }) => {
       return (
-        <div className="initechNode" id={node.Name}> 
+        <div className="initechNode" id={node.Name}>
           <div className="parent-node"
             id={node.Name} >
             <h4 className="parent-size">{node.Name}</h4>
@@ -149,7 +159,7 @@ class UserList extends React.Component {
                           </ButtonGroup>
                         </div>
                         <TransformComponent>
-                          <div id="divToPrint" className="mt4" >
+                          <div id="divToPrint" className="mt4" onClick={this.IncreaseWidth}>
                             <div class="contain">
                               <input type="checkbox" id="zoomCheck" />
                               <label for="zoomCheck">
