@@ -72,13 +72,9 @@ class UserList extends React.Component {
   printDocument() {
     window.scrollTo(0, 0);
     const input = document.getElementById('divToPrint');
-    input.style.transform = 'scale(0.5)';
-    if(input.style.transform == 'scale(0.5)'){
-        alert("hello");
-    } 
-    else{
-      alert(" heeeh");
-    }
+    // input.style.transform = 'scale(0)';
+    input.style.transition = 'all 1s ease';
+    
     // setTimeout(() => {
     //   this.setState({ isLoading: true })
     //   html2canvas(input)
