@@ -1694,4 +1694,6 @@ input[type="checkbox"]:checked ~ label > p {
   cursor: zoom-out;
 }
  
- 
+.react-transform-element.TransformComponent-module_content__TZU5O {
+  transition: transform 1s ease 0s;
+}
