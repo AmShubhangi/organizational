@@ -1660,7 +1660,7 @@ img.color {
 
 h4.export {
   font-size: 14px;
-  color: #287cfa;
+  color: black;
   font-weight: 700;
   margin-top: 10px;
 }
@@ -1694,4 +1694,11 @@ input[type="checkbox"]:checked ~ label > p {
   cursor: zoom-out;
 }
  
+
+/* 10-01-2020 */
+
+button.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButtonGroup-grouped.MuiButtonGroup-groupedHorizontal.MuiButtonGroup-groupedText.MuiButtonGroup-groupedTextHorizontal.MuiButtonGroup-groupedTextPrimary.my-donwload.MuiButton-textPrimary
+{
+  color: black !important;
+}
  
