@@ -29,6 +29,8 @@ class UserList extends React.Component {
     this.downloadImage = this.downloadImage.bind(this);
     this.getcolor = this.getcolor.bind(this);
 
+
+
     this.initechOrg = '';
     var arry = require('../../API/clientData.json');
     var map = {};
@@ -56,6 +58,8 @@ class UserList extends React.Component {
 
   downloadImage() {
     window.scroll(0, 100);
+    const input = document.getElementById('divToPrint');
+    input.style.transform = 'scale(0.5)';
     this.setState({ isimageLoading: true });
     setTimeout(() => {
       htmlToImage.toPng(document.getElementById('divToPrint'), { quality: 0.55 })
@@ -66,13 +70,14 @@ class UserList extends React.Component {
           link.click();
           this.setState({ isimageLoading: false })
         });
-    }, 3000)
+    }, 4000)
   }
 
   printDocument() {
     window.scrollTo(0, 0);
+    const input = document.getElementById('divToPrint');
+     input.style.transform = 'scale(0.5)';
     setTimeout(() => {
-      const input = document.getElementById('divToPrint');
       this.setState({ isLoading: true })
       html2canvas(input)
         .then((canvas) => {
@@ -84,7 +89,7 @@ class UserList extends React.Component {
           pdf.save("OG-Structure.pdf");
           this.setState({ isLoading: false });
         });
-    }, 2000)
+    }, 3000)
   }
 
   getcolor(event) {
@@ -103,6 +108,7 @@ class UserList extends React.Component {
     var zoomIn = document.getElementById('zoom');
     zoomIn.style.transform = 'scale(1.5)';
   }
+
 
   render() {
     const MyNodeComponent = ({ node }) => {
@@ -156,7 +162,7 @@ class UserList extends React.Component {
                           </ButtonGroup>
                         </div>
                         <TransformComponent>
-                          <div id="divToPrint" className="mt4">
+                          <div id="divToPrint" className="mt4" >
                             <div class="contain">
                               <input type="checkbox" id="zoomCheck" />
                               <label for="zoomCheck">
