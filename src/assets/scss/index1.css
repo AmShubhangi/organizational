@@ -1690,5 +1690,8 @@ input[type="checkbox"] {
 
 input[type="checkbox"]:checked ~ label > p {
   transform: scale(2);
+  transition: all 1s ease;
   cursor: zoom-out;
 }
+ 
+ 

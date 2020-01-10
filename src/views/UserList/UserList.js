@@ -27,9 +27,7 @@ class UserList extends React.Component {
     }
     this.myRef = React.createRef();
     this.downloadImage = this.downloadImage.bind(this);
-    this.getcolor = this.getcolor.bind(this);
-
-
+    this.getcolor = this.getcolor.bind(this); 
 
     this.initechOrg = '';
     var arry = require('../../API/clientData.json');
@@ -53,9 +51,7 @@ class UserList extends React.Component {
     }
     this.initechOrg = map[arry[0].Id.Value];
   }
-
-
-
+ 
   downloadImage() {
     window.scroll(0, 100);
     const input = document.getElementById('divToPrint');
@@ -76,45 +72,42 @@ class UserList extends React.Component {
   printDocument() {
     window.scrollTo(0, 0);
     const input = document.getElementById('divToPrint');
-     input.style.transform = 'scale(0.5)';
-    setTimeout(() => {
-      this.setState({ isLoading: true })
-      html2canvas(input)
-        .then((canvas) => {
-          const imgData = canvas.toDataURL('image/png');
-          const pdf = new jsPDF('l', 'mm', [75000, 1500], true);
-          pdf.setTextColor(150);
-          pdf.addImage(imgData, 'PNG', 0, 0);
-          pdf.text('John Doe', 10, 10);
-          pdf.save("OG-Structure.pdf");
-          this.setState({ isLoading: false });
-        });
-    }, 3000)
-  }
-
+    input.style.transform = 'scale(0.5)';
+    if(input.style.transform == 'scale(0.5)'){
+        alert("hello");
+    } 
+    else{
+      alert(" heeeh");
+    }
+    // setTimeout(() => {
+    //   this.setState({ isLoading: true })
+    //   html2canvas(input)
+    //     .then((canvas) => {
+    //       const imgData = canvas.toDataURL('image/png');
+    //       const pdf = new jsPDF('l', 'mm', [75000, 1500], true);
+    //       pdf.setTextColor(150);
+    //       pdf.addImage(imgData, 'PNG', 0, 0);
+    //       pdf.text('John Doe', 10, 10);
+    //       pdf.save("OG-Structure.pdf");
+    //       this.setState({ isLoading: false });
+    //     });
+    // }, 3000)
+  } 
   getcolor(event) {
     const div = document.getElementById(event.target.parentNode.id);
     div.style.backgroundColor = event.target.value;
     const bgColor = div.style.backgroundColor;
     this.setState({ color: bgColor });
-  }
-
+  } 
   componentDidMount() {
     var elem = document.getElementById(this.initechOrg.Name);
     window.scrollTo(elem.offsetLeft - 700, 0);
-  }
-
-  myZoomIn(e) {
-    var zoomIn = document.getElementById('zoom');
-    zoomIn.style.transform = 'scale(1.5)';
-  }
-
-
+  } 
+ 
   render() {
     const MyNodeComponent = ({ node }) => {
       return (
-        <div className="initechNode" id={node.Name}>
-
+        <div className="initechNode" id={node.Name}> 
           <div className="parent-node"
             id={node.Name} >
             <h4 className="parent-size">{node.Name}</h4>
@@ -166,7 +159,7 @@ class UserList extends React.Component {
                             <div class="contain">
                               <input type="checkbox" id="zoomCheck" />
                               <label for="zoomCheck">
-                                <p> <OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} /></p></label></div>
+                                <p><OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} /></p></label></div>
                           </div>
                         </TransformComponent>
                       </React.Fragment>
