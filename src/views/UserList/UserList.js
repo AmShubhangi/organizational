@@ -14,7 +14,7 @@ import ZoomInIcon from '@material-ui/icons/ZoomIn';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 import LoadingOverlay from 'react-loading-overlay';
-
+import { MapInteractionCSS } from 'react-map-interaction';
 
 class UserList extends React.Component {
   constructor(props) {
@@ -98,13 +98,6 @@ class UserList extends React.Component {
     window.scrollTo(elem.offsetLeft - 700, 0);
   }
 
-  IncreaseWidth() {
-    const div = document.getElementById('divToPrint');
-    console.log("b",div.style.width);
-    if (div.style.width = "4743mm") {
-      div.style.width = "20062mm";
-    }
-  }
 
   render() {
     const MyNodeComponent = ({ node }) => {
@@ -157,11 +150,11 @@ class UserList extends React.Component {
                           </ButtonGroup>
                         </div>
                         <TransformComponent>
-                          <div id="divToPrint" className="mt4" onClick={this.IncreaseWidth}>
-                            <div class="contain">
-                              <input type="checkbox" id="zoomCheck" />
-                              <label for="zoomCheck">
-                                <p><OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} /></p></label></div>
+
+                          <div id="divToPrint" className="mt4" >
+                            <MapInteractionCSS>
+                              <OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} />
+                            </MapInteractionCSS>
                           </div>
                         </TransformComponent>
                       </React.Fragment>
