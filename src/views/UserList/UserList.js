@@ -15,12 +15,8 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 import LoadingOverlay from 'react-loading-overlay';
 import { MapInteractionCSS } from 'react-map-interaction';
-<<<<<<< HEAD
-=======
-import watermark from '../../assets/images/home-logo.661d8116.png'
 import { Progress } from 'react-sweet-progress';
 import "react-sweet-progress/lib/style.css";
->>>>>>> 1decf123cf77babfd1bda8eeb67a021d1ef82128
 
 class UserList extends React.Component {
   constructor(props) {
@@ -30,8 +26,7 @@ class UserList extends React.Component {
     this.state = {
       isLoading: false,
       isimageLoading: false,
-      bgcolor: '#287cfa',
-      percent: 0
+      bgcolor: '#287cfa'
     }
     this.myRef = React.createRef();
     this.downloadImage = this.downloadImage.bind(this);
@@ -78,19 +73,8 @@ class UserList extends React.Component {
   printDocument() {
     window.scrollTo(0, 0);
     const input = document.getElementById('divToPrint');
-    setInterval(() => {
-       const maxvalue = 100;
-       if(this.state.percent > maxvalue)
-       {
-         this.setState({percent : 0});
-       }
-       else 
-       {
-         this.setState({percent : this.state.percent + 1});
-       }
-    })
-      setTimeout(() => {
-      this.setState({ isLoading: true });
+    setTimeout(() => {
+      this.setState({ isLoading: true })
       html2canvas(input)
         .then((canvas) => {
           const imgData = canvas.toDataURL('image/png', { quality: 0.55 });
@@ -133,49 +117,40 @@ class UserList extends React.Component {
       <LoadingOverlay
         active={this.state.isimageLoading ? this.state.isimageLoading : this.state.isLoading}
         spinner
-        text={this.state.percent}
+        text='Exporting File!' 
       >
+       
+        <div className="root">
+          <div className="content">
+            <div className="full-width">
+              <div className="donwload-group fixed-top">
+                <h4 className="export">Export as :</h4>
+                <ButtonGroup variant="text" id="download-button" color="primary" aria-label="text primary button group">
 
-      <div className="root">
-        <div className="content">
-          <div className="full-width">
-            <div className="donwload-group fixed-top">
-              <h4 className="export">Export as :</h4>
-              <ButtonGroup variant="text" id="download-button" color="primary" aria-label="text primary button group">
-
-                <Button onClick={this.printDocument} className="my-donwload" disabled={this.state.isLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <PictureAsPdfIcon />}&nbsp;{this.state.isLoading ? "Exporting PDF" : "PDF"}</Button>
-                <Button onClick={this.downloadImage} className="my-donwload" disabled={this.state.isimageLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <CloudDownloadIcon />}&nbsp;{this.state.isimageLoading ? "Exporting Image" : "Image"}</Button>
-              </ButtonGroup>
-            </div>
-            <div className="mt4">
-              <div className="App" id="initechOrgChart">
-                <TransformWrapper>
-                  {({ zoomIn, zoomOut, resetTransform }) => (
-                    <React.Fragment>
-                      <div className="tools fixed-top">
-                        <ButtonGroup variant="text" className="zoom-in-out" color="primary" aria-label="text primary button group">
-                          <Button className="my-donwload" onClick={zoomIn}><ZoomInIcon /></Button>
-                          <Button className="my-donwload" onClick={zoomOut}><ZoomOutIcon /></Button>
-                          <Button className="my-donwload" onClick={resetTransform}><RotateLeftIcon /></Button>
-                          <Button>
-                            <input type="color" id="color-picker"
-                              className="btn btn-outline" onChange={this.getcolor}></input>
-                          </Button>
-                        </ButtonGroup>
-                      </div>
-                      <TransformComponent>
-                        <div id="divToPrint" className="mt4" >
-                          <MapInteractionCSS>
-                            <OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} />
-                          </MapInteractionCSS>
+                  <Button onClick={this.printDocument} className="my-donwload" disabled={this.state.isLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <PictureAsPdfIcon />}&nbsp;{this.state.isLoading ? "Exporting PDF" : "PDF"}</Button>
+                  <Button onClick={this.downloadImage} className="my-donwload" disabled={this.state.isimageLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <CloudDownloadIcon />}&nbsp;{this.state.isimageLoading ? "Exporting Image" : "Image"}</Button>
+                </ButtonGroup>
+              </div>
+              <div className="mt4">
+                <div className="App" id="initechOrgChart">
+                  <TransformWrapper>
+                    {({ zoomIn, zoomOut, resetTransform }) => (
+                      <React.Fragment>
+                        <div className="tools fixed-top">
+                          <ButtonGroup variant="text" className="zoom-in-out" color="primary" aria-label="text primary button group">
+                            <Button className="my-donwload" onClick={zoomIn}><ZoomInIcon /></Button>
+                            <Button className="my-donwload" onClick={zoomOut}><ZoomOutIcon /></Button>
+                            <Button className="my-donwload" onClick={resetTransform}><RotateLeftIcon /></Button>
+                            <Button>
+                              <input type="color" id="color-picker"
+                                className="btn btn-outline" onChange={this.getcolor}></input>
+                            </Button>
+                          </ButtonGroup>
                         </div>
                         <TransformComponent>
                           <div id="divToPrint" className="mt4" >
                             <MapInteractionCSS>
                               <OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} />
-                              <div className="watermark">
-                                <img src={watermark} className="watermark1" />
-                              </div>
                             </MapInteractionCSS>
                           </div>
                         </TransformComponent>
@@ -184,13 +159,12 @@ class UserList extends React.Component {
                   </TransformWrapper>
                 </div>
               </div>
+
+
             </div>
-
-
           </div>
         </div>
-      </div>
-      // </LoadingOverlay>
+      </LoadingOverlay>
     );
   }
 }
