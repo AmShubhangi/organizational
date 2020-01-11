@@ -15,6 +15,8 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 import LoadingOverlay from 'react-loading-overlay';
 import { MapInteractionCSS } from 'react-map-interaction';
+import { Progress } from 'react-sweet-progress';
+import "react-sweet-progress/lib/style.css";
 
 class UserList extends React.Component {
   constructor(props) {
@@ -24,7 +26,7 @@ class UserList extends React.Component {
     this.state = {
       isLoading: false,
       isimageLoading: false,
-      bgcolor:'#287cfa'
+      bgcolor: '#287cfa'
     }
     this.myRef = React.createRef();
     this.downloadImage = this.downloadImage.bind(this);
@@ -89,7 +91,7 @@ class UserList extends React.Component {
     }, 2000)
   }
   getcolor(event) {
-   this.setState({bgcolor : event.target.value});
+    this.setState({ bgcolor: event.target.value });
   }
 
   componentDidMount() {
@@ -103,7 +105,7 @@ class UserList extends React.Component {
       return (
         <div className="initechNode" id={node.Name}>
           <div className="parent-node"
-            id={node.Name} style={{backgroundColor:this.state.bgcolor}}>
+            id={node.Name} style={{ backgroundColor: this.state.bgcolor }}>
             <h4 className="parent-size">{node.Name}</h4>
           </div>
           <div className="initechNode-info">
@@ -119,8 +121,34 @@ class UserList extends React.Component {
       <LoadingOverlay
         active={this.state.isimageLoading ? this.state.isimageLoading : this.state.isLoading}
         spinner
-        text='Exporting File!'
+        text={this.state.isLoading ? <Progress
+          theme={
+            {
+              error: {
+                symbol: this.state.percent + '%',
+                trailColor: 'pink',
+                color: 'red'
+              },
+              default: {
+                symbol: this.state.percent + '%',
+                trailColor: 'lightblue',
+                color: 'blue'
+              },
+              active: {
+                symbol: this.state.percent + '%',
+                trailColor: 'yellow',
+                color: 'orange'
+              },
+              success: {
+                symbol: this.state.percent + '%',
+                trailColor: 'lime',
+                color: 'green'
+              }
+            }
+          }
+        />: 'Exporting File!'}
       >
+       
         <div className="root">
           <div className="content">
             <div className="full-width">
@@ -144,8 +172,10 @@ class UserList extends React.Component {
                             <Button className="my-donwload" onClick={zoomIn}><ZoomInIcon /></Button>
                             <Button className="my-donwload" onClick={zoomOut}><ZoomOutIcon /></Button>
                             <Button className="my-donwload" onClick={resetTransform}><RotateLeftIcon /></Button>
-                            <input type="color" id="color-picker"
-                              className="btn btn-outline" onChange={this.getcolor}></input>
+                            <Button>
+                              <input type="color" id="color-picker"
+                                className="btn btn-outline" onChange={this.getcolor}></input>
+                            </Button>
                           </ButtonGroup>
                         </div>
                         <TransformComponent>
