@@ -118,32 +118,33 @@ class UserList extends React.Component {
       <LoadingOverlay
         active={this.state.isimageLoading ? this.state.isimageLoading : this.state.isLoading}
         spinner
-        text={this.state.isLoading ? <Progress
-          theme={
-            {
-              error: {
-                symbol: this.state.percent + '%',
-                trailColor: 'pink',
-                color: 'red'
-              },
-              default: {
-                symbol: this.state.percent + '%',
-                trailColor: 'lightblue',
-                color: 'blue'
-              },
-              active: {
-                symbol: this.state.percent + '%',
-                trailColor: 'yellow',
-                color: 'orange'
-              },
-              success: {
-                symbol: this.state.percent + '%',
-                trailColor: 'lime',
-                color: 'green'
+        text={this.state.isLoading ?
+          <Progress
+            theme={
+              {
+                error: {
+                  symbol: this.state.percent + '%',
+                  trailColor: 'pink',
+                  color: 'red'
+                },
+                default: {
+                  symbol: this.state.percent + '%',
+                  trailColor: 'lightblue',
+                  color: 'blue'
+                },
+                active: {
+                  symbol: this.state.percent + '%',
+                  trailColor: 'yellow',
+                  color: 'orange'
+                },
+                success: {
+                  symbol: this.state.percent + '%',
+                  trailColor: 'lime',
+                  color: 'green'
+                }
               }
             }
-          }
-        /> : 'Exporting File!'}
+          /> : 'Exporting File!'}
       >
 
         <div className="root">
@@ -176,7 +177,7 @@ class UserList extends React.Component {
                         <TransformComponent>
                           <div id="divToPrint" className="mt4" >
                             <div className="watermark">
-                             <p className="copy">By</p> <img src={watermark} className="watermark1" />
+                              <p className="copy">By</p> <img src={watermark} className="watermark1" />
                             </div>
                             <MapInteractionCSS>
 

@@ -1699,6 +1699,12 @@ input[type="checkbox"]:checked ~ label > p {
 button.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButtonGroup-grouped.MuiButtonGroup-groupedHorizontal.MuiButtonGroup-groupedText.MuiButtonGroup-groupedTextHorizontal.MuiButtonGroup-groupedTextPrimary.my-donwload.MuiButton-textPrimary {
   color: black !important;
 }
+ 
+
+/* 11-01-2020 */
+.react-sweet-progress-line-inner.undefined {
+  display: none;
+}
 
 .watermark {
   position: absolute;
