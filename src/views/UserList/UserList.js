@@ -15,7 +15,7 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 import LoadingOverlay from 'react-loading-overlay';
 import { MapInteractionCSS } from 'react-map-interaction';
-
+import watermark from '../../assets/images/home-logo.661d8116.png'
 class UserList extends React.Component {
   constructor(props) {
     super(props);
@@ -146,6 +146,9 @@ class UserList extends React.Component {
                           <div id="divToPrint" className="mt4" >
                             <MapInteractionCSS>
                               <OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} />
+                              <div className="watermark">
+                                <img src={watermark} className="watermark1" />
+                              </div>
                             </MapInteractionCSS>
                           </div>
                         </TransformComponent>
