@@ -24,7 +24,7 @@ class UserList extends React.Component {
     this.state = {
       isLoading: false,
       isimageLoading: false,
-      bgcolor:'#287cfa'
+      bgcolor: '#287cfa'
     }
     this.myRef = React.createRef();
     this.downloadImage = this.downloadImage.bind(this);
@@ -47,7 +47,7 @@ class UserList extends React.Component {
           map[parent].children.push(obj);
         }
       } catch (error) {
-        console.log('error');
+        console.log('');
       }
     }
     this.initechOrg = map[arry[0].Id.Value];
@@ -55,8 +55,6 @@ class UserList extends React.Component {
 
   downloadImage() {
     window.scroll(0, 100);
-    // const input = document.getElementById('divToPrint');
-    // input.style.transform = 'scale(0.5)';
     this.setState({ isimageLoading: true });
     setTimeout(() => {
       htmlToImage.toPng(document.getElementById('divToPrint'), { quality: 0.55 })
@@ -73,12 +71,11 @@ class UserList extends React.Component {
   printDocument() {
     window.scrollTo(0, 0);
     const input = document.getElementById('divToPrint');
-    // input.style.transform = 'scale(0.5)';
     setTimeout(() => {
       this.setState({ isLoading: true })
       html2canvas(input)
         .then((canvas) => {
-          const imgData = canvas.toDataURL('image/png');
+          const imgData = canvas.toDataURL('image/png', { quality: 0.55 });
           const pdf = new jsPDF('l', 'mm', [75000, 1500], true);
           pdf.setTextColor(150);
           pdf.addImage(imgData, 'PNG', 0, 0);
@@ -89,7 +86,7 @@ class UserList extends React.Component {
     }, 2000)
   }
   getcolor(event) {
-   this.setState({bgcolor : event.target.value});
+    this.setState({ bgcolor: event.target.value });
   }
 
   componentDidMount() {
@@ -97,13 +94,12 @@ class UserList extends React.Component {
     window.scrollTo(elem.offsetLeft - 700, 0);
   }
 
-
   render() {
     const MyNodeComponent = ({ node }) => {
       return (
         <div className="initechNode" id={node.Name}>
           <div className="parent-node"
-            id={node.Name} style={{backgroundColor:this.state.bgcolor}}>
+            id={node.Name} style={{ backgroundColor: this.state.bgcolor }}>
             <h4 className="parent-size">{node.Name}</h4>
           </div>
           <div className="initechNode-info">
@@ -131,10 +127,8 @@ class UserList extends React.Component {
                   <Button onClick={this.printDocument} className="my-donwload" disabled={this.state.isLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <PictureAsPdfIcon />}&nbsp;{this.state.isLoading ? "Exporting PDF" : "PDF"}</Button>
                   <Button onClick={this.downloadImage} className="my-donwload" disabled={this.state.isimageLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <CloudDownloadIcon />}&nbsp;{this.state.isimageLoading ? "Exporting Image" : "Image"}</Button>
                 </ButtonGroup>
-                {/* {this.state.isLoading ? <Loading loading background="rgb(220, 232, 225)" loaderColor="#3498db" /> : ' '} */}
               </div>
               <div className="mt4">
-
                 <div className="App" id="initechOrgChart">
                   <TransformWrapper>
                     {({ zoomIn, zoomOut, resetTransform }) => (
@@ -149,7 +143,6 @@ class UserList extends React.Component {
                           </ButtonGroup>
                         </div>
                         <TransformComponent>
-
                           <div id="divToPrint" className="mt4" >
                             <MapInteractionCSS>
                               <OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} />
