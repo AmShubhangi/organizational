@@ -15,8 +15,6 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 import LoadingOverlay from 'react-loading-overlay';
 import { MapInteractionCSS } from 'react-map-interaction';
-import { Progress } from 'react-sweet-progress';
-import "react-sweet-progress/lib/style.css";
 
 class UserList extends React.Component {
   constructor(props) {
@@ -26,7 +24,8 @@ class UserList extends React.Component {
     this.state = {
       isLoading: false,
       isimageLoading: false,
-      bgcolor: '#287cfa'
+      bgcolor: '#287cfa',
+      percent: 0
     }
     this.myRef = React.createRef();
     this.downloadImage = this.downloadImage.bind(this);
@@ -73,8 +72,19 @@ class UserList extends React.Component {
   printDocument() {
     window.scrollTo(0, 0);
     const input = document.getElementById('divToPrint');
-    setTimeout(() => {
-      this.setState({ isLoading: true })
+    setInterval(() => {
+       const maxvalue = 100;
+       if(this.state.percent > maxvalue)
+       {
+         this.setState({percent : 0});
+       }
+       else 
+       {
+         this.setState({percent : this.state.percent + 1});
+       }
+    })
+      setTimeout(() => {
+      this.setState({ isLoading: true });
       html2canvas(input)
         .then((canvas) => {
           const imgData = canvas.toDataURL('image/png', { quality: 0.55 });
@@ -117,79 +127,54 @@ class UserList extends React.Component {
       <LoadingOverlay
         active={this.state.isimageLoading ? this.state.isimageLoading : this.state.isLoading}
         spinner
-        text={this.state.isLoading ? <Progress
-          theme={
-            {
-              error: {
-                symbol: this.state.percent + '%',
-                trailColor: 'pink',
-                color: 'red'
-              },
-              default: {
-                symbol: this.state.percent + '%',
-                trailColor: 'lightblue',
-                color: 'blue'
-              },
-              active: {
-                symbol: this.state.percent + '%',
-                trailColor: 'yellow',
-                color: 'orange'
-              },
-              success: {
-                symbol: this.state.percent + '%',
-                trailColor: 'lime',
-                color: 'green'
-              }
-            }
-          }
-        />: 'Exporting File!'}
+        text={this.state.percent}
       >
-       
-        <div className="root">
-          <div className="content">
-            <div className="full-width">
-              <div className="donwload-group fixed-top">
-                <h4 className="export">Export as :</h4>
-                <ButtonGroup variant="text" id="download-button" color="primary" aria-label="text primary button group">
 
-                  <Button onClick={this.printDocument} className="my-donwload" disabled={this.state.isLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <PictureAsPdfIcon />}&nbsp;{this.state.isLoading ? "Exporting PDF" : "PDF"}</Button>
-                  <Button onClick={this.downloadImage} className="my-donwload" disabled={this.state.isimageLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <CloudDownloadIcon />}&nbsp;{this.state.isimageLoading ? "Exporting Image" : "Image"}</Button>
-                </ButtonGroup>
-              </div>
-              <div className="mt4">
-                <div className="App" id="initechOrgChart">
-                  <TransformWrapper>
-                    {({ zoomIn, zoomOut, resetTransform }) => (
-                      <React.Fragment>
-                        <div className="tools fixed-top">
-                          <ButtonGroup variant="text" className="zoom-in-out" color="primary" aria-label="text primary button group">
-                            <Button className="my-donwload" onClick={zoomIn}><ZoomInIcon /></Button>
-                            <Button className="my-donwload" onClick={zoomOut}><ZoomOutIcon /></Button>
-                            <Button className="my-donwload" onClick={resetTransform}><RotateLeftIcon /></Button>
-                            <Button>
-                              <input type="color" id="color-picker"
-                                className="btn btn-outline" onChange={this.getcolor}></input>
-                            </Button>
-                          </ButtonGroup>
-                        </div>
-                        <TransformComponent>
-                          <div id="divToPrint" className="mt4" >
-                            <MapInteractionCSS>
-                              <OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} />
-                            </MapInteractionCSS>
-                          </div>
-                        </TransformComponent>
-                      </React.Fragment>
-                    )}
-                  </TransformWrapper>
-                </div>
-              </div>
+      <div className="root">
+        <div className="content">
+          <div className="full-width">
+            <div className="donwload-group fixed-top">
+              <h4 className="export">Export as :</h4>
+              <ButtonGroup variant="text" id="download-button" color="primary" aria-label="text primary button group">
 
-
+                <Button onClick={this.printDocument} className="my-donwload" disabled={this.state.isLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <PictureAsPdfIcon />}&nbsp;{this.state.isLoading ? "Exporting PDF" : "PDF"}</Button>
+                <Button onClick={this.downloadImage} className="my-donwload" disabled={this.state.isimageLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <CloudDownloadIcon />}&nbsp;{this.state.isimageLoading ? "Exporting Image" : "Image"}</Button>
+              </ButtonGroup>
             </div>
+            <div className="mt4">
+              <div className="App" id="initechOrgChart">
+                <TransformWrapper>
+                  {({ zoomIn, zoomOut, resetTransform }) => (
+                    <React.Fragment>
+                      <div className="tools fixed-top">
+                        <ButtonGroup variant="text" className="zoom-in-out" color="primary" aria-label="text primary button group">
+                          <Button className="my-donwload" onClick={zoomIn}><ZoomInIcon /></Button>
+                          <Button className="my-donwload" onClick={zoomOut}><ZoomOutIcon /></Button>
+                          <Button className="my-donwload" onClick={resetTransform}><RotateLeftIcon /></Button>
+                          <Button>
+                            <input type="color" id="color-picker"
+                              className="btn btn-outline" onChange={this.getcolor}></input>
+                          </Button>
+                        </ButtonGroup>
+                      </div>
+                      <TransformComponent>
+                        <div id="divToPrint" className="mt4" >
+                          <MapInteractionCSS>
+                            <OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} />
+                          </MapInteractionCSS>
+                        </div>
+                      </TransformComponent>
+                    </React.Fragment>
+                  )}
+                </TransformWrapper>
+              </div>
+            </div>
+
+
           </div>
         </div>
-      </LoadingOverlay>
+      </div>
+      // </LoadingOverlay>
     );
   }
 }

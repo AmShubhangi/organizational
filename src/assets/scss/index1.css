@@ -1702,3 +1702,8 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButtonGroup-grouped.M
   color: black !important;
 }
  
+
+/* 11-01-2020 */
+.react-sweet-progress-line-inner.undefined {
+  display: none;
+}
