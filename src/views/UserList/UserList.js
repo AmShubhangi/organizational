@@ -16,6 +16,9 @@ import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 import LoadingOverlay from 'react-loading-overlay';
 import { MapInteractionCSS } from 'react-map-interaction';
 import watermark from '../../assets/images/home-logo.661d8116.png'
+import { Progress } from 'react-sweet-progress';
+import "react-sweet-progress/lib/style.css";
+
 class UserList extends React.Component {
   constructor(props) {
     super(props);
@@ -115,8 +118,34 @@ class UserList extends React.Component {
       <LoadingOverlay
         active={this.state.isimageLoading ? this.state.isimageLoading : this.state.isLoading}
         spinner
-        text='Exporting File!'
+        text={this.state.isLoading ? <Progress
+          theme={
+            {
+              error: {
+                symbol: this.state.percent + '%',
+                trailColor: 'pink',
+                color: 'red'
+              },
+              default: {
+                symbol: this.state.percent + '%',
+                trailColor: 'lightblue',
+                color: 'blue'
+              },
+              active: {
+                symbol: this.state.percent + '%',
+                trailColor: 'yellow',
+                color: 'orange'
+              },
+              success: {
+                symbol: this.state.percent + '%',
+                trailColor: 'lime',
+                color: 'green'
+              }
+            }
+          }
+        />: 'Exporting File!'}
       >
+       
         <div className="root">
           <div className="content">
             <div className="full-width">
@@ -138,8 +167,10 @@ class UserList extends React.Component {
                             <Button className="my-donwload" onClick={zoomIn}><ZoomInIcon /></Button>
                             <Button className="my-donwload" onClick={zoomOut}><ZoomOutIcon /></Button>
                             <Button className="my-donwload" onClick={resetTransform}><RotateLeftIcon /></Button>
-                            <input type="color" id="color-picker"
-                              className="btn btn-outline" onChange={this.getcolor}></input>
+                            <Button>
+                              <input type="color" id="color-picker"
+                                className="btn btn-outline" onChange={this.getcolor}></input>
+                            </Button>
                           </ButtonGroup>
                         </div>
                         <TransformComponent>

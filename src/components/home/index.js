@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import CountUp from 'react-countup';
 import studentimg from 'assets/images/homepage.png';
-import photo from 'assets/images/photo-1557804506-669a67965ba0.jpeg';
+import slider1 from '../../assets/images/slider.jpeg';
+import slider2 from '../../assets/images/2.PNG';
+import slider3 from '../../assets/images/3.png';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import DescriptionIcon from '@material-ui/icons/Description';
 import VisibilityIcon from '@material-ui/icons/Visibility';
@@ -38,10 +40,10 @@ class HomeComponent extends Component {
     return (
       <div>
         <nav className="navbar  navbar-expand-lg navbar-light bg-light">
-          <div className="container"> 
-              <a className="site-logo" href="index.html">
-                <img src={logo} width="150" height="35"></img>
-              </a> 
+          <div className="container">
+            <a className="site-logo" href="index.html">
+              <img src={logo} width="150" height="35"></img>
+            </a>
             <button onClick={this.toggleNavbar} className={`${classTwo}`} type="button" data-toggle="collapse" data-target="#navbar-Collapse" aria-controls="navbar-Collapse" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon" />
             </button>
@@ -138,138 +140,167 @@ class HomeComponent extends Component {
                 visualize and export (Image, PDF, other types if possible) OGs.</p>
               </div>
               <div className="owl-carousel slide-one-item col-md-6">
-                <img src={photo} className="img-fluid" alt="Service" />
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div className="bg-light" id="Statistics">
-          <div className="container padding-top-bottom">
-            <div className="row mb-5">
-              <div className="col-12">
-                <h2 className="heading">Statistics</h2>
-                <p className="font-weight-bold">IT Admin of a company enters the company Workspace One tenant API credentials in our OG tool.
-              </p>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-md-6 col-lg-4 mb-4">
-                <div className="service h-100 Statistics-item">
-                  <div className="icon-section">
-                    <span className="wrap-icon">
-                      <SupervisorAccountIcon className="services-icon" />
-                    </span>
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img class="d-block w-100" src={slider1}  />
+                   </div>
+                      <div class="carousel-item">
+                        <img class="d-block w-100" src={slider2}  />
+                      </div>
+                        <div class="carousel-item">
+                          <img class="d-block w-100" src={slider3} />
+                       </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon text-dark" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon text-dark" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+
+                    </div>
+
+
                   </div>
-                  <h3 className="title">Clients</h3>
-                  <h1 className="text-primary  mt-2"><p className="item-des  font-size"><CountUp end={10000} duration={5} />
-                  </p>
-                  </h1>
                 </div>
               </div>
-              <div className="col-md-6 col-lg-4 mb-4">
-                <div className="service h-100 Statistics-item">
-                  <div className="icon-section">
-                    <span className="wrap-icon">
-                      <AccountTreeIcon className="services-icon" />
-                    </span>
-                  </div>
-                  <h3 className="title">Diagram Generated</h3>
-                  <h1 className="text-primary  mt-2"><p className="item-des font-size"><CountUp end={23999} duration={5} /> </p></h1>
-                </div>
 
-              </div>
-              <div className="col-md-6 col-lg-4 mb-4">
-                <div className="service h-100 Statistics-item">
-                  <div className="icon-section">
-                    <span className="wrap-icon">
-                      <BusinessIcon className="services-icon" />
-                    </span>
-                  </div>
-                  <h3 className="title">Organisation Group</h3>
-                  <h1 className="text-primary  mt-2 "><p className="item-des font-size"><CountUp end={23448} duration={5} /></p></h1>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <footer className="site-footer">
-            <div className="container">
-              <div className="row">
-                <div className="col-lg-4 mb-5 mb-lg-0">
+              <div className="bg-light" id="Statistics">
+                <div className="container padding-top-bottom">
                   <div className="row mb-5">
                     <div className="col-12">
-                      <h3 className="footer-heading mb-4">About Us</h3>
-                      <p>OG tool is a simple Workspace One tool to visualize organization groups and manipulate them using
+                      <h2 className="heading">Statistics</h2>
+                      <p className="font-weight-bold">IT Admin of a company enters the company Workspace One tenant API credentials in our OG tool.
+              </p>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-md-6 col-lg-4 mb-4">
+                      <div className="service h-100 Statistics-item">
+                        <div className="icon-section">
+                          <span className="wrap-icon">
+                            <SupervisorAccountIcon className="services-icon" />
+                          </span>
+                        </div>
+                        <h3 className="title">Clients</h3>
+                        <h1 className="text-primary  mt-2"><p className="item-des  font-size"><CountUp end={10000} duration={5} />
+                        </p>
+                        </h1>
+                      </div>
+                    </div>
+                    <div className="col-md-6 col-lg-4 mb-4">
+                      <div className="service h-100 Statistics-item">
+                        <div className="icon-section">
+                          <span className="wrap-icon">
+                            <AccountTreeIcon className="services-icon" />
+                          </span>
+                        </div>
+                        <h3 className="title">Diagram Generated</h3>
+                        <h1 className="text-primary  mt-2"><p className="item-des font-size"><CountUp end={23999} duration={5} /> </p></h1>
+                      </div>
+
+                    </div>
+                    <div className="col-md-6 col-lg-4 mb-4">
+                      <div className="service h-100 Statistics-item">
+                        <div className="icon-section">
+                          <span className="wrap-icon">
+                            <BusinessIcon className="services-icon" />
+                          </span>
+                        </div>
+                        <h3 className="title">Organisation Group</h3>
+                        <h1 className="text-primary  mt-2 "><p className="item-des font-size"><CountUp end={23448} duration={5} /></p></h1>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <footer className="site-footer">
+                  <div className="container">
+                    <div className="row">
+                      <div className="col-lg-4 mb-5 mb-lg-0">
+                        <div className="row mb-5">
+                          <div className="col-12">
+                            <h3 className="footer-heading mb-4">About Us</h3>
+                            <p>OG tool is a simple Workspace One tool to visualize organization groups and manipulate them using
                       an interactive UI.</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-5 ml-auto">
-
-                  <div className="row mb-7">
-                    <div className="col-md-12">
-                      <h3 className="footer-heading mb-4">Navigation</h3>
-                    </div>
-                    <div className="col-md-12">
-
-                      <ul className="list-unstyled row">
-                        <div className="col-md-4">
-                          <li><a href="#home" className="nav-link">Home</a></li>
-                          <li><a href="#service" className="nav-link">service</a></li>
+                          </div>
                         </div>
-                        <div className="col-md-4">
-                          <li><a href="#work" className="nav-link">How it works?</a></li>
-                          <li><a href="#Statistics" className="nav-link">Statistics</a></li>
+                      </div>
+                      <div className="col-lg-5 ml-auto">
+
+                        <div className="row mb-7">
+                          <div className="col-md-12">
+                            <h3 className="footer-heading mb-4">Navigation</h3>
+                          </div>
+                          <div className="col-md-12">
+
+                            <ul className="list-unstyled row">
+                              <div className="col-md-4">
+                                <li><a href="#home" className="nav-link">Home</a></li>
+                                <li><a href="#service" className="nav-link">service</a></li>
+                              </div>
+                              <div className="col-md-4">
+                                <li><a href="#work" className="nav-link">How it works?</a></li>
+                                <li><a href="#Statistics" className="nav-link">Statistics</a></li>
+                              </div>
+                              <div className="col-md-4">
+                                <li><a href="#service" className="nav-link">Contact</a></li>
+                                <li><a href="/login" className="nav-link">Login</a></li>
+                              </div>
+                            </ul>
+
+                          </div>
+
                         </div>
-                        <div className="col-md-4">
-                          <li><a href="#service" className="nav-link">Contact</a></li>
-                          <li><a href="/login" className="nav-link">Login</a></li>
+
+                      </div>
+
+
+                      <div className="col-lg-3 mb-5 mb-lg-0" id="contact-section">
+
+                        <div className="mb-5">
+                          <h3 className="footer-heading mb-4">Quick Contact</h3>
+                          <div className="Address">
+                            <span className="address"><span style={{ color: '#b3b3b3' }} >Phone:</span> +33600000000</span>
+                            <span className="address"><span style={{ color: '#b3b3b3' }} >Email:</span> ogwsone@gmail.com</span>
+                            <span className="address"><span style={{ color: '#b3b3b3' }} >Address:</span> 7 Rue de Test, 75000 Paris</span>
+                          </div>
                         </div>
-                      </ul>
+                      </div>
 
                     </div>
-
-                  </div>
-
-                </div>
-
-
-                <div className="col-lg-3 mb-5 mb-lg-0" id="contact-section">
-
-                  <div className="mb-5">
-                    <h3 className="footer-heading mb-4">Quick Contact</h3>
-                    <div className="Address">
-                      <span className="address"><span style={{color:'#b3b3b3'}} >Phone:</span> +33600000000</span>
-                      <span className="address"><span style={{color:'#b3b3b3'}} >Email:</span> ogwsone@gmail.com</span>
-                      <span className="address"><span style={{color:'#b3b3b3'}} >Address:</span> 7 Rue de Test, 75000 Paris</span>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-              <div className="row text-center">
-                <div className="col-md-12">
-                  <div className="mb-4">
-                    <a href="#demo" className="pl-0 pr-3"><span className="icon-facebook"><FacebookIcon /></span></a>
-                    <a href="#demo" className="pl-3 pr-3"><span className="icon-twitter"><TwitterIcon /></span></a>
-                    <a href="#demo" className="pl-3 pr-3"><span className="icon-instagram"><InstagramIcon /></span></a>
-                    <a href="#demo" className="pl-3 pr-3"><span className="icon-linkedin"><LinkedInIcon /></span></a>
-                  </div>
-                  <p>
-                    Copyright &copy;
+                    <div className="row text-center">
+                      <div className="col-md-12">
+                        <div className="mb-4">
+                          <a href="#demo" className="pl-0 pr-3"><span className="icon-facebook"><FacebookIcon /></span></a>
+                          <a href="#demo" className="pl-3 pr-3"><span className="icon-twitter"><TwitterIcon /></span></a>
+                          <a href="#demo" className="pl-3 pr-3"><span className="icon-instagram"><InstagramIcon /></span></a>
+                          <a href="#demo" className="pl-3 pr-3"><span className="icon-linkedin"><LinkedInIcon /></span></a>
+                        </div>
+                        <p>
+                          Copyright &copy;
                   <script>document.write(new Date().getFullYear());</script> All rights reserved
                 </p>
-                </div>
+                      </div>
 
+                    </div>
+                  </div>
+                </footer>
               </div>
+
             </div>
-          </footer>
-        </div>
-
-      </div>
-    );
-  }
-}
-export default HomeComponent;
-
+            );
+          }
+        }
+        export default HomeComponent;
+        
