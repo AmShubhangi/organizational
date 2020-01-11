@@ -24,6 +24,7 @@ class UserList extends React.Component {
     this.state = {
       isLoading: false,
       isimageLoading: false,
+      bgcolor:'#287cfa'
     }
     this.myRef = React.createRef();
     this.downloadImage = this.downloadImage.bind(this);
@@ -54,7 +55,7 @@ class UserList extends React.Component {
 
   downloadImage() {
     window.scroll(0, 100);
-    const input = document.getElementById('divToPrint');
+    // const input = document.getElementById('divToPrint');
     // input.style.transform = 'scale(0.5)';
     this.setState({ isimageLoading: true });
     setTimeout(() => {
@@ -88,11 +89,9 @@ class UserList extends React.Component {
     }, 2000)
   }
   getcolor(event) {
-    const div = document.getElementById(event.target.parentNode.id);
-    div.style.backgroundColor = event.target.value;
-    const bgColor = div.style.backgroundColor;
-    this.setState({ color: bgColor });
+   this.setState({bgcolor : event.target.value});
   }
+
   componentDidMount() {
     var elem = document.getElementById(this.initechOrg.Name);
     window.scrollTo(elem.offsetLeft - 700, 0);
@@ -104,10 +103,8 @@ class UserList extends React.Component {
       return (
         <div className="initechNode" id={node.Name}>
           <div className="parent-node"
-            id={node.Name} >
+            id={node.Name} style={{backgroundColor:this.state.bgcolor}}>
             <h4 className="parent-size">{node.Name}</h4>
-            <input type="color" id="color-picker"
-              className="btn btn-outline" onChange={this.getcolor}></input>
           </div>
           <div className="initechNode-info">
             {/* <p className="no-margin">Identifier:{node.Id.Value}</p> */}
@@ -147,6 +144,8 @@ class UserList extends React.Component {
                             <Button className="my-donwload" onClick={zoomIn}><ZoomInIcon /></Button>
                             <Button className="my-donwload" onClick={zoomOut}><ZoomOutIcon /></Button>
                             <Button className="my-donwload" onClick={resetTransform}><RotateLeftIcon /></Button>
+                            <input type="color" id="color-picker"
+                              className="btn btn-outline" onChange={this.getcolor}></input>
                           </ButtonGroup>
                         </div>
                         <TransformComponent>
