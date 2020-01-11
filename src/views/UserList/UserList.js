@@ -143,9 +143,9 @@ class UserList extends React.Component {
               }
             }
           }
-        />: 'Exporting File!'}
+        /> : 'Exporting File!'}
       >
-       
+
         <div className="root">
           <div className="content">
             <div className="full-width">
@@ -175,11 +175,12 @@ class UserList extends React.Component {
                         </div>
                         <TransformComponent>
                           <div id="divToPrint" className="mt4" >
+                            <div className="watermark">
+                             <p className="copy">By</p> <img src={watermark} className="watermark1" />
+                            </div>
                             <MapInteractionCSS>
+
                               <OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} />
-                              <div className="watermark">
-                                <img src={watermark} className="watermark1" />
-                              </div>
                             </MapInteractionCSS>
                           </div>
                         </TransformComponent>
