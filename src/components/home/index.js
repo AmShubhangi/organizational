@@ -42,7 +42,7 @@ class HomeComponent extends Component {
         <nav className="navbar  navbar-expand-lg navbar-light bg-light">
           <div className="container">
             <a className="site-logo" href="index.html">
-              <img src={logo} width="150" height="35"></img>
+              <img src={logo} width="150" height="35" alt="a"></img>
             </a>
             <button onClick={this.toggleNavbar} className={`${classTwo}`} type="button" data-toggle="collapse" data-target="#navbar-Collapse" aria-controls="navbar-Collapse" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon" />
@@ -149,13 +149,13 @@ class HomeComponent extends Component {
                   </ol>
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img class="d-block w-100" src={slider1}  />
+                      <img class="d-block w-100" src={slider1} alt="b" />
                    </div>
                       <div class="carousel-item">
-                        <img class="d-block w-100" src={slider2}  />
+                        <img class="d-block w-100" src={slider2} alt="c"  />
                       </div>
                         <div class="carousel-item">
-                          <img class="d-block w-100" src={slider3} />
+                          <img class="d-block w-100" src={slider3} alt="v" />
                        </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

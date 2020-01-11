@@ -177,10 +177,9 @@ class UserList extends React.Component {
                         <TransformComponent>
                           <div id="divToPrint" className="mt4" >
                             <div className="watermark">
-                              <p className="copy">By</p> <img src={watermark} className="watermark1" />
+                              <p className="copy">By</p> <img src={watermark} alt="watermark" className="watermark1" />
                             </div>
                             <MapInteractionCSS>
-
                               <OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} />
                             </MapInteractionCSS>
                           </div>
@@ -190,8 +189,6 @@ class UserList extends React.Component {
                   </TransformWrapper>
                 </div>
               </div>
-
-
             </div>
           </div>
         </div>
