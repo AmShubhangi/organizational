@@ -45,7 +45,7 @@ class HomeComponent extends Component {
               breakpoint={768} 
               className="scroll-your-role"
               speed={1000}
-              target={75}
+              target={0}
               distance={300}
               text={<ArrowUpwardIcon />}
             />
