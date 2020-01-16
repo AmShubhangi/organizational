@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import CountUp from 'react-countup';
 import studentimg from 'assets/images/homepage.png';
 import slider1 from '../../assets/images/slider.jpeg';
-import slider2 from '../../assets/images/2.PNG';
 import slider3 from '../../assets/images/3.png';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import DescriptionIcon from '@material-ui/icons/Description';
@@ -147,17 +146,14 @@ class HomeComponent extends Component {
                   <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  
                   </ol>
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img class="d-block w-100" src={slider1} alt="b" />
-                   </div>
-                      <div class="carousel-item">
-                        <img class="d-block w-100" src={slider2} alt="c"  />
-                      </div>
+                      <img class="d-block w-100 img-slider" src={slider1} alt="b" />
+                   </div> 
                         <div class="carousel-item">
-                          <img class="d-block w-100" src={slider3} alt="v" />
+                          <img class="d-block w-100 img-slider" src={slider3} alt="v" />
                        </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
