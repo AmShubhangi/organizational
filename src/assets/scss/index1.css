@@ -1740,3 +1740,11 @@ p.copy {
 img.d-block.w-100.img-slider{
   height: 450px;
 }
+.scroll-your-role{
+background-color:rgba(0, 0, 0, 0.25);
+z-index: 9999 !important; 
+}
+button.react-scrolltop-button.scroll-your-role.sc-bdVaJa.fMbuBM{
+  padding: 5px;
+}
+ 
