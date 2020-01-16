@@ -61,7 +61,6 @@ class UserList extends React.Component {
     this.setState({watermarkVisible: true});
     setTimeout(() => { 
       htmlToImage.toPng(document.getElementById('divToPrint'), { quality: 0.55 }) 
-         
         .then((dataUrl) => { 
           var link = document.createElement('a');
           link.download = 'OG-Structure.png';
@@ -69,7 +68,6 @@ class UserList extends React.Component {
           link.click();
           this.setState({ isimageLoading: false })
         });
-       
     },10)
   }
 
@@ -155,7 +153,6 @@ class UserList extends React.Component {
                             {this.state.watermarkVisible === true ? <div className="watermark">
                               <p className="copy">By</p><img src={watermark} alt="watermark" className="watermark1" />
                             </div>  : ''}
-                            
                             <MapInteractionCSS>
                               <OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} />
                             </MapInteractionCSS>

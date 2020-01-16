@@ -88,7 +88,7 @@ p.no-margin {
 }
 h4.parent-size {
   font-size: 10px;
-  word-wrap: break-word;
+  word-break: break-word;
   margin-bottom: 0px;
   width: 100px;
   font-weight: 700;
