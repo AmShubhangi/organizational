@@ -16,7 +16,6 @@ import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 import LoadingOverlay from 'react-loading-overlay';
 import { MapInteractionCSS } from 'react-map-interaction';
 import watermark from '../../assets/images/home-logo.661d8116.png'
-import { Progress } from 'react-sweet-progress';
 import "react-sweet-progress/lib/style.css";
 
 class UserList extends React.Component {
@@ -32,6 +31,8 @@ class UserList extends React.Component {
     }
     this.downloadImage = this.downloadImage.bind(this);
     this.getcolor = this.getcolor.bind(this);
+    this.GotoParent = this.GotoParent.bind(this);
+
     this.initechOrg = '';
     var arry = require('../../API/clientData.json');
     var map = {};
@@ -56,27 +57,27 @@ class UserList extends React.Component {
   }
 
   downloadImage() {
-    window.scroll(0, 100);  
-    this.setState({ isimageLoading: true }); 
-    this.setState({watermarkVisible: true});
-    setTimeout(() => { 
-      htmlToImage.toPng(document.getElementById('divToPrint'), { quality: 0.55 }) 
-        .then((dataUrl) => { 
+    window.scroll(0, 100);
+    this.setState({ isimageLoading: true });
+    this.setState({ watermarkVisible: true });
+    setTimeout(() => {
+      htmlToImage.toPng(document.getElementById('divToPrint'), { quality: 0.55 })
+        .then((dataUrl) => {
           var link = document.createElement('a');
           link.download = 'OG-Structure.png';
           link.href = dataUrl;
           link.click();
           this.setState({ isimageLoading: false })
         });
-    },10)
+    }, 10)
   }
 
   printDocument() {
-    window.scrollTo(0, 0);
-    const input = document.getElementById('divToPrint'); 
+    // window.scrollTo(0, 0);
+    const input = document.getElementById('divToPrint');
     setTimeout(() => {
       this.setState({ isLoading: true })
-      this.setState({watermarkVisible: true});
+      this.setState({ watermarkVisible: true });
       html2canvas(input)
         .then((canvas) => {
           const imgData = canvas.toDataURL('image/png', { quality: 0.55 });
@@ -93,8 +94,14 @@ class UserList extends React.Component {
   }
 
   componentDidMount() {
+    // this.GotoParent();
+  }
+
+  GotoParent() {
     var elem = document.getElementById(this.initechOrg.Name);
     window.scrollTo(elem.offsetLeft - 700, 0);
+    const c = document.getElementById('org');
+    c.parentNode.style.transform = "translate(0px,0px) scale(1)";
   }
 
   render() {
@@ -141,7 +148,7 @@ class UserList extends React.Component {
                           <ButtonGroup variant="text" className="zoom-in-out" color="primary" aria-label="text primary button group">
                             <Button className="my-donwload" onClick={zoomIn}><ZoomInIcon /></Button>
                             <Button className="my-donwload" onClick={zoomOut}><ZoomOutIcon /></Button>
-                            <Button className="my-donwload" onClick={resetTransform}><RotateLeftIcon /></Button>
+                            <Button className="my-donwload" onClick={this.GotoParent}><RotateLeftIcon /></Button>
                             <Button>
                               <input type="color" id="color-picker"
                                 className="btn btn-outline" onChange={this.getcolor}></input>
@@ -152,9 +159,11 @@ class UserList extends React.Component {
                           <div id="divToPrint" className="mt4" >
                             {this.state.watermarkVisible === true ? <div className="watermark">
                               <p className="copy">By</p><img src={watermark} alt="watermark" className="watermark1" />
-                            </div>  : ''}
+                            </div> : ''}
                             <MapInteractionCSS>
-                              <OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} />
+                              <div id="org">
+                                <OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} />
+                              </div>
                             </MapInteractionCSS>
                           </div>
                         </TransformComponent>
