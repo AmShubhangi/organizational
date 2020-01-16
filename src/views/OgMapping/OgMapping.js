@@ -95,10 +95,14 @@ class OgMapping extends React.Component {
   }
 
   captureImage() {
-    html2canvas(document.getElementById("capture"), { scale: 1 }).then(canvas => {
-      document.body.appendChild(canvas);
-      console.log(canvas);
-    });
+    htmlToImage.toPng(document.getElementById('divToPrint'), { quality: 0.55 })
+      .then((dataUrl) => {
+        var link = document.createElement('a');
+        link.download = 'OG-Structure.png';
+        link.href = dataUrl;
+        link.click();
+        this.setState({ isimageLoading: false })
+      });
   }
 
   componentDidMount() {
@@ -133,9 +137,7 @@ class OgMapping extends React.Component {
       <LoadingOverlay
         active={this.state.isimageLoading ? this.state.isimageLoading : this.state.isLoading}
         spinner
-        text='Exporting File!'
-      >
-
+        text='Exporting File!'>
         <div className="root">
           <div className="content">
             <div className="full-width">
@@ -162,9 +164,6 @@ class OgMapping extends React.Component {
                                 className="btn btn-outline" onChange={this.getcolor}></input>
                             </Button>
                           </ButtonGroup>
-                        </div>
-                        <div id="capture">
-                          <h4 style={{ color: '#000' }}>Hello world!</h4>
                         </div>
                         <TransformComponent>
                           <div id="divToPrint" className="mt4" >
