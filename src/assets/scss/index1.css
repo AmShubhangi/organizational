@@ -1720,6 +1720,9 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButtonGroup-grouped.M
 .reactOrgChart {
   margin-top: 100px !important;
 }
+.reactOrgChart {
+  margin-top: 50px !important;
+}
 .watermark1 {
   opacity: 0.5;
   height: 45px;
