@@ -4,7 +4,7 @@ import { RouteWithLayout } from './components';
 import { Main as MainLayout, Minimal as MinimalLayout } from './layouts';
 import {
   ProductList as ProductListView,
-  UserList as UserListView,
+  OgMapping as OgMappingView,
   Typography as TypographyView,
   Icons as IconsView,
   Account as AccountView,
@@ -36,7 +36,7 @@ const Routes = () => {
         path="/dashboard"
       /> */}
       <RouteWithLayout
-        component={UserListView}
+        component={OgMappingView}
         exact
         layout={MainLayout}
         path="/og-map"
