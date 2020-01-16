@@ -94,7 +94,7 @@ class UserList extends React.Component {
   }
 
   componentDidMount() {
-    // this.GotoParent();
+    this.GotoParent();
   }
 
   GotoParent() {
