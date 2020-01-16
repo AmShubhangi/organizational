@@ -148,7 +148,7 @@ class UserList extends React.Component {
                           <ButtonGroup variant="text" className="zoom-in-out" color="primary" aria-label="text primary button group">
                             <Button className="my-donwload" onClick={zoomIn}><ZoomInIcon /></Button>
                             <Button className="my-donwload" onClick={zoomOut}><ZoomOutIcon /></Button>
-                            <Button className="my-donwload" onClick={this.GotoParent}><RotateLeftIcon /></Button>
+                            <Button className="my-donwload" onClick={resetTransform} onClickCapture={this.GotoParent}><RotateLeftIcon /></Button>
                             <Button>
                               <input type="color" id="color-picker"
                                 className="btn btn-outline" onChange={this.getcolor}></input>
