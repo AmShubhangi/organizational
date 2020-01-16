@@ -17,8 +17,9 @@ import LoadingOverlay from 'react-loading-overlay';
 import { MapInteractionCSS } from 'react-map-interaction';
 import watermark from '../../assets/images/home-logo.661d8116.png'
 import "react-sweet-progress/lib/style.css";
+import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 
-class UserList extends React.Component {
+class OgMapping extends React.Component {
   constructor(props) {
     super(props);
     this.downloadImage = this.downloadImage.bind(this);
@@ -93,6 +94,13 @@ class UserList extends React.Component {
     this.setState({ bgcolor: event.target.value });
   }
 
+  captureImage() {
+    html2canvas(document.getElementById("capture"), { scale: 1 }).then(canvas => {
+      document.body.appendChild(canvas);
+      console.log(canvas);
+    });
+  }
+
   componentDidMount() {
     this.GotoParent();
   }
@@ -134,9 +142,9 @@ class UserList extends React.Component {
               <div className="donwload-group fixed-top">
                 <h4 className="export">Export as :</h4>
                 <ButtonGroup variant="text" id="download-button" color="primary" aria-label="text primary button group">
-
                   <Button onClick={this.printDocument} className="my-donwload" disabled={this.state.isLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <PictureAsPdfIcon />}&nbsp;{this.state.isLoading ? "Exporting PDF" : "PDF"}</Button>
                   <Button onClick={this.downloadImage} className="my-donwload" disabled={this.state.isimageLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <CloudDownloadIcon />}&nbsp;{this.state.isimageLoading ? "Exporting Image" : "Image"}</Button>
+                  <Button onClick={this.captureImage} className="my-donwload"><AddAPhotoIcon /></Button>
                 </ButtonGroup>
               </div>
               <div className="mt4">
@@ -154,6 +162,9 @@ class UserList extends React.Component {
                                 className="btn btn-outline" onChange={this.getcolor}></input>
                             </Button>
                           </ButtonGroup>
+                        </div>
+                        <div id="capture">
+                          <h4 style={{ color: '#000' }}>Hello world!</h4>
                         </div>
                         <TransformComponent>
                           <div id="divToPrint" className="mt4" >
@@ -175,8 +186,8 @@ class UserList extends React.Component {
             </div>
           </div>
         </div>
-      </LoadingOverlay>
+      </LoadingOverlay >
     );
   }
 }
-export default UserList;
+export default OgMapping;
