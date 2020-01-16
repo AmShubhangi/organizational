@@ -29,10 +29,8 @@ class UserList extends React.Component {
       isimageLoading: false,
       bgcolor: '#287cfa'
     }
-    this.myRef = React.createRef();
     this.downloadImage = this.downloadImage.bind(this);
     this.getcolor = this.getcolor.bind(this);
-
     this.initechOrg = '';
     var arry = require('../../API/clientData.json');
     var map = {};
@@ -82,7 +80,6 @@ class UserList extends React.Component {
           const pdf = new jsPDF('l', 'mm', [75000, 1500], true);
           pdf.setTextColor(150);
           pdf.addImage(imgData, 'PNG', 0, 0);
-          pdf.text('John Doe', 10, 10);
           pdf.save("OG-Structure.pdf");
           this.setState({ isLoading: false });
         });
