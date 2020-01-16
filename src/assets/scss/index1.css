@@ -137,6 +137,7 @@ h4.parent-size {
   width: 65px;
   display: inline-block;
   margin: 0px 0px 0px 6px;
+   
 }
 
 .initechNode-info {
@@ -159,7 +160,7 @@ h4.parent-size {
 #initechOrgChart .orgNodeChildGroup .nodeGroupLineVerticalMiddle {
   border-right: solid 1px #287cfa;
 }
-
+ 
 #initechOrgChart .nodeLineBorderTop {
   border-top: solid 1px #287cfa;
 }
@@ -1710,16 +1711,29 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButtonGroup-grouped.M
   position: absolute;
   right: 0px;
   margin: 0px 110px 40px 40px;
+  margin: auto;
+  display: flex;
+  width: 50.5%;
   opacity: 0.5;
+  padding-bottom:30px;  
+}
+.reactOrgChart {
+  margin-top: 100px !important;
 }
 .watermark1 {
   opacity: 0.5;
   height: 45px;
 }
-.carousel-indicators li{
+ 
+.carousel-indicators li {
   border-radius: 50%;
   background-color: black;
   height: 10px;
   width: 10px;
 }
- 
+p.copy {
+  font-size: 20px;
+}
+img.d-block.w-100.img-slider{
+  height: 450px;
+}

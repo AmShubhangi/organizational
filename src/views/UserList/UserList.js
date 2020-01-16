@@ -15,6 +15,7 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 import LoadingOverlay from 'react-loading-overlay';
 import { MapInteractionCSS } from 'react-map-interaction';
+import watermark from '../../assets/images/home-logo.661d8116.png'
 import { Progress } from 'react-sweet-progress';
 import "react-sweet-progress/lib/style.css";
 
@@ -26,7 +27,8 @@ class UserList extends React.Component {
     this.state = {
       isLoading: false,
       isimageLoading: false,
-      bgcolor: '#287cfa'
+      bgcolor: '#287cfa',
+      watermarkVisible: false,
     }
     this.myRef = React.createRef();
     this.downloadImage = this.downloadImage.bind(this);
@@ -56,25 +58,29 @@ class UserList extends React.Component {
   }
 
   downloadImage() {
-    window.scroll(0, 100);
-    this.setState({ isimageLoading: true });
-    setTimeout(() => {
-      htmlToImage.toPng(document.getElementById('divToPrint'), { quality: 0.55 })
-        .then((dataUrl) => {
+    window.scroll(0, 100);  
+    this.setState({ isimageLoading: true }); 
+    this.setState({watermarkVisible: true});
+    setTimeout(() => { 
+      htmlToImage.toPng(document.getElementById('divToPrint'), { quality: 0.55 }) 
+         
+        .then((dataUrl) => { 
           var link = document.createElement('a');
           link.download = 'OG-Structure.png';
           link.href = dataUrl;
           link.click();
           this.setState({ isimageLoading: false })
         });
-    }, 3000)
+       
+    },10)
   }
 
   printDocument() {
     window.scrollTo(0, 0);
-    const input = document.getElementById('divToPrint');
+    const input = document.getElementById('divToPrint'); 
     setTimeout(() => {
       this.setState({ isLoading: true })
+      this.setState({watermarkVisible: true});
       html2canvas(input)
         .then((canvas) => {
           const imgData = canvas.toDataURL('image/png', { quality: 0.55 });
@@ -117,9 +123,9 @@ class UserList extends React.Component {
       <LoadingOverlay
         active={this.state.isimageLoading ? this.state.isimageLoading : this.state.isLoading}
         spinner
-        text='Exporting File!' 
+        text='Exporting File!'
       >
-       
+
         <div className="root">
           <div className="content">
             <div className="full-width">
@@ -149,6 +155,10 @@ class UserList extends React.Component {
                         </div>
                         <TransformComponent>
                           <div id="divToPrint" className="mt4" >
+                            {this.state.watermarkVisible === true ? <div className="watermark">
+                              <p className="copy">By</p><img src={watermark} alt="watermark" className="watermark1" />
+                            </div>  : ''}
+                            
                             <MapInteractionCSS>
                               <OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} />
                             </MapInteractionCSS>
@@ -159,8 +169,6 @@ class UserList extends React.Component {
                   </TransformWrapper>
                 </div>
               </div>
-
-
             </div>
           </div>
         </div>
