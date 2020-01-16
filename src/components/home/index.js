@@ -15,6 +15,7 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import logo from '../../assets/images/home-logo.png';
+import {CircleArrow as ScrollUpButton} from "react-scroll-up-button";
 
 
 
@@ -41,6 +42,7 @@ class HomeComponent extends Component {
       <div>
         <nav className="navbar  navbar-expand-lg navbar-light bg-light">
           <div className="container">
+          <ScrollUpButton AnimationDuration={500}/>
             <a className="site-logo" href="index.html">
               <img src={logo} width="150" height="35" alt="a"></img>
             </a>
