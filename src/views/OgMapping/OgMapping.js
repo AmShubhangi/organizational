@@ -95,10 +95,7 @@ class OgMapping extends React.Component {
   }
 
   captureImage() {
-    html2canvas(document.getElementById("capture"), { scale: 1 }).then(canvas => {
-      document.body.appendChild(canvas);
-      console.log(canvas);
-    });
+     window.print();
   }
 
   componentDidMount() {
