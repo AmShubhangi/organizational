@@ -107,7 +107,7 @@ class OgMapping extends React.Component {
 
   GotoParent() {
     var elem = document.getElementById(this.initechOrg.Name);
-    window.scrollTo(elem.offsetLeft - 700, 0);
+    window.scrollTo(elem.offsetLeft - window.innerWidth / 2, 0);
     const c = document.getElementById('org');
     c.parentNode.style.transform = "translate(0px,0px) scale(1)";
   }
