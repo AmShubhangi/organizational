@@ -1750,3 +1750,10 @@ button.react-scrolltop-button.scroll-your-role.sc-bdVaJa.fMbuBM{
   padding: 5px;
 }
  
+
+/* 17-01-2020 */
+
+._loading_overlay_overlay.css-df17o1
+{
+  position: fixed !important;
+}

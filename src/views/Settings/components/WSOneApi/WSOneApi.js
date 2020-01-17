@@ -30,13 +30,15 @@ class WSOneApi extends React.Component {
     this.setState({submitted : false});
   }
 
-
+//Handle change event of textvalidator.
   handleChange = (event) => {
     const { formData } = this.state;
     formData[event.target.name] = event.target.value;
     this.setState({ formData });
   }
 
+
+//Handle submit event of form.
   handleSubmit = () => {
     this.setState({ submitted: true }, () => {
       setTimeout(() => this.setState({ submitted: false }), 5000);

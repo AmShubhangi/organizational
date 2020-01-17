@@ -22,18 +22,22 @@ import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 class OgMapping extends React.Component {
   constructor(props) {
     super(props);
+    this.getImage = this.getImage.bind(this);
     this.downloadImage = this.downloadImage.bind(this);
     this.printDocument = this.printDocument.bind(this);
-    this.state = {
-      isLoading: false,
-      isimageLoading: false,
-      bgcolor: '#287cfa',
-      watermarkVisible: false,
-    }
-    this.downloadImage = this.downloadImage.bind(this);
+    this.downloadPdf = this.downloadPdf.bind(this);
     this.getcolor = this.getcolor.bind(this);
     this.GotoParent = this.GotoParent.bind(this);
 
+    this.state = {
+      isLoading: false,//PDF Loader.
+      isImageLoading: false,//Image Loader.
+      bgcolor: '#287cfa',//ColorPicker.
+      watermarkVisible: false,//Watermark.
+    }
+
+
+    //Converting json data format into library format of Diagram.
     this.initechOrg = '';
     var arry = require('../../API/clientData.json');
     var map = {};
@@ -55,53 +59,70 @@ class OgMapping extends React.Component {
       }
     }
     this.initechOrg = map[arry[0].Id.Value];
-  }
+  }//
 
   downloadImage() {
-    window.scroll(0, 100);
-    this.setState({ isimageLoading: true });
     this.setState({ watermarkVisible: true });
-    setTimeout(() => {
-      htmlToImage.toPng(document.getElementById('divToPrint'), { quality: 0.55 })
-        .then((dataUrl) => {
-          var link = document.createElement('a');
-          link.download = 'OG-Structure.png';
-          link.href = dataUrl;
-          link.click();
-          this.setState({ isimageLoading: false })
-        });
-    }, 10)
+    htmlToImage.toPng(document.getElementById('divToPrint'), { quality: 0.55 })
+      .then((dataUrl) => {
+        var link = document.createElement('a');
+        link.download = 'OG-Structure.png';
+        link.href = dataUrl;
+        link.click();
+        this.setState({ isImageLoading: false })
+      });
+
   }
 
-  printDocument() {
-    // window.scrollTo(0, 0);
-    const input = document.getElementById('divToPrint');
-    setTimeout(() => {
-      this.setState({ isLoading: true })
-      this.setState({ watermarkVisible: true });
-      html2canvas(input)
-        .then((canvas) => {
-          const imgData = canvas.toDataURL('image/png', { quality: 0.55 });
-          const pdf = new jsPDF('l', 'mm', [75000, 1500], true);
-          pdf.setTextColor(150);
-          pdf.addImage(imgData, 'PNG', 0, 0);
-          pdf.save("OG-Structure.pdf");
-          this.setState({ isLoading: false });
-        });
-    }, 2000)
+  //Download as Image.
+  getImage() {
+    this.setState({ isImageLoading: true });
+    if (window.pageXOffset == '0' && window.pageYOffset == '0') {
+      this.downloadImage();
+    }
+    else {
+      window.scroll(0, 100);
+      this.downloadImage();
+    }
   }
+
+  downloadPdf() {
+    this.setState({ watermarkVisible: true });
+    const input = document.getElementById('divToPrint');
+    html2canvas(input)
+      .then((canvas) => {
+        const imgData = canvas.toDataURL('image/png', { quality: 0.55 });
+        const pdf = new jsPDF('l', 'mm', [75000, 1500], true);
+        pdf.setTextColor(150);
+        pdf.addImage(imgData, 'PNG', 0, 0);
+        pdf.save("OG-Structure.pdf");
+        this.setState({ isLoading: false });
+      });
+  }
+
+  //Download as PDF.
+  printDocument() {
+    this.setState({ isLoading: true });
+
+    if (window.pageXOffset == '0' && window.pageYOffset == '0') {
+      this.downloadPdf();
+    }
+    else {
+      window.scrollTo(0, 0);
+      this.downloadPdf();
+    }
+  }
+
+  //Get Color from Colorpicker and set it into state.
   getcolor(event) {
     this.setState({ bgcolor: event.target.value });
   }
 
-  captureImage() {
-     window.print();
-  }
-
   componentDidMount() {
-    this.GotoParent();
+    this.GotoParent();//When Component render its scroll to the parent node.
   }
 
+  //Scroll to the parent node.
   GotoParent() {
     var elem = document.getElementById(this.initechOrg.Name);
     window.scrollTo(elem.offsetLeft - window.innerWidth / 2, 0);
@@ -118,7 +139,7 @@ class OgMapping extends React.Component {
             <h4 className="parent-size">{node.Name}</h4>
           </div>
           <div className="initechNode-info">
-            {/* <p className="no-margin">Identifier:{node.Id.Value}</p> */}
+            <p className="no-margin">Identifier:{node.Id.Value}</p>
             <p className="no-margin">Users:{node.Users}</p>
             <p className="no-margin">Admins:{node.Admins}</p>
             <p className="no-margin">Devices:{node.Devices}</p>
@@ -127,11 +148,13 @@ class OgMapping extends React.Component {
       );
     };
     return (
+
       <LoadingOverlay
-        active={this.state.isimageLoading ? this.state.isimageLoading : this.state.isLoading}
+        active={this.state.isImageLoading ? this.state.isImageLoading : this.state.isLoading}
         spinner
         text='Exporting File!'
-      >
+        className="loader-overlay"
+      >{/*Loader while downloading image and PDF.*/}
 
         <div className="root">
           <div className="content">
@@ -140,7 +163,7 @@ class OgMapping extends React.Component {
                 <h4 className="export">Export as :</h4>
                 <ButtonGroup variant="text" id="download-button" color="primary" aria-label="text primary button group">
                   <Button onClick={this.printDocument} className="my-donwload" disabled={this.state.isLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <PictureAsPdfIcon />}&nbsp;{this.state.isLoading ? "Exporting PDF" : "PDF"}</Button>
-                  <Button onClick={this.downloadImage} className="my-donwload" disabled={this.state.isimageLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <CloudDownloadIcon />}&nbsp;{this.state.isimageLoading ? "Exporting Image" : "Image"}</Button>
+                  <Button onClick={this.getImage} className="my-donwload" disabled={this.state.isimageLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <CloudDownloadIcon />}&nbsp;{this.state.isimageLoading ? "Exporting Image" : "Image"}</Button>
                   <Button onClick={this.captureImage} className="my-donwload"><AddAPhotoIcon /></Button>
                 </ButtonGroup>
               </div>
@@ -152,16 +175,13 @@ class OgMapping extends React.Component {
                         <div className="tools fixed-top">
                           <ButtonGroup variant="text" className="zoom-in-out" color="primary" aria-label="text primary button group">
                             <Button className="my-donwload" onClick={zoomIn}><ZoomInIcon /></Button>
-                            <Button className="my-donwload" onClick={zoomOut}><ZoomOutIcon /></Button>
+                            <Button className="my-donwload" onClick={zoomOut} ><ZoomOutIcon /></Button>
                             <Button className="my-donwload" onClick={resetTransform} onClickCapture={this.GotoParent}><RotateLeftIcon /></Button>
                             <Button>
                               <input type="color" id="color-picker"
                                 className="btn btn-outline" onChange={this.getcolor}></input>
                             </Button>
                           </ButtonGroup>
-                        </div>
-                        <div id="capture">
-                          <h4 style={{ color: '#000' }}>Hello world!</h4>
                         </div>
                         <TransformComponent>
                           <div id="divToPrint" className="mt4" >
