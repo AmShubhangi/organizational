@@ -90,32 +90,30 @@ class OgMapping extends React.Component {
 
   //Download as PDF.
   downloadPdf() {
-    setTimeout(() => {
-      this.setState({ watermarkVisible: true });
-      const input = document.getElementById('divToPrint');
-      html2canvas(input)
-        .then((canvas) => {
-          const imgData = canvas.toDataURL('image/png', { quality: 0.55 });
-          const pdf = new jsPDF('l', 'mm', [75000, 1500], true);
-          pdf.setTextColor(150);
-          pdf.addImage(imgData, 'PNG', 0, 0);
-          pdf.save("OG-Structure.pdf");
-          this.setState({ isLoading: false });
-          this.setState({ watermarkVisible: false });
-        });
-    },2000);
-    
+    this.setState({ watermarkVisible: true });
+    const input = document.getElementById('divToPrint');
+    html2canvas(input)
+      .then((canvas) => {
+        const imgData = canvas.toDataURL('image/png', { quality: 0.55 });
+        const pdf = new jsPDF('l', 'mm', [75000, 1500], true);
+        pdf.setTextColor(150);
+        pdf.addImage(imgData, 'PNG', 0, 0);
+        pdf.save("OG-Structure.pdf");
+        this.setState({ isLoading: false });
+        this.setState({ watermarkVisible: false });
+      });
   }
-
 
   printDocument() {
     this.setState({ isLoading: true });
-
-    if (window.pageXOffset == '0' && window.pageYOffset == '0') {
+    this.setState({ watermarkVisible: true });
+    console.log(window.pageXOffset == 0 && window.pageYOffset == 0)
+    if (window.pageXOffset == 0 && window.pageYOffset == 0) {
+      console.log()
       this.downloadPdf();
     }
     else {
-      window.scrollTo(0, 100);
+      window.scrollTo(0, 0);
       this.downloadPdf();
     }
   }
