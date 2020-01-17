@@ -61,6 +61,7 @@ class OgMapping extends React.Component {
     this.initechOrg = map[arry[0].Id.Value];
   }//
 
+  //Download as Image.
   downloadImage() {
     this.setState({ watermarkVisible: true });
     htmlToImage.toPng(document.getElementById('divToPrint'), { quality: 0.55 })
@@ -69,12 +70,12 @@ class OgMapping extends React.Component {
         link.download = 'OG-Structure.png';
         link.href = dataUrl;
         link.click();
-        this.setState({ isImageLoading: false })
+        this.setState({ isImageLoading: false });
+        this.setState({ watermarkVisible: false });
       });
 
   }
 
-  //Download as Image.
   getImage() {
     this.setState({ isImageLoading: true });
     if (window.pageXOffset == '0' && window.pageYOffset == '0') {
@@ -86,21 +87,27 @@ class OgMapping extends React.Component {
     }
   }
 
-  downloadPdf() {
-    this.setState({ watermarkVisible: true });
-    const input = document.getElementById('divToPrint');
-    html2canvas(input)
-      .then((canvas) => {
-        const imgData = canvas.toDataURL('image/png', { quality: 0.55 });
-        const pdf = new jsPDF('l', 'mm', [75000, 1500], true);
-        pdf.setTextColor(150);
-        pdf.addImage(imgData, 'PNG', 0, 0);
-        pdf.save("OG-Structure.pdf");
-        this.setState({ isLoading: false });
-      });
-  }
 
   //Download as PDF.
+  downloadPdf() {
+    setTimeout(() => {
+      this.setState({ watermarkVisible: true });
+      const input = document.getElementById('divToPrint');
+      html2canvas(input)
+        .then((canvas) => {
+          const imgData = canvas.toDataURL('image/png', { quality: 0.55 });
+          const pdf = new jsPDF('l', 'mm', [75000, 1500], true);
+          pdf.setTextColor(150);
+          pdf.addImage(imgData, 'PNG', 0, 0);
+          pdf.save("OG-Structure.pdf");
+          this.setState({ isLoading: false });
+          this.setState({ watermarkVisible: false });
+        });
+    },2000);
+    
+  }
+
+
   printDocument() {
     this.setState({ isLoading: true });
 
@@ -108,7 +115,7 @@ class OgMapping extends React.Component {
       this.downloadPdf();
     }
     else {
-      window.scrollTo(0, 0);
+      window.scrollTo(0, 100);
       this.downloadPdf();
     }
   }
