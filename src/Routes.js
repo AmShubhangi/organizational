@@ -3,9 +3,7 @@ import { Switch, Redirect } from 'react-router-dom';
 import { RouteWithLayout } from './components';
 import { Main as MainLayout, Minimal as MinimalLayout } from './layouts';
 import {
-  ProductList as ProductListView,
   OgMapping as OgMappingView,
-  Typography as TypographyView,
   Icons as IconsView,
   Account as AccountView,
   Settings as SettingsView,
@@ -52,18 +50,6 @@ const Routes = () => {
         exact
         layout={MainLayout}
         path="/register"
-      />
-      <RouteWithLayout
-        component={ProductListView}
-        exact
-        layout={MainLayout}
-        path="/products"
-      />
-      <RouteWithLayout
-        component={TypographyView}
-        exact
-        layout={MainLayout}
-        path="/typography"
       />
       <RouteWithLayout
         component={IconsView}

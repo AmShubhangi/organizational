@@ -49,7 +49,7 @@ class HomeComponent extends Component {
               distance={300}
               text={<ArrowUpwardIcon />}
             />
-            <a className="site-logo" href="index.html">
+            <a className="site-logo" href="/home">
               <img src={logo} width="150" height="35" alt="a"></img>
             </a>
             <button onClick={this.toggleNavbar} className={`${classTwo}`} type="button" data-toggle="collapse" data-target="#navbar-Collapse" aria-controls="navbar-Collapse" aria-expanded="false" aria-label="Toggle navigation">

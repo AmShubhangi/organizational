@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/styles';
 import { useMediaQuery } from '@material-ui/core';
-import { Sidebar, Topbar } from './components';
+import { Topbar } from './components';
 import HomeComponent from 'components/home';
 
 const useStyles = makeStyles(theme => ({
@@ -51,11 +51,6 @@ const Main = props => {
       >
         <Topbar onSidebarOpen={handleSidebarOpen} />
 
-        {window.location.pathname !== '/login' && window.location.pathname !== '/register' ? <Sidebar
-          onClose={handleSidebarClose}
-          open={shouldOpenSidebar}
-          variant={isDesktop ? 'persistent' : 'temporary'}
-        /> : ''}
         <main className={classes.content}>
           {children}
           {/* <Footer /> */}
