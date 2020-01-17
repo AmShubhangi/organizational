@@ -37,7 +37,7 @@ html {
   background: #287cfa;
 }
 .MuiTypography-colorTextSecondary {
-  color: #ffffff !important;
+  color: black !important;
   text-align: center;
 }
 .home-top-bg {
@@ -461,7 +461,7 @@ h6 {
     background: #333333;
   }
   .site-footer p {
-    color: #8c8c8c;
+    color: rgb(179, 179, 179);;
   }
   .site-footer h2,
   .site-footer h3,
@@ -1615,6 +1615,8 @@ a:hover {
 /* 06-01-2020 */
 span.address {
   display: block;
+  color: rgb(179, 179, 179);
+  white-space: nowrap;
 }
 
 ul.list-unstyled.row {

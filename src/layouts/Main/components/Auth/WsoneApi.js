@@ -11,7 +11,7 @@ import {
 } from '@material-ui/core';
 import { Redirect } from 'react-router-dom';
 
-class Password extends React.Component {
+class WsoneApi extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -144,4 +144,4 @@ class Password extends React.Component {
 }
 
 
-export default Password;
+export default WsoneApi;

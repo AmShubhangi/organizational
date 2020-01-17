@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { Grid } from '@material-ui/core';
 
-import { Password } from './components';
+import WSOneApi  from './components/WSOneApi/WSOneApi';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -30,7 +30,7 @@ const Settings = () => {
           item
           md={6}
           xs={12}>
-          <Password />
+          <WSOneApi />
         </Grid>
       
         <Grid
