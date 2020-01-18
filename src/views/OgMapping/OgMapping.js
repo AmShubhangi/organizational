@@ -23,9 +23,7 @@ class OgMapping extends React.Component {
   constructor(props) {
     super(props);
     this.getImage = this.getImage.bind(this);
-    this.downloadImage = this.downloadImage.bind(this);
     this.printDocument = this.printDocument.bind(this);
-    this.downloadPdf = this.downloadPdf.bind(this);
     this.getcolor = this.getcolor.bind(this);
     this.GotoParent = this.GotoParent.bind(this);
 
@@ -64,7 +62,11 @@ class OgMapping extends React.Component {
   }//
 
   //Download as Image.
-  downloadImage() {
+  getImage() {
+    this.setState({ isImageLoading: true });
+    this.setState({ Positionx: window.pageXOffset });
+    this.setState({ PositionY: window.pageYOffset });
+
     this.setState({ watermarkVisible: true });
     htmlToImage.toPng(document.getElementById('divToPrint'), { quality: 0.55 })
       .then((dataUrl) => {
@@ -72,57 +74,35 @@ class OgMapping extends React.Component {
         link.download = 'OG-Structure.png';
         link.href = dataUrl;
         link.click();
-        window.scrollTo(this.state.Positionx, this.state.PositionY);
         this.setState({ isImageLoading: false });
         this.setState({ watermarkVisible: false });
+        window.scrollTo(this.state.Positionx, this.state.PositionY);
       });
-
-  }
-
-  getImage() {
-    this.setState({ Positionx: window.pageXOffset });
-    this.setState({ PositionY: window.pageYOffset });
-    this.setState({ isImageLoading: true });
-
-    if (window.pageXOffset == '0' && window.pageYOffset == '0') {
-      this.downloadImage();
-    }
-    else {
-      window.scroll(0, 100);
-      this.downloadImage();
-    }
   }
 
 
   //Download as PDF.
-  downloadPdf() {
-    this.setState({ watermarkVisible: true });
-    const input = document.getElementById('divToPrint');
-    console.log(input);
-      html2canvas(input)
-        .then((canvas) => {
-          const imgData = canvas.toDataURL('image/png', { quality: 0.55 });
-          const pdf = new jsPDF('l', 'mm', [75000, 1500], true);
-          pdf.setTextColor(150);
-          pdf.addImage(imgData, 'PNG', 0, 0 );
-          pdf.save("OG-Structure.pdf");
-          window.scrollTo(this.state.Positionx, this.state.PositionY);
-          this.setState({ isLoading: false });
-          this.setState({ watermarkVisible: false });
-        });
-  }
-
   printDocument() {
     this.setState({ Positionx: window.pageXOffset });
     this.setState({ PositionY: window.pageYOffset });
     this.setState({ isLoading: true });
-    if (window.pageXOffset == 0 && window.pageYOffset == 0) {
-      this.downloadPdf();
-    }
-    else {
-      window.scrollTo(0, 0);
-      this.downloadPdf();
-    }
+
+    window.scrollTo(0, 0);
+    const input = document.getElementById('divToPrint');
+    setTimeout(() => {
+      this.setState({ watermarkVisible: true });
+      html2canvas(input)
+        .then((canvas) => {
+          const imgData = canvas.toDataURL('image/png', { quality: 0.55 });
+          const pdf = new jsPDF('l', 'mm', [750000, 1500], true);
+          pdf.setTextColor(150);
+          pdf.addImage(imgData, 'PNG', 0, 0);
+          pdf.save("OG-Structure.pdf");
+          this.setState({ watermarkVisible: false });
+          this.setState({ isLoading: false });
+          window.scrollTo(this.state.Positionx, this.state.PositionY);
+        });
+    }, 3000)
   }
 
   //Get Color from Colorpicker and set it into state.
@@ -175,8 +155,8 @@ class OgMapping extends React.Component {
                 <h4 className="export">Export as :</h4>
                 <ButtonGroup variant="text" id="download-button" color="primary" aria-label="text primary button group">
                   <Button onClick={this.printDocument} className="my-donwload" disabled={this.state.isLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <PictureAsPdfIcon />}&nbsp;{this.state.isLoading ? "Exporting PDF" : "PDF"}</Button>
-                  <Button onClick={this.getImage} className="my-donwload" disabled={this.state.isimageLoading}>{this.state.isLoading ? <i class="fa fa-spinner fa-spin"></i> : <CloudDownloadIcon />}&nbsp;{this.state.isimageLoading ? "Exporting Image" : "Image"}</Button>
-                  <Button onClick={this.captureImage} className="my-donwload"><AddAPhotoIcon /></Button>
+
+                  <Button onClick={this.getImage} className="my-donwload" disabled={this.state.isImageLoading}>{this.state.isImageLoading ? <i class="fa fa-spinner fa-spin"></i> : <CloudDownloadIcon />}&nbsp;{this.state.isImageLoading ? "Exporting Image" : "Image"}</Button>
                 </ButtonGroup>
               </div>
               <div className="mt4">
@@ -197,9 +177,9 @@ class OgMapping extends React.Component {
                         </div>
                         <TransformComponent>
                           <div id="divToPrint" className="mt4">
-                            {/* {this.state.watermarkVisible === true ? <div className="watermark">
+                            {this.state.watermarkVisible === true ? <div className="watermark">
                               <p className="copy">By</p><img src={watermark} alt="watermark" className="watermark1" />
-                            </div> : ''} */}
+                            </div> : ''}
                             <MapInteractionCSS>
                               <div id="org">
                                 <OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} />
