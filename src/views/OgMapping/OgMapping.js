@@ -15,7 +15,7 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 import LoadingOverlay from 'react-loading-overlay';
 import { MapInteractionCSS } from 'react-map-interaction';
-import watermark from '../../assets/images/home-logo.661d8116.png'
+import watermark from '../../assets/images/home-logo.661d8116.png';
 import "react-sweet-progress/lib/style.css";
 import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 
@@ -34,6 +34,8 @@ class OgMapping extends React.Component {
       isImageLoading: false,//Image Loader.
       bgcolor: '#287cfa',//ColorPicker.
       watermarkVisible: false,//Watermark.
+      Positionx: window.pageXOffset,
+      PositionY: window.pageYOffset
     }
 
 
@@ -70,6 +72,7 @@ class OgMapping extends React.Component {
         link.download = 'OG-Structure.png';
         link.href = dataUrl;
         link.click();
+        window.scrollTo(this.state.Positionx, this.state.PositionY);
         this.setState({ isImageLoading: false });
         this.setState({ watermarkVisible: false });
       });
@@ -77,7 +80,10 @@ class OgMapping extends React.Component {
   }
 
   getImage() {
+    this.setState({ Positionx: window.pageXOffset });
+    this.setState({ PositionY: window.pageYOffset });
     this.setState({ isImageLoading: true });
+
     if (window.pageXOffset == '0' && window.pageYOffset == '0') {
       this.downloadImage();
     }
@@ -92,24 +98,25 @@ class OgMapping extends React.Component {
   downloadPdf() {
     this.setState({ watermarkVisible: true });
     const input = document.getElementById('divToPrint');
-    html2canvas(input)
-      .then((canvas) => {
-        const imgData = canvas.toDataURL('image/png', { quality: 0.55 });
-        const pdf = new jsPDF('l', 'mm', [75000, 1500], true);
-        pdf.setTextColor(150);
-        pdf.addImage(imgData, 'PNG', 0, 0);
-        pdf.save("OG-Structure.pdf");
-        this.setState({ isLoading: false });
-        this.setState({ watermarkVisible: false });
-      });
+    console.log(input);
+      html2canvas(input)
+        .then((canvas) => {
+          const imgData = canvas.toDataURL('image/png', { quality: 0.55 });
+          const pdf = new jsPDF('l', 'mm', [75000, 1500], true);
+          pdf.setTextColor(150);
+          pdf.addImage(imgData, 'PNG', 0, 0 );
+          pdf.save("OG-Structure.pdf");
+          window.scrollTo(this.state.Positionx, this.state.PositionY);
+          this.setState({ isLoading: false });
+          this.setState({ watermarkVisible: false });
+        });
   }
 
   printDocument() {
+    this.setState({ Positionx: window.pageXOffset });
+    this.setState({ PositionY: window.pageYOffset });
     this.setState({ isLoading: true });
-    this.setState({ watermarkVisible: true });
-    console.log(window.pageXOffset == 0 && window.pageYOffset == 0)
     if (window.pageXOffset == 0 && window.pageYOffset == 0) {
-      console.log()
       this.downloadPdf();
     }
     else {
@@ -189,10 +196,10 @@ class OgMapping extends React.Component {
                           </ButtonGroup>
                         </div>
                         <TransformComponent>
-                          <div id="divToPrint" className="mt4" >
-                            {this.state.watermarkVisible === true ? <div className="watermark">
+                          <div id="divToPrint" className="mt4">
+                            {/* {this.state.watermarkVisible === true ? <div className="watermark">
                               <p className="copy">By</p><img src={watermark} alt="watermark" className="watermark1" />
-                            </div> : ''}
+                            </div> : ''} */}
                             <MapInteractionCSS>
                               <div id="org">
                                 <OrgChart tree={this.initechOrg} NodeComponent={MyNodeComponent} />
