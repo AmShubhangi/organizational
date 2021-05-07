@@ -57,7 +57,7 @@
     "react-to-pdf": "0.0.8",
     "react-zoom-pan-pinch": "^1.5.1",
     "recompose": "^0.30.0",
-    "underscore": "^1.9.1",
+    "underscore": "^1.12.1",
     "uuid": "^3.3.2",
     "validate.js": "^0.13.1",
     "watermarkjs": "^2.0.0"
